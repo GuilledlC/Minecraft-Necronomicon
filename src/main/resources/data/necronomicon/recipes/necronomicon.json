@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ERG",
+    "RQB",
+    "RRI"
+  ],
+  "key": {
+    "E": {
+      "item": "minecraft:spider_eye"
+    },
+    "R": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "Q": {
+      "item": "minecraft:writable_book"
+    },
+    "B": {
+      "item": "minecraft:bone"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "necronomicon:necronomicon"
+  }
+}
