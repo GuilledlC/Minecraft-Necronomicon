@@ -1,6 +1,8 @@
 package net.guille_dlc.necronomicon;
 
+import net.guille_dlc.necronomicon.entity.ModEntityTypes;
 import net.guille_dlc.necronomicon.item.ModItems;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,6 +25,7 @@ public class Necronomicon
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(eventBus);
+        ModEntityTypes.register(eventBus);
 
         eventBus.addListener(this::setup);
 

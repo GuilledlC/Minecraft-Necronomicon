@@ -1,4 +1,6 @@
 {
   "item.necronomicon.necronomicon": "Necronomicon",
-  "itemGroup.necronomicontab": "Necronomicon Mod"
+  "itemGroup.necronomicontab": "Necronomicon Mod",
+  "entity.necronomicon.angle": "Angle",
+  "item.necronomicon.angle_spawn_egg": "Angle Spawn Egg"
 }
