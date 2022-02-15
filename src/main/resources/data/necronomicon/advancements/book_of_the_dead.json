@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "necronomicon:necronomicon"
+    },
+    "title": "The Book of the Dead",
+    "description": "Obtain a §4Necronomicon",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "minecraft:textures/block/podzol_top.png"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "necronomicon:necronomicon"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

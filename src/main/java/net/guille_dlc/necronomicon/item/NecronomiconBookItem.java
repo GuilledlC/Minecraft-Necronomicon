@@ -1,54 +1,41 @@
 package net.guille_dlc.necronomicon.item;
 
 import com.google.common.collect.Lists;
-import net.guille_dlc.necronomicon.ClientboundOpenNecronomiconPacket;
-import net.guille_dlc.necronomicon.dimension.ModDimensions;
-import net.guille_dlc.necronomicon.dimension.ModTeleporters;
 import net.guille_dlc.necronomicon.events.ClientModEvents;
-import net.minecraft.ChatFormatting;
+import net.guille_dlc.necronomicon.particles.ModParticles;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.inventory.BookViewScreen;
-import net.minecraft.client.multiplayer.ClientPacketListener;
-import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.particle.Particle;
 import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.Registry;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.ComponentUtils;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.network.protocol.PacketUtils;
-import net.minecraft.network.protocol.game.ClientboundOpenBookPacket;
-import net.minecraft.server.MinecraftServer;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
-import net.minecraft.util.StringUtil;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LecternBlock;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.extensions.IForgeItem;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.DistExecutor;
 import org.jetbrains.annotations.Nullable;
 
 
-import javax.swing.*;
-import java.awt.print.PageFormat;
-import java.awt.print.Pageable;
 import java.util.List;
 
 public class NecronomiconBookItem extends Item implements IForgeItem {
@@ -144,21 +131,22 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
         ItemStack itemStack = pPlayer.getItemInHand(pHand);
 
-        //Substituting this -> pPlayer.openItemGui(itemstack, pHand);
-        if(pPlayer instanceof ServerPlayer sPlayer) { //Only the ServerPlayer is gonna receive this
+        LightningBolt lightningbolt = EntityType.LIGHTNING_BOLT.create(pLevel);
+        lightningbolt.moveTo(pPlayer.getX(), pPlayer.getY(), pPlayer.getZ());
+        pLevel.addFreshEntity(lightningbolt);
+
+        pLevel.explode(pPlayer, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), 3.0F, true, Explosion.BlockInteraction.DESTROY);
+
+        playActivateAnimation(itemStack, (Entity)pPlayer);
+        Minecraft mc = Minecraft.getInstance();
+
+        /*if(pLevel.isClientSide) {
             if (resolveBookComponents(itemStack, pPlayer.createCommandSourceStack(), pPlayer)) {
                 pPlayer.containerMenu.broadcastChanges();
             }
-            /*  pPlayer.openItemGui(itemstack, pHand);
-                    this.connection.send(new ClientboundOpenBookPacket(pHand));
-                    is sent to the ClientPacketListener handleOpenBook()
-                        this.minecraft.setScreen(new BookViewScreen(new BookViewScreen.WrittenBookAccess(itemstack)));
-            */
-            //sPlayer.connection.send(new ClientboundOpenBookPacket(pHand));
             itemStack.setTag(bookTag());
-            sPlayer.connection.send(new ClientboundOpenNecronomiconPacket(itemStack));
-            ClientModEvents.BookScreen(itemStack);
-        }
+            DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientModEvents.BookScreen(itemStack));
+        }*/
         pPlayer.awardStat(Stats.ITEM_USED.get(this)); //Don't delete this (don't delete anything)
         return InteractionResultHolder.sidedSuccess(itemStack, pLevel.isClientSide()); //I don't know what this does lol
     }
@@ -228,7 +216,9 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
         CompoundTag bookTag =  new CompoundTag();
         ListTag pages = new ListTag();
         List<String> pagesList = Lists.newArrayList();
-        pagesList.add("{\"text\":\"Hello\"}");
+        pagesList.add("§8Hello");
+        //pagesList.add("{\"text\":\"Hello\nhi\"}");
+        //pagesList.add("{\"text\":\"\\n§8To visit The Dead, one \\n\\nmust sacrifice their\\n\\nown mortal soul to \\n\\n§4§KThe Old Gods§8, while\\n\\nholding this book \\n\\nin their hands\"}");
         pagesList.stream().map(StringTag::valueOf).forEach(pages::add);
         bookTag.put("pages", pages);
         bookTag.put("author", StringTag.valueOf("The Dead"));
@@ -237,5 +227,18 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
         bookTag.put("title", StringTag.valueOf("Necronomicon"));
         ItemStack book = new ItemStack(this, 1, bookTag);
         return bookTag;
+    }
+
+    public void playActivateAnimation(ItemStack itemStack, Entity entity) {
+        Minecraft mc = Minecraft.getInstance();
+        //mc.particleEngine.createTrackingEmitter(entity, ParticleTypes.TOTEM_OF_UNDYING, 10);
+        mc.particleEngine.createTrackingEmitter(entity, ModParticles.BLOOD_PARTICLE.get(), 10);
+
+        assert mc.level != null: "Level is null";
+        mc.level.playLocalSound(entity.getX(), entity.getY(), entity.getZ(), SoundEvents.TOTEM_USE, entity.getSoundSource(), 1.0F, 1.0F, false);
+
+        if(entity == mc.player) {
+            mc.gameRenderer.displayItemActivation(itemStack);
+        }
     }
 }
