@@ -21,6 +21,7 @@ import net.minecraft.world.entity.ai.behavior.JumpOnBed;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.Fox;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.*;
@@ -40,10 +41,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
+import java.util.List;
 import java.util.Random;
 import java.util.function.Predicate;
 
 public class AngleEntity extends Vindicator {
+    static final Predicate<ItemEntity> ALLOWED_ITEMS = (p_28528_) -> {
+        return !p_28528_.hasPickUpDelay() && p_28528_.isAlive() && p_28528_.getItem().getItem() instanceof NecronomiconBookItem;
+    };
     private static final String TAG_JOHNNY = "Johnny";
     static final Predicate<Difficulty> DOOR_BREAKING_PREDICATE = (p_34082_) -> {
         return p_34082_ == Difficulty.NORMAL || p_34082_ == Difficulty.HARD;
@@ -78,6 +83,7 @@ public class AngleEntity extends Vindicator {
                 SoundEvents.BOOK_PAGE_TURN, (arg) -> {
             return true;
         }));*/
+        this.goalSelector.addGoal(1, new AngleSearchForItemsGoal());
         this.goalSelector.addGoal(8, new RandomStrollGoal(this, 0.6D));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 3.0F, 0.5F));
@@ -91,7 +97,7 @@ public class AngleEntity extends Vindicator {
 
     @Override
     protected void populateDefaultEquipmentSlots(DifficultyInstance pDifficulty) {
-        this.setItemInHand(InteractionHand.MAIN_HAND, new NecronomiconBookItem(new Item.Properties()).getDefaultInstance());
+        //this.setItemInHand(InteractionHand.MAIN_HAND, new NecronomiconBookItem(new Item.Properties()).getDefaultInstance());
         /*Random r = new Random();
         int p = Math.abs(r.nextInt()%56);
         if(p > 54)
@@ -116,8 +122,28 @@ public class AngleEntity extends Vindicator {
             this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));*/
     }
 
-    protected static void pickUpItem() {
+    /**Method stolen from the Fox class**/
+    protected void pickUpItem(ItemEntity pEntity) {
+        ItemStack itemstack = pEntity.getItem();
+        if (this.canHoldItem(itemstack) && AngleEntity.ALLOWED_ITEMS.test(pEntity)) {
+            int i = itemstack.getCount();
+            if (i > 1) {
+                this.dropItemStack(itemstack.split(i - 1));
+            }
 
+            this.dropItemStack(this.getItemBySlot(EquipmentSlot.MAINHAND));
+            this.onItemPickup(pEntity);
+            this.setItemSlot(EquipmentSlot.MAINHAND, itemstack.split(1));
+            this.handDropChances[EquipmentSlot.MAINHAND.getIndex()] = 2.0F;
+            this.take(pEntity, itemstack.getCount());
+            pEntity.discard();
+        }
+    }
+
+    /**Method stolen from the Fox class**/
+    private void dropItemStack(ItemStack pStack) {
+        ItemEntity itementity = new ItemEntity(this.level, this.getX(), this.getY(), this.getZ(), pStack);
+        this.level.addFreshEntity(itementity);
     }
 
     static class AngleBreakDoorGoal extends BreakDoorGoal {
@@ -186,6 +212,55 @@ public class AngleEntity extends Vindicator {
             } else {
                 return super.getAttackReachSqr(pAttackTarget);
             }
+        }
+    }
+
+    /**Class stolen from the Fox class**/
+    class AngleSearchForItemsGoal extends Goal {
+        public AngleSearchForItemsGoal() {
+            this.setFlags(EnumSet.of(Goal.Flag.MOVE));
+        }
+
+        /**
+         * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
+         * method as well.
+         */
+        public boolean canUse() {
+            if (!AngleEntity.this.getItemBySlot(EquipmentSlot.MAINHAND).isEmpty()) {
+                return false;
+            } else if (AngleEntity.this.getTarget() == null && AngleEntity.this.getLastHurtByMob() == null) {
+                if (AngleEntity.this.getRandom().nextInt(reducedTickDelay(10)) != 0) {
+                    return false;
+                } else {
+                    List<ItemEntity> list = AngleEntity.this.level.getEntitiesOfClass(ItemEntity.class, AngleEntity.this.getBoundingBox().inflate(8.0D, 8.0D, 8.0D), AngleEntity.ALLOWED_ITEMS);
+                    return !list.isEmpty() && AngleEntity.this.getItemBySlot(EquipmentSlot.MAINHAND).isEmpty();
+                }
+            } else {
+                return false;
+            }
+        }
+
+        /**
+         * Keep ticking a continuous task that has already been started
+         */
+        public void tick() {
+            List<ItemEntity> list = AngleEntity.this.level.getEntitiesOfClass(ItemEntity.class, AngleEntity.this.getBoundingBox().inflate(8.0D, 8.0D, 8.0D), AngleEntity.ALLOWED_ITEMS);
+            ItemStack itemstack = AngleEntity.this.getItemBySlot(EquipmentSlot.MAINHAND);
+            if (itemstack.isEmpty() && !list.isEmpty()) {
+                AngleEntity.this.getNavigation().moveTo(list.get(0), (double)1.05F);
+            }
+
+        }
+
+        /**
+         * Execute a one shot task or start executing a continuous task
+         */
+        public void start() {
+            List<ItemEntity> list = AngleEntity.this.level.getEntitiesOfClass(ItemEntity.class, AngleEntity.this.getBoundingBox().inflate(8.0D, 8.0D, 8.0D), AngleEntity.ALLOWED_ITEMS);
+            if (!list.isEmpty()) {
+                AngleEntity.this.getNavigation().moveTo(list.get(0), (double)1.1F);
+            }
+
         }
     }
 }
