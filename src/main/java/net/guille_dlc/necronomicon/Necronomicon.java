@@ -12,6 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -20,6 +21,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -54,6 +56,7 @@ public class Necronomicon
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.addListener(this::livingHurt);
+        MinecraftForge.EVENT_BUS.addListener(this::playerTick);
 
     }
 
@@ -65,6 +68,8 @@ public class Necronomicon
     }
 
     private void livingHurt(final LivingHurtEvent event) {
+        if (event.getSource() == DamageSource.OUT_OF_WORLD) //Makes sure you get killed with "/kill" and The Void
+            return;
         Entity entity = event.getEntity();
         if(entity.getLevel().isClientSide())
             return;
@@ -74,26 +79,44 @@ public class Necronomicon
         if(event.getEntityLiving() instanceof ServerPlayer player) {
             for(InteractionHand hand : InteractionHand.values()) {
                 ItemStack itemStack = player.getItemInHand(hand);
-                if(itemStack.getItem() instanceof NecronomiconBookItem) {
-                    ((NecronomiconBookItem)itemStack.getItem()).rapture(event.getEntity().getLevel(), player, hand);
+                if(itemStack.getItem() instanceof NecronomiconBookItem item) {
+                    if(item.coolDown == 0) {
+                        item.rapture(event.getEntity().getLevel(), player, hand);
 
-                    if(event.getAmount() > player.getHealth())
-                        event.setAmount(0);
-                    else
-                        player.heal(event.getAmount());
+                        if(event.getAmount() > player.getMaxHealth())
+                            event.setAmount(player.getHealth() - 1);
+                        else
+                            player.heal(event.getAmount());
 
-                    player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 150, 0));
-                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 150, 0));
-                    player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 150, 0));
-                    player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
-
-                    ResourceKey<Level> resourcekey = event.getEntity().getLevel().dimension() == Level.END ? Level.OVERWORLD : Level.END;
-                    ServerLevel serverlevel = ((ServerLevel)event.getEntity().getLevel()).getServer().getLevel(resourcekey);
-                    if (serverlevel == null) {
-                        return;
+                        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 150, 0));
+                        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 150, 0));
+                        player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 300, 0));
+                        player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
                     }
+                }
+            }
+        }
+    }
 
-                    //player.changeDimension(serverlevel);
+    private void playerTick(final TickEvent.PlayerTickEvent event)
+    {
+        if(event.player instanceof ServerPlayer player) {
+            for(InteractionHand hand : InteractionHand.values()) {
+                ItemStack itemStack = player.getItemInHand(hand);
+                if(itemStack.getItem() instanceof NecronomiconBookItem item) {
+                    if(item.coolDown != 0) {
+                        if(item.coolDown == 1) {
+                            ResourceKey<Level> resourcekey = player.getLevel().dimension() == Level.END ? Level.OVERWORLD : Level.END;
+                            ServerLevel serverlevel = player.getLevel().getServer().getLevel(resourcekey);
+                            if (serverlevel == null) {
+
+                               return;
+                            }
+
+                            player.changeDimension(serverlevel);
+                        }
+                        item.coolDown--;
+                    }
                 }
             }
         }

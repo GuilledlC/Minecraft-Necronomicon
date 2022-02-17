@@ -5,6 +5,7 @@ import net.guille_dlc.necronomicon.events.ClientModEvents;
 import net.guille_dlc.necronomicon.particles.ModParticles;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.Particle;
+import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
@@ -21,9 +22,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LightningBolt;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
@@ -39,6 +38,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class NecronomiconBookItem extends Item implements IForgeItem {
+
+    public int coolDown = 0;
+
     public NecronomiconBookItem(Properties properties) {
         super(properties);
     }
@@ -136,10 +138,11 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
                 pPlayer.containerMenu.broadcastChanges();
             }
             itemStack.setTag(bookTag());
+            pPlayer.playSound(SoundEvents.BOOK_PAGE_TURN, 1, 1);
             DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientModEvents.BookScreen(itemStack));
         }
-        pPlayer.awardStat(Stats.ITEM_USED.get(this)); //Don't delete this (don't delete anything)
-        return InteractionResultHolder.sidedSuccess(itemStack, pLevel.isClientSide()); //I don't know what this does lol
+        pPlayer.awardStat(Stats.ITEM_USED.get(this));
+        return InteractionResultHolder.sidedSuccess(itemStack, pLevel.isClientSide());
     }
 
     public static boolean resolveBookComponents(ItemStack pBookStack, @javax.annotation.Nullable CommandSourceStack pResolvingSource, @javax.annotation.Nullable Player pResolvingPlayer) {
@@ -229,6 +232,7 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
 
         level.explode(player, player.getX(), player.getY(), player.getZ(), 3.0F, true, Explosion.BlockInteraction.DESTROY);
 
+        coolDown = 100;
         playActivateAnimation(itemStack, (Entity)player);
     }
 
@@ -243,5 +247,19 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
         if(entity == mc.player) {
             mc.gameRenderer.displayItemActivation(itemStack);
         }
+    }
+
+    public void dim(Level pLevel, Entity pEntity) {
+        if(coolDown == 1) {
+            ResourceKey<Level> resourcekey = pEntity.getLevel().dimension() == Level.END ? Level.OVERWORLD : Level.END;
+            ServerLevel serverlevel = ((ServerLevel)pEntity.getLevel()).getServer().getLevel(resourcekey);
+            if (serverlevel == null) {
+                return;
+            }
+
+            pEntity.changeDimension(serverlevel);
+        }
+        while(coolDown > 0)
+            coolDown--;
     }
 }
