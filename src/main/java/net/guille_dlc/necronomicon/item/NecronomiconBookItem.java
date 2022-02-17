@@ -131,22 +131,13 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
         ItemStack itemStack = pPlayer.getItemInHand(pHand);
 
-        LightningBolt lightningbolt = EntityType.LIGHTNING_BOLT.create(pLevel);
-        lightningbolt.moveTo(pPlayer.getX(), pPlayer.getY(), pPlayer.getZ());
-        pLevel.addFreshEntity(lightningbolt);
-
-        pLevel.explode(pPlayer, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), 3.0F, true, Explosion.BlockInteraction.DESTROY);
-
-        playActivateAnimation(itemStack, (Entity)pPlayer);
-        Minecraft mc = Minecraft.getInstance();
-
-        /*if(pLevel.isClientSide) {
+        if(pLevel.isClientSide) {
             if (resolveBookComponents(itemStack, pPlayer.createCommandSourceStack(), pPlayer)) {
                 pPlayer.containerMenu.broadcastChanges();
             }
             itemStack.setTag(bookTag());
             DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientModEvents.BookScreen(itemStack));
-        }*/
+        }
         pPlayer.awardStat(Stats.ITEM_USED.get(this)); //Don't delete this (don't delete anything)
         return InteractionResultHolder.sidedSuccess(itemStack, pLevel.isClientSide()); //I don't know what this does lol
     }
@@ -227,6 +218,18 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
         bookTag.put("title", StringTag.valueOf("Necronomicon"));
         ItemStack book = new ItemStack(this, 1, bookTag);
         return bookTag;
+    }
+
+    public void rapture(Level level, Player player, InteractionHand pHand) {
+        ItemStack itemStack = player.getItemInHand(pHand);
+
+        LightningBolt lightningbolt = EntityType.LIGHTNING_BOLT.create(level);
+        lightningbolt.moveTo(player.getX(), player.getY(), player.getZ());
+        level.addFreshEntity(lightningbolt);
+
+        level.explode(player, player.getX(), player.getY(), player.getZ(), 3.0F, true, Explosion.BlockInteraction.DESTROY);
+
+        playActivateAnimation(itemStack, (Entity)player);
     }
 
     public void playActivateAnimation(ItemStack itemStack, Entity entity) {

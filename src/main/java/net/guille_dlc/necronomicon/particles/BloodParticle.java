@@ -21,11 +21,14 @@ public class BloodParticle extends SimpleAnimatedParticle {
         this.quadSize *= 0.75F;
         this.lifetime = 60 + this.random.nextInt(12);
         this.setSpriteFromAge(pSprites);
-        if (this.random.nextInt(4) == 0) {
-            this.setColor(1F + this.random.nextFloat() * 0.0F, this.random.nextFloat() * 0.2F, this.random.nextFloat() * 0.1F);
-        } else {
+        int rand = this.random.nextInt(4);
+        if (rand == 0) {
             this.setColor(0.6F + this.random.nextFloat() * 0.1F, this.random.nextFloat() * 0.2F, 0.05F + this.random.nextFloat() * 0.1F);
-        }
+        } else {//if(rand == 1) {
+            this.setColor(0.1F + this.random.nextFloat() * 0.1F, 0.1F + this.random.nextFloat() * 0.1F, 0.1F + this.random.nextFloat() * 0.1F);
+        }/* else {
+            this.setColor(1F + this.random.nextFloat() * 0.0F, this.random.nextFloat() * 0.2F, this.random.nextFloat() * 0.1F);
+        }*/
     }
 
     //@OnlyIn(Dist.CLIENT)

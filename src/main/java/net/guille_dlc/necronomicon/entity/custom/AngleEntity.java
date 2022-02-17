@@ -136,6 +136,7 @@ public class AngleEntity extends Vindicator {
             this.setItemSlot(EquipmentSlot.MAINHAND, itemstack.split(1));
             this.handDropChances[EquipmentSlot.MAINHAND.getIndex()] = 2.0F;
             this.take(pEntity, itemstack.getCount());
+            this.setItemInHand(InteractionHand.MAIN_HAND, itemstack);
             pEntity.discard();
         }
     }
@@ -260,7 +261,6 @@ public class AngleEntity extends Vindicator {
             if (!list.isEmpty()) {
                 AngleEntity.this.getNavigation().moveTo(list.get(0), (double)1.1F);
             }
-
         }
     }
 }

@@ -6,8 +6,17 @@ import net.guille_dlc.necronomicon.entity.custom.AngleEntity;
 import net.guille_dlc.necronomicon.item.ModItems;
 import net.guille_dlc.necronomicon.item.NecronomiconBookItem;
 import net.guille_dlc.necronomicon.particles.ModParticles;
+import net.minecraft.client.Minecraft;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -19,6 +28,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import terrablender.api.BiomeProvider;
 import terrablender.api.BiomeProviders;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
+
+import java.util.concurrent.TimeUnit;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Necronomicon.MOD_ID)
@@ -41,6 +53,8 @@ public class Necronomicon
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.addListener(this::livingHurt);
+
     }
 
     private void setup(final FMLCommonSetupEvent event)
@@ -48,5 +62,40 @@ public class Necronomicon
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+    }
+
+    private void livingHurt(final LivingHurtEvent event) {
+        Entity entity = event.getEntity();
+        if(entity.getLevel().isClientSide())
+            return;
+        if(event.getAmount() < event.getEntityLiving().getHealth())
+            return;
+
+        if(event.getEntityLiving() instanceof ServerPlayer player) {
+            for(InteractionHand hand : InteractionHand.values()) {
+                ItemStack itemStack = player.getItemInHand(hand);
+                if(itemStack.getItem() instanceof NecronomiconBookItem) {
+                    ((NecronomiconBookItem)itemStack.getItem()).rapture(event.getEntity().getLevel(), player, hand);
+
+                    if(event.getAmount() > player.getHealth())
+                        event.setAmount(0);
+                    else
+                        player.heal(event.getAmount());
+
+                    player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 150, 0));
+                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 150, 0));
+                    player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 150, 0));
+                    player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
+
+                    ResourceKey<Level> resourcekey = event.getEntity().getLevel().dimension() == Level.END ? Level.OVERWORLD : Level.END;
+                    ServerLevel serverlevel = ((ServerLevel)event.getEntity().getLevel()).getServer().getLevel(resourcekey);
+                    if (serverlevel == null) {
+                        return;
+                    }
+
+                    //player.changeDimension(serverlevel);
+                }
+            }
+        }
     }
 }
