@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "necronomicon:item/fish_n_chips"
+  }
+}

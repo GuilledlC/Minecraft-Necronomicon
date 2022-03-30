@@ -19,8 +19,8 @@ public final class ClientModEvents {
 
     private ClientModEvents() {}
 
-    public static DistExecutor.SafeRunnable BookScreen(ItemStack itemStack) {
-            return () -> Minecraft.getInstance().setScreen(new BookViewScreen(new BookViewScreen.WrittenBookAccess(itemStack)));
+    public static DistExecutor.SafeRunnable BookScreen(BookViewScreen screen) {
+            return () -> Minecraft.getInstance().setScreen(screen);
     }
 
     @SubscribeEvent

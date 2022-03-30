@@ -1,54 +1,36 @@
 package net.guille_dlc.necronomicon.entity.custom;
 
-import net.guille_dlc.necronomicon.Necronomicon;
 import net.guille_dlc.necronomicon.item.ModItems;
 import net.guille_dlc.necronomicon.item.NecronomiconBookItem;
-import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
-import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.behavior.FollowTemptation;
-import net.minecraft.world.entity.ai.behavior.JumpOnBed;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.animal.Fox;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.npc.AbstractVillager;
+import net.minecraft.world.entity.npc.InventoryCarrier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.PotionUtils;
-import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.block.state.BlockState;
-import org.checkerframework.common.returnsreceiver.qual.This;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
 import java.util.List;
-import java.util.Random;
 import java.util.function.Predicate;
 
 public class AngleEntity extends Vindicator {
     static final Predicate<ItemEntity> ALLOWED_ITEMS = (p_28528_) -> {
         return !p_28528_.hasPickUpDelay() && p_28528_.isAlive() && p_28528_.getItem().getItem() instanceof NecronomiconBookItem;
     };
+
     private static final String TAG_JOHNNY = "Johnny";
     static final Predicate<Difficulty> DOOR_BREAKING_PREDICATE = (p_34082_) -> {
         return p_34082_ == Difficulty.NORMAL || p_34082_ == Difficulty.HARD;
@@ -97,9 +79,8 @@ public class AngleEntity extends Vindicator {
 
     @Override
     protected void populateDefaultEquipmentSlots(DifficultyInstance pDifficulty) {
-        //this.setItemInHand(InteractionHand.MAIN_HAND, new NecronomiconBookItem(new Item.Properties()).getDefaultInstance());
-        /*Random r = new Random();
-        int p = Math.abs(r.nextInt()%56);
+        //this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.NECRONOMICON_BOOK.get()));
+        int p = Math.abs(this.random.nextInt(56));
         if(p > 54)
             this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_AXE));
         else if(p > 53)
@@ -119,24 +100,24 @@ public class AngleEntity extends Vindicator {
         else if(p > 10)
             this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_PICKAXE));
         else if(p > 0)
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));*/
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));
     }
 
     /**Method stolen from the Fox class**/
     protected void pickUpItem(ItemEntity pEntity) {
         ItemStack itemstack = pEntity.getItem();
-        if (this.canHoldItem(itemstack) && AngleEntity.ALLOWED_ITEMS.test(pEntity)) {
+        if (this.canHoldItem(itemstack) && AngleEntity.ALLOWED_ITEMS.test(pEntity) && !hasItemInSlot(EquipmentSlot.MAINHAND)) {
             int i = itemstack.getCount();
             if (i > 1) {
                 this.dropItemStack(itemstack.split(i - 1));
             }
 
-            this.dropItemStack(this.getItemBySlot(EquipmentSlot.MAINHAND));
             this.onItemPickup(pEntity);
-            this.setItemSlot(EquipmentSlot.MAINHAND, itemstack.split(1));
-            this.handDropChances[EquipmentSlot.MAINHAND.getIndex()] = 2.0F;
+            //this.setItemSlot(EquipmentSlot.MAINHAND, itemstack.split(1));
+            //this.handDropChances[EquipmentSlot.MAINHAND.getIndex()] = 2.0F;
             this.take(pEntity, itemstack.getCount());
-            this.setItemInHand(InteractionHand.MAIN_HAND, itemstack);
+            //this.setItemInHand(InteractionHand.MAIN_HAND, itemstack);
+            this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, itemstack);
             pEntity.discard();
         }
     }
@@ -147,6 +128,7 @@ public class AngleEntity extends Vindicator {
         this.level.addFreshEntity(itementity);
     }
 
+    /**From the Vindicator class**/
     static class AngleBreakDoorGoal extends BreakDoorGoal {
         public AngleBreakDoorGoal(Mob p_34112_) {
             super(p_34112_, 6, AngleEntity.DOOR_BREAKING_PREDICATE);
@@ -179,6 +161,7 @@ public class AngleEntity extends Vindicator {
         }
     }
 
+    /**From the Vindicator class**/
     static class AngleJohnnyAttackGoal extends NearestAttackableTargetGoal<LivingEntity> {
         public AngleJohnnyAttackGoal(AngleEntity p_34117_) {
             super(p_34117_, LivingEntity.class, 0, true, true, LivingEntity::attackable);
@@ -201,6 +184,7 @@ public class AngleEntity extends Vindicator {
         }
     }
 
+    /**From the Vindicator class**/
     class AngleMeleeAttackGoal extends MeleeAttackGoal {
         public AngleMeleeAttackGoal(AngleEntity p_34123_) {
             super(p_34123_, 1.0D, false);

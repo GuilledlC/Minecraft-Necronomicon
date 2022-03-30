@@ -1,6 +1,6 @@
 package net.guille_dlc.necronomicon.biome;
 
-import com.mojang.datafixers.util.Pair;
+/*import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -32,7 +32,7 @@ public class TestBiomeProvider extends BiomeProvider {
             points.forEach(point -> builder.replaceBiome(point, TestBiomes.LOVECRAFT_COUNTRY));
         });
 
-        /*
+        *//*
         Parameter temperature
         Parameter humidity
         Parameter continentalness
@@ -40,6 +40,6 @@ public class TestBiomeProvider extends BiomeProvider {
         Parameter weirdness
         Parameter depth
         float offset
-         */
+         *//*
     }
-}
+}*/

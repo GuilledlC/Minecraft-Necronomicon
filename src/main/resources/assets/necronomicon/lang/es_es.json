@@ -1,19 +1,19 @@
 {
-  "itemGroup.necronomicon_tab": "Necronomicon Mod",
+  "itemGroup.necronomicon_tab": "Mod Necronomicon",
 
   "item.necronomicon.necronomicon_book": "Necronomicon",
   "entry.necronomicon.necronomicon_book_text":   "\n§8To visit The Dead, one \n\nmust sacrifice their\n\nown mortal soul to \n\n§4§KThe Old Gods§8, while\n\nholding this book \n\nin their hands",
-  "entry.necronomicon.necronomicon_book_author": "The Dead",
-  "entry.necronomicon.tooltip": "The Book of the Dead",
+  "entry.necronomicon.necronomicon_book_author": "Los Muertos",
+  "entry.necronomicon.tooltip": "El Libro de los Muertos",
 
-  "entity.necronomicon.angle": "Angle",
-  "item.necronomicon.angle_spawn_egg": "Angle Spawn Egg",
+  "entity.necronomicon.angle": "Anglo",
+  "item.necronomicon.angle_spawn_egg": "Generar Anglo",
 
   "item.necronomicon.cthulhu_helmet": "Cthulu's Cowl",
   "item.necronomicon.cthulhu_chestplate": "Cthulu's Cloak",
   "item.necronomicon.cthulhu_leggings": "Cthulu's Pantaloons",
   "item.necronomicon.cthulhu_boots": "Cthulu's Wellingtons",
 
-  "item.necronomicon.battered_cod": "Battered Cod",
-  "item.necronomicon.fish_n_chips": "Fish 'N' Chips"
+  "item.necronomicon.battered_cod": "Bacalao Rebozao",
+  "item.necronomicon.fish_n_chips": "Bacalao con Patatas"
 }

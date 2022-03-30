@@ -23,7 +23,21 @@ public class TestOverworldBiomes {
     }
 
     private static Biome biome(Biome.Precipitation precipitation, Biome.BiomeCategory category, float temperature, float downfall, int waterColor, int waterFogColor, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music) {
-        return (new Biome.BiomeBuilder()).precipitation(precipitation).biomeCategory(category).temperature(temperature).downfall(downfall).specialEffects((new BiomeSpecialEffects.Builder()).waterColor(waterColor).waterFogColor(waterFogColor).fogColor(12638463).skyColor(calculateSkyColor(temperature)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(music).build()).mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
+        return (new Biome.BiomeBuilder())
+                .precipitation(precipitation)
+                .biomeCategory(category)
+                .temperature(temperature)
+                .downfall(downfall)
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(waterColor)
+                        .waterFogColor(waterFogColor)
+                        .fogColor(12638463)
+                        .skyColor(calculateSkyColor(temperature))
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                        .backgroundMusic(music).build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .generationSettings(biomeBuilder.build())
+                .build();
     }
 
     private static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder)

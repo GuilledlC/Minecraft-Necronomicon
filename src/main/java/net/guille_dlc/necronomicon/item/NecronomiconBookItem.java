@@ -3,7 +3,9 @@ package net.guille_dlc.necronomicon.item;
 import com.google.common.collect.Lists;
 import net.guille_dlc.necronomicon.events.ClientModEvents;
 import net.guille_dlc.necronomicon.particles.ModParticles;
+import net.guille_dlc.necronomicon.screen.NecronomiconBookViewScreen;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.inventory.BookViewScreen;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.commands.CommandSourceStack;
@@ -18,10 +20,13 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
@@ -35,11 +40,13 @@ import net.minecraftforge.fml.DistExecutor;
 import org.jetbrains.annotations.Nullable;
 
 
+import java.awt.print.Book;
 import java.util.List;
 
 public class NecronomiconBookItem extends Item implements IForgeItem {
 
     public int coolDown = 0;
+    public boolean activated = false;
 
     public NecronomiconBookItem(Properties properties) {
         super(properties);
@@ -70,12 +77,8 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(new TranslatableComponent("The Book of the Dead"));
+        pTooltipComponents.add(new TranslatableComponent("entry.necronomicon.tooltip"));
     }
-
-
-
-
 
     /**TO DO**/
     public static boolean makeSureTagIsValid(@javax.annotation.Nullable CompoundTag pCompoundTag) {
@@ -105,14 +108,6 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
     }
 
     /**
-     * Gets the title name of the book
-     */
-    public Component getName(ItemStack pStack) {
-        return new TextComponent("Necronomicon");
-        //No need to explain
-    }
-
-    /**
      * Called when this item is used when targetting a Block
      */
     public InteractionResult useOn(UseOnContext pContext) {
@@ -138,8 +133,12 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
                 pPlayer.containerMenu.broadcastChanges();
             }
             itemStack.setTag(bookTag());
-            pPlayer.playSound(SoundEvents.BOOK_PAGE_TURN, 1, 1);
-            DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientModEvents.BookScreen(itemStack));
+            pPlayer.playSound(SoundEvents.BOOK_PAGE_TURN, 1.0F, 1.0F);
+            pPlayer.playSound(SoundEvents.AMBIENT_CAVE, 1.0F, 5.0F);
+            pPlayer.playSound(SoundEvents.FIRE_AMBIENT, 1.5F, 1.0F);
+
+            BookViewScreen screen = new NecronomiconBookViewScreen(new BookViewScreen.WrittenBookAccess(itemStack));
+            DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientModEvents.BookScreen(screen));
         }
         pPlayer.awardStat(Stats.ITEM_USED.get(this));
         return InteractionResultHolder.sidedSuccess(itemStack, pLevel.isClientSide());
@@ -210,12 +209,11 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
         CompoundTag bookTag =  new CompoundTag();
         ListTag pages = new ListTag();
         List<String> pagesList = Lists.newArrayList();
-        pagesList.add("§8Hello");
-        //pagesList.add("{\"text\":\"Hello\nhi\"}");
+        pagesList.add(new TranslatableComponent("entry.necronomicon.necronomicon_book_text").getString());
         //pagesList.add("{\"text\":\"\\n§8To visit The Dead, one \\n\\nmust sacrifice their\\n\\nown mortal soul to \\n\\n§4§KThe Old Gods§8, while\\n\\nholding this book \\n\\nin their hands\"}");
         pagesList.stream().map(StringTag::valueOf).forEach(pages::add);
         bookTag.put("pages", pages);
-        bookTag.put("author", StringTag.valueOf("The Dead"));
+        bookTag.put("author", StringTag.valueOf("entry.necronomicon.necronomicon_book_author"));
         bookTag.put("filtered_title", StringTag.valueOf("Necronomicon"));
         //bookTag.put("resolved", ByteTag.valueOf(true));
         bookTag.put("title", StringTag.valueOf("Necronomicon"));
@@ -227,12 +225,14 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
         ItemStack itemStack = player.getItemInHand(pHand);
 
         LightningBolt lightningbolt = EntityType.LIGHTNING_BOLT.create(level);
+        lightningbolt.setDamage(0);
         lightningbolt.moveTo(player.getX(), player.getY(), player.getZ());
         level.addFreshEntity(lightningbolt);
 
         level.explode(player, player.getX(), player.getY(), player.getZ(), 3.0F, true, Explosion.BlockInteraction.DESTROY);
 
-        coolDown = 100;
+        coolDown = 60;
+        activated = true;
         playActivateAnimation(itemStack, (Entity)player);
     }
 
@@ -249,17 +249,9 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
         }
     }
 
-    public void dim(Level pLevel, Entity pEntity) {
-        if(coolDown == 1) {
-            ResourceKey<Level> resourcekey = pEntity.getLevel().dimension() == Level.END ? Level.OVERWORLD : Level.END;
-            ServerLevel serverlevel = ((ServerLevel)pEntity.getLevel()).getServer().getLevel(resourcekey);
-            if (serverlevel == null) {
-                return;
-            }
-
-            pEntity.changeDimension(serverlevel);
-        }
-        while(coolDown > 0)
-            coolDown--;
+    @Override
+    public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
+        System.out.println("finished with it");
+        return super.finishUsingItem(pStack, pLevel, pLivingEntity);
     }
 }
