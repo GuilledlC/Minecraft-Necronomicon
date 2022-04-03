@@ -11,6 +11,9 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
+import net.minecraft.world.entity.animal.Rabbit;
+import net.minecraft.world.entity.animal.Wolf;
+import net.minecraft.world.entity.animal.horse.Llama;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.npc.AbstractVillager;
@@ -60,6 +63,7 @@ public class AngleEntity extends Vindicator {
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
         this.targetSelector.addGoal(4, new AngleEntity.AngleJohnnyAttackGoal(this));
+        this.targetSelector.addGoal(1, new AngleEntity.AngleAvoidNecronomiconGoal<Player>(this, Player.class, 4.0F, 1.5F, 1.5F));
         /*this.goalSelector.addGoal(0, new UseItemGoal<>(this,
                 new NecronomiconBookItem(new Item.Properties()).getDefaultInstance(),
                 SoundEvents.BOOK_PAGE_TURN, (arg) -> {
@@ -80,7 +84,7 @@ public class AngleEntity extends Vindicator {
     @Override
     protected void populateDefaultEquipmentSlots(DifficultyInstance pDifficulty) {
         //this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.NECRONOMICON_BOOK.get()));
-        int p = Math.abs(this.random.nextInt(56));
+        /*int p = Math.abs(this.random.nextInt(56));
         if(p > 54)
             this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_AXE));
         else if(p > 53)
@@ -100,7 +104,7 @@ public class AngleEntity extends Vindicator {
         else if(p > 10)
             this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_PICKAXE));
         else if(p > 0)
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));*/
     }
 
     /**Method stolen from the Fox class**/
@@ -245,6 +249,38 @@ public class AngleEntity extends Vindicator {
             if (!list.isEmpty()) {
                 AngleEntity.this.getNavigation().moveTo(list.get(0), (double)1.1F);
             }
+        }
+    }
+
+    class AngleAvoidNecronomiconGoal<T extends LivingEntity> extends AvoidEntityGoal<T> {
+        private final AngleEntity angle;
+
+        public AngleAvoidNecronomiconGoal(AngleEntity angle, Class<T> pEntityClassToAvoid, float pMaxDistance, double pWalkSpeedModifier, double pSprintSpeedModifier) {
+            super(angle, pEntityClassToAvoid, pMaxDistance, pWalkSpeedModifier, pSprintSpeedModifier);
+            this.angle = angle;
+        }
+
+        public boolean canUse() {
+            if (super.canUse() && this.toAvoid instanceof Player) {
+                return this.avoidPlayer((Player)this.toAvoid);
+            } else {
+                return false;
+            }
+        }
+
+        private boolean avoidPlayer(Player player) {
+            return player.getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof NecronomiconBookItem
+                    || player.getItemInHand(InteractionHand.OFF_HAND).getItem() instanceof NecronomiconBookItem;
+        }
+
+        public void start() {
+            AngleEntity.this.setTarget((LivingEntity)null);
+            super.start();
+        }
+
+        public void tick() {
+            AngleEntity.this.setTarget((LivingEntity)null);
+            super.tick();
         }
     }
 }
