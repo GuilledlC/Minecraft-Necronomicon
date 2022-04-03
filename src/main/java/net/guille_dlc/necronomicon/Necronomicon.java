@@ -127,7 +127,7 @@ public class Necronomicon
                                return;
                             }
                             item.activated = false;
-                            //player.changeDimension(serverlevel);
+                            player.changeDimension(serverlevel);
                         }
                         item.coolDown--;
                     }
