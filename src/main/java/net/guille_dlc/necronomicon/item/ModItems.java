@@ -2,12 +2,14 @@ package net.guille_dlc.necronomicon.item;
 
 import net.guille_dlc.necronomicon.Necronomicon;
 import net.guille_dlc.necronomicon.entity.ModEntityTypes;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -42,6 +44,10 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.NECRONOMICON_TAB).food(ModFoods.BATTERED_COD)));
     public static final RegistryObject<Item> FISH_N_CHIPS = ITEMS.register("fish_n_chips",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.NECRONOMICON_TAB).food(ModFoods.FISH_N_CHIPS)));
+
+    public static final RegistryObject<Item> BEER = ITEMS.register("beer",
+            () -> new BeerItem(new Item.Properties().tab(ModCreativeModeTab.NECRONOMICON_TAB).food(ModFoods.BEER)
+                    .craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -7,6 +7,7 @@ import net.guille_dlc.necronomicon.events.ClientModEvents;
 import net.guille_dlc.necronomicon.item.ModItems;
 import net.guille_dlc.necronomicon.item.NecronomiconBookItem;
 import net.guille_dlc.necronomicon.particles.ModParticles;
+import net.guille_dlc.necronomicon.util.BetterBrewingRecipe;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.BookViewScreen;
@@ -29,10 +30,14 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.client.event.*;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.brewing.BrewingRecipe;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -64,7 +69,7 @@ public class Necronomicon
         ModItems.register(eventBus);
         ModEntityTypes.register(eventBus);
         /*BiomeProviders.register(new TestBiomeProvider(new ResourceLocation(MOD_ID, "biome_provider"), 2));*/
-        ModParticles.PARTICLE_TYPES.register(eventBus);
+        ModParticles.register(eventBus);
 
         eventBus.addListener(this::setup);
 
@@ -81,6 +86,10 @@ public class Necronomicon
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+
+        event.enqueueWork(() -> {
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD, Items.WHEAT, ModItems.BEER.get()));
+        });
     }
 
     private void livingHurt(final LivingHurtEvent event) {
