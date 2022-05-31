@@ -7,6 +7,12 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class BeerItem extends DrinkableItem {
     public BeerItem(Properties properties) {
         super(properties);
@@ -14,8 +20,24 @@ public class BeerItem extends DrinkableItem {
 
     @Override
     public void affectConsumer(ItemStack stack, Level level, LivingEntity consumer) {
-        consumer.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 500, 1));
-        consumer.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 500, 1));
+        List<MobEffectInstance> effects = consumer.getActiveEffects().stream().toList();
+        int slowDur = 500, slowAmp = 1, confDur = 500, confAmp = 1;
+        Iterator<MobEffectInstance> effectIterator = effects.iterator();
+
+        //Both effects accumulate until a max of 2 and a half minutes
+        while(effectIterator.hasNext()) {
+            MobEffectInstance effect = effectIterator.next();
+            if(effect.getEffect() == MobEffects.MOVEMENT_SLOWDOWN) {
+                slowDur = Math.min(slowDur + effect.getDuration(), 3000);
+                slowAmp = effect.getAmplifier();
+            } else if(effect.getEffect() == MobEffects.CONFUSION) {
+                confDur = Math.min(confDur + effect.getDuration(), 3000);
+                confAmp = effect.getAmplifier();
+            }
+        }
+
+        consumer.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, slowDur, slowAmp));
+        consumer.addEffect(new MobEffectInstance(MobEffects.CONFUSION, confDur, confAmp));
         consumer.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 300, 0));
     }
 }
