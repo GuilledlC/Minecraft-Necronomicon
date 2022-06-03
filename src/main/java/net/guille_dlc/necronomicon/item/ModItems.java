@@ -49,6 +49,13 @@ public class ModItems {
             () -> new BeerItem(new Item.Properties().tab(ModCreativeModeTab.NECRONOMICON_TAB).food(ModFoods.BEER)
                     .craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
 
+    public static final RegistryObject<Item> BEATING_HEART = ITEMS.register("beating_heart",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.NECRONOMICON_TAB).food(ModFoods.BEATING_HEART)));
+
+    public static final RegistryObject<Item> IRON_DAGGER = ITEMS.register("iron_dagger",
+            () -> new SwordItem(Tiers.IRON, 2, 3F,
+                    (new Item.Properties().tab(ModCreativeModeTab.NECRONOMICON_TAB))));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

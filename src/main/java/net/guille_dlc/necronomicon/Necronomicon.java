@@ -148,8 +148,8 @@ public class Necronomicon
 
     private void playerRightClickItem(final PlayerInteractEvent.RightClickItem event) {
         if(event.getEntityLiving() instanceof ServerPlayer player) {
-            if(event.getItemStack().getItem() instanceof NecronomiconBookItem) {
-                player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 99999, 0));
+            if(event.getItemStack().getItem() instanceof NecronomiconBookItem item) {
+                player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 300, 0));
             }
         }
     }

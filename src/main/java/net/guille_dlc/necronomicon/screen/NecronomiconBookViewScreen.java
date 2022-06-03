@@ -12,7 +12,7 @@ public class NecronomiconBookViewScreen extends BookViewScreen {
         super(pBookAccess);
     }
 
-    @Override
+    /*@Override
     public boolean mouseClicked(double pMouseX, double pMouseY, int pButton) {
         if(super.mouseClicked(pMouseX, pMouseY, pButton)) {
             this.minecraft.player.removeEffect(MobEffects.BLINDNESS);
@@ -24,5 +24,5 @@ public class NecronomiconBookViewScreen extends BookViewScreen {
     public void onClose() {
         this.minecraft.player.removeEffect(MobEffects.BLINDNESS);
         super.onClose();
-    }
+    }*/
 }

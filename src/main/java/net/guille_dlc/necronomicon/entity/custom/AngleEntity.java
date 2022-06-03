@@ -84,17 +84,21 @@ public class AngleEntity extends Vindicator {
     @Override
     protected void populateDefaultEquipmentSlots(DifficultyInstance pDifficulty) {
         //this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.NECRONOMICON_BOOK.get()));
-        /*int p = Math.abs(this.random.nextInt(56));
-        if(p > 54)
+        int p = Math.abs(this.random.nextInt(67));
+        if(p > 65)
+            this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, new ItemStack(ModItems.IRON_DAGGER.get()));
+        else if(p > 64)
             this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_AXE));
-        else if(p > 53)
+        else if(p > 63)
             this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_HOE));
-        else if(p > 52)
+        else if(p > 62)
             this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SHOVEL));
-        else if(p > 51)
+        else if(p > 61)
             this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_PICKAXE));
-        else if(p > 50)
+        else if(p > 60)
             this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));
+        else if(p > 50)
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.IRON_DAGGER.get()));
         else if(p > 40)
             this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_AXE));
         else if(p > 30)
@@ -104,7 +108,7 @@ public class AngleEntity extends Vindicator {
         else if(p > 10)
             this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_PICKAXE));
         else if(p > 0)
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));*/
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));
     }
 
     /**Method stolen from the Fox class**/

@@ -9,6 +9,7 @@ import net.minecraft.client.gui.screens.inventory.BookViewScreen;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.*;
@@ -33,6 +34,9 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LecternBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.extensions.IForgeItem;
@@ -111,18 +115,15 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
      * Called when this item is used when targetting a Block
      */
     public InteractionResult useOn(UseOnContext pContext) {
-        return InteractionResult.PASS;
-    }
-
-    /*
-     * Called to trigger the item's "innate" right click behavior. To handle when this item is used on a Block, see
-     * {@link #onItemUse}.
-     */
-    public InteractionResultHolder<ItemStack> uses(Level pLevel, Player pPlayer, InteractionHand pHand) {
-        ItemStack itemstack = pPlayer.getItemInHand(pHand);
-        pPlayer.openItemGui(itemstack, pHand);
-        pPlayer.awardStat(Stats.ITEM_USED.get(this));
-        return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
+        Level level = pContext.getLevel();
+        BlockPos blockpos = pContext.getClickedPos();
+        BlockState blockstate = level.getBlockState(blockpos);
+        if (blockstate.is(Blocks.LECTERN)) {
+            return LecternBlock.tryPlaceBook(pContext.getPlayer(), level, blockpos, blockstate, pContext.getItemInHand()) ? InteractionResult.sidedSuccess(level.isClientSide) : InteractionResult.PASS;
+        } else {
+            return InteractionResult.PASS;
+        }
+        //return InteractionResult.PASS;
     }
 
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
