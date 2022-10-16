@@ -14,7 +14,7 @@ public class ModEntityTypes {
     private ModEntityTypes() {}
 
     public static DeferredRegister<EntityType<?>> ENTITIES =
-            DeferredRegister.create(ForgeRegistries.ENTITIES, Necronomicon.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Necronomicon.MOD_ID);
 
     public static final RegistryObject<EntityType<AngleEntity>> ANGLE =
             ENTITIES.register("angle",

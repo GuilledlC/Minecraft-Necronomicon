@@ -15,7 +15,7 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -33,7 +33,7 @@ public class ModParticles {
             () -> new SimpleParticleType(true));
 
     @SubscribeEvent
-    public static void registerParticleTypes(ParticleFactoryRegisterEvent event) {
+    public static void registerParticleTypes(RegisterParticleProvidersEvent event) {
         Minecraft.getInstance().particleEngine.register(ModParticles.BLOOD_PARTICLE.get(), BloodParticle.Provider::new);
     }
 

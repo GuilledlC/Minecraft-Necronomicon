@@ -3,6 +3,7 @@ package net.guille_dlc.necronomicon.entity.custom;
 import net.guille_dlc.necronomicon.item.ModItems;
 import net.guille_dlc.necronomicon.item.NecronomiconBookItem;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -82,7 +83,7 @@ public class AngleEntity extends Vindicator {
     }
 
     @Override
-    protected void populateDefaultEquipmentSlots(DifficultyInstance pDifficulty) {
+    protected void populateDefaultEquipmentSlots(RandomSource pRandom, DifficultyInstance pDifficulty) {
         //this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.NECRONOMICON_BOOK.get()));
         int p = Math.abs(this.random.nextInt(67));
         if(p > 65)

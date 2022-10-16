@@ -85,7 +85,8 @@ public class Necronomicon
     {
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getName()); //Blocks.DIRT.getRegistryName());
+
 
         event.enqueueWork(() -> {
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD, Items.WHEAT, ModItems.BEER.get()));
@@ -98,10 +99,10 @@ public class Necronomicon
         Entity entity = event.getEntity();
         if(entity.getLevel().isClientSide())
             return;
-        if(event.getAmount() < event.getEntityLiving().getHealth())
+        if(event.getAmount() < event.getEntity().getHealth())
             return;
 
-        if(event.getEntityLiving() instanceof ServerPlayer player) {
+        if(event.getEntity() instanceof ServerPlayer player) {
             for(InteractionHand hand : InteractionHand.values()) {
                 ItemStack itemStack = player.getItemInHand(hand);
                 if(itemStack.getItem() instanceof NecronomiconBookItem item) {
@@ -147,7 +148,7 @@ public class Necronomicon
     }
 
     private void playerRightClickItem(final PlayerInteractEvent.RightClickItem event) {
-        if(event.getEntityLiving() instanceof ServerPlayer player) {
+        if(event.getEntity() instanceof ServerPlayer player) {
             if(event.getItemStack().getItem() instanceof NecronomiconBookItem item) {
                 player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 300, 0));
             }

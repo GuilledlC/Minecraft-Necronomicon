@@ -58,7 +58,8 @@ public class DrinkableItem extends Item {
         if(!level.isClientSide)
             this.affectConsumer(stack, level, consumer);
 
-        ItemStack containerStack = stack.getContainerItem();
+        //ItemStack containerStack = stack.getContainerItem(); 1.18.2
+        ItemStack containerStack = stack.copy(); //1.19.2
 
         if(stack.isEdible())
             super.finishUsingItem(stack, level, consumer);

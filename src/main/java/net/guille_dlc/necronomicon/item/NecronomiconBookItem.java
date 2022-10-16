@@ -15,8 +15,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.ComponentUtils;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -81,7 +80,7 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(new TranslatableComponent("entry.necronomicon.tooltip"));
+        pTooltipComponents.add(Component.translatable("entry.necronomicon.tooltip"));
     }
 
     /**TO DO**/
@@ -179,7 +178,7 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
             component = Component.Serializer.fromJsonLenient(pResolvingPageContents);
             component = ComponentUtils.updateForEntity(pResolvingSource, component, pResolvingPlayer, 0);
         } catch (Exception exception) {
-            component = new TextComponent(pResolvingPageContents);
+            component = Component.literal(pResolvingPageContents);
         }
 
         return Component.Serializer.toJson(component);
@@ -198,7 +197,7 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
 
     @Override
     public void fillItemCategory(CreativeModeTab pCategory, NonNullList<ItemStack> pItems) {
-        if (this.allowdedIn(pCategory)) {
+        if(this.allowedIn(pCategory)) {
             ItemStack subItemStack = new ItemStack(this, 1);
             CompoundTag nbt = subItemStack.getOrCreateTag();
             nbt.equals(bookTag());
@@ -210,7 +209,7 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
         CompoundTag bookTag =  new CompoundTag();
         ListTag pages = new ListTag();
         List<String> pagesList = Lists.newArrayList();
-        pagesList.add(new TranslatableComponent("entry.necronomicon.necronomicon_book_text").getString());
+        pagesList.add(Component.translatable("entry.necronomicon.necronomicon_book_text").getString());
         //pagesList.add("{\"text\":\"\\n§8To visit The Dead, one \\n\\nmust sacrifice their\\n\\nown mortal soul to \\n\\n§4§KThe Old Gods§8, while\\n\\nholding this book \\n\\nin their hands\"}");
         pagesList.stream().map(StringTag::valueOf).forEach(pages::add);
         bookTag.put("pages", pages);
