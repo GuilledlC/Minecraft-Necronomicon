@@ -134,7 +134,7 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
             }
             itemStack.setTag(bookTag());
             pPlayer.playSound(SoundEvents.BOOK_PAGE_TURN, 1.0F, 1.0F);
-            pPlayer.playSound(SoundEvents.AMBIENT_CAVE, 1.0F, 5.0F);
+            pPlayer.playSound(SoundEvents.AMBIENT_CAVE.get(), 1.0F, 5.0F);
             pPlayer.playSound(SoundEvents.FIRE_AMBIENT, 1.5F, 1.0F);
 
             BookViewScreen screen = new NecronomiconBookViewScreen(new BookViewScreen.WrittenBookAccess(itemStack));
@@ -195,7 +195,8 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
         return false;
     }
 
-    @Override
+    /**Needed for 1.19.2**/
+    /*@Override
     public void fillItemCategory(CreativeModeTab pCategory, NonNullList<ItemStack> pItems) {
         if(this.allowedIn(pCategory)) {
             ItemStack subItemStack = new ItemStack(this, 1);
@@ -203,7 +204,7 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
             nbt.equals(bookTag());
             pItems.add(subItemStack);
         }
-    }
+    }*/
 
     public CompoundTag bookTag() {
         CompoundTag bookTag =  new CompoundTag();
@@ -229,7 +230,7 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
         lightningbolt.moveTo(player.getX(), player.getY(), player.getZ());
         level.addFreshEntity(lightningbolt);
 
-        level.explode(player, player.getX(), player.getY(), player.getZ(), 3.0F, true, Explosion.BlockInteraction.DESTROY);
+        level.explode(player, player.getX(), player.getY(), player.getZ(), 3.0F, true, Level.ExplosionInteraction.BLOCK); //Used to be Explosion.BlockInteraction.DESTROY
 
         coolDown = 60;
         activated = true;

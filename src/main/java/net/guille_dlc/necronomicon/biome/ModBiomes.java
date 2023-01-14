@@ -1,6 +1,7 @@
 package net.guille_dlc.necronomicon.biome;
 
 import net.guille_dlc.necronomicon.Necronomicon;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.biome.Biome;
 //import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,13 +19,13 @@ import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModBiomes {
-    protected static DeferredRegister<Biome> BIOME_REGISTER = DeferredRegister.create(Registry.BIOME_REGISTRY, Necronomicon.MOD_ID);
+    protected static DeferredRegister<Biome> BIOME_REGISTER = DeferredRegister.create(Registries.BIOME, Necronomicon.MOD_ID);
 
     //@SubscribeEvent 1.19???
-    public static void registerBiomes()
+    /*public static void registerBiomes()
     {
         register(TestBiomes.LOVECRAFT_COUNTRY, TestOverworldBiomes::lovecraftCountry);
-    }
+    }*/
 
     public static RegistryObject<Biome> register(ResourceKey<Biome> key, Supplier<Biome> biomeSupplier)
     {

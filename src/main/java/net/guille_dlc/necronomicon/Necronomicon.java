@@ -4,10 +4,12 @@ package net.guille_dlc.necronomicon;
 import net.guille_dlc.necronomicon.entity.ModEntityTypes;
 import net.guille_dlc.necronomicon.entity.custom.AngleEntity;
 import net.guille_dlc.necronomicon.events.ClientModEvents;
+import net.guille_dlc.necronomicon.events.ForgeClientEvents;
 import net.guille_dlc.necronomicon.item.ModItems;
 import net.guille_dlc.necronomicon.item.NecronomiconBookItem;
 import net.guille_dlc.necronomicon.particles.ModParticles;
 import net.guille_dlc.necronomicon.util.BetterBrewingRecipe;
+import net.guille_dlc.necronomicon.world.dimension.ModDimensions;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.BookViewScreen;
@@ -70,6 +72,7 @@ public class Necronomicon
         ModEntityTypes.register(eventBus);
         /*BiomeProviders.register(new TestBiomeProvider(new ResourceLocation(MOD_ID, "biome_provider"), 2));*/
         ModParticles.register(eventBus);
+        ModDimensions.register();
 
         eventBus.addListener(this::setup);
 
@@ -78,6 +81,8 @@ public class Necronomicon
         MinecraftForge.EVENT_BUS.addListener(this::livingHurt);
         MinecraftForge.EVENT_BUS.addListener(this::playerTick);
         MinecraftForge.EVENT_BUS.addListener(this::playerRightClickItem);
+        eventBus.register(this);
+        eventBus.register(new ForgeClientEvents());
 
     }
 

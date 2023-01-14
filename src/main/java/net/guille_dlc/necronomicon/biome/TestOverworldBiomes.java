@@ -1,9 +1,12 @@
 package net.guille_dlc.necronomicon.biome;
 
+import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.sounds.Music;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.biome.*;
+import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import javax.annotation.Nullable;
 
@@ -49,11 +52,11 @@ public class TestOverworldBiomes {
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
     }
 
-    public static Biome lovecraftCountry() {
+    public static Biome lovecraftCountry(HolderGetter<PlacedFeature> featureHolder, HolderGetter<ConfiguredWorldCarver<?>> carverHolder) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureHolder, carverHolder);
         globalOverworldGeneration(biomeBuilder);
 
         BiomeDefaultFeatures.addBirchTrees(biomeBuilder);
