@@ -1,4 +1,4 @@
-package net.guille_dlc.necronomicon.biome;
+package net.guille_dlc.necronomicon.biome.old;
 
 import net.guille_dlc.necronomicon.Necronomicon;
 import net.minecraft.core.Registry;
@@ -10,6 +10,6 @@ public class TestBiomes {
     public static final ResourceKey<Biome> LOVECRAFT_COUNTRY = register("lovecraft_country");
 
     private static ResourceKey<Biome> register(String name) {
-        return ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(Necronomicon.MOD_ID, name));
+        return ResourceKey.create(Registry.BIOME_REGISTRY, Necronomicon.id(name));
     }
 }

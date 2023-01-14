@@ -60,6 +60,10 @@ public class Necronomicon
 {
     public static final String MOD_ID = "necronomicon";
 
+    public static ResourceLocation id (String path) {
+        return new ResourceLocation(MOD_ID, path);
+    }
+
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 

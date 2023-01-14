@@ -20,7 +20,7 @@ public class ModEntityTypes {
             ENTITIES.register("angle",
             () -> EntityType.Builder.of(AngleEntity::new,
                     MobCategory.MONSTER).sized(0.6F, 1.95F)
-                    .build(new ResourceLocation(Necronomicon.MOD_ID, "angle").toString()));
+                    .build(Necronomicon.id("angle").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITIES.register(eventBus);

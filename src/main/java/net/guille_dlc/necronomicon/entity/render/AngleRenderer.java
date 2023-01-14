@@ -16,7 +16,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 //public class AngleRenderer<T extends AngleEntity> extends MobRenderer<T, AngleModel<T>> {
 //@OnlyIn(Dist.CLIENT)
 public class AngleRenderer extends IllagerRenderer<AngleEntity> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(Necronomicon.MOD_ID, "textures/entity/angle.png");
+    private static final ResourceLocation TEXTURE = Necronomicon.id("textures/entity/angle.png");
 
     public AngleRenderer(EntityRendererProvider.Context context) {
         //super(context, new AngleModel<>(context.bakeLayer(AngleModel.LAYER_LOCATION)), 0.5F);

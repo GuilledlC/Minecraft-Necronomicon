@@ -1,4 +1,4 @@
-package net.guille_dlc.necronomicon.biome;
+package net.guille_dlc.necronomicon.biome.old;
 
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.sounds.Music;

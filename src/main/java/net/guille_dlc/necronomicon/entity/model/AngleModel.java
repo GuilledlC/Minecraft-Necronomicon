@@ -16,7 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 public class AngleModel<T extends AngleEntity> extends EntityModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
-            new ResourceLocation(Necronomicon.MOD_ID, "angle"), "main");
+            Necronomicon.id("angle"), "main");
     private final ModelPart All;
 
     public AngleModel(ModelPart root) {

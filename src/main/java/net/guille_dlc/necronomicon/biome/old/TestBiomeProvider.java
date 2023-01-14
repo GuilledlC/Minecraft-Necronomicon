@@ -1,4 +1,4 @@
-package net.guille_dlc.necronomicon.biome;
+package net.guille_dlc.necronomicon.biome.old;
 
 /*import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Registry;
