@@ -1,6 +1,8 @@
 package net.guille_dlc.necronomicon;
 
 /*import net.guille_dlc.necronomicon.biome.TestBiomeProvider;*/
+import net.guille_dlc.necronomicon.biome.ModBiomes;
+import net.guille_dlc.necronomicon.biome.ModRegion;
 import net.guille_dlc.necronomicon.entity.ModEntityTypes;
 import net.guille_dlc.necronomicon.entity.custom.AngleEntity;
 import net.guille_dlc.necronomicon.events.ClientModEvents;
@@ -50,6 +52,8 @@ import org.apache.logging.log4j.Logger;
 import terrablender.api.BiomeProviders;*/
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.TickEvent.PlayerTickEvent;
+import terrablender.api.Region;
+import terrablender.api.Regions;
 
 
 import java.util.concurrent.TimeUnit;
@@ -68,14 +72,16 @@ public class Necronomicon
     private static final Logger LOGGER = LogManager.getLogger();
 
     public Necronomicon() {
-        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        modEventBus.addListener(this::setup);
 
-        ModItems.register(eventBus);
-        ModEntityTypes.register(eventBus);
+        ModItems.register(modEventBus);
+        ModEntityTypes.register(modEventBus);
         /*BiomeProviders.register(new TestBiomeProvider(new ResourceLocation(MOD_ID, "biome_provider"), 2));*/
-        ModParticles.register(eventBus);
+        ModParticles.register(modEventBus);
 
-        eventBus.addListener(this::setup);
+        ModBiomes.BIOME_REGISTER.register(modEventBus);
+        ModBiomes.registerBiomes();
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -85,8 +91,7 @@ public class Necronomicon
 
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
+    private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getName()); //Blocks.DIRT.getRegistryName());
@@ -94,6 +99,7 @@ public class Necronomicon
 
         event.enqueueWork(() -> {
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD, Items.WHEAT, ModItems.BEER.get()));
+            Regions.register(new ModRegion());
         });
     }
 
