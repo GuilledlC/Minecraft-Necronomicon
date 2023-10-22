@@ -1,4 +1,4 @@
-package net.guille_dlc.necronomicon.old.item;
+package net.guille_dlc.necronomicon.common.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;

@@ -1,4 +1,4 @@
-package net.guille_dlc.necronomicon.old.item;
+package net.guille_dlc.necronomicon.common.item;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;

@@ -1,12 +1,12 @@
 package net.guille_dlc.necronomicon;
 
+import net.guille_dlc.necronomicon.api.item.NecronomiconItems;
 import net.guille_dlc.necronomicon.init.ModBiomes;
 import net.guille_dlc.necronomicon.init.ModConfig;
-import net.guille_dlc.necronomicon.old.biome.ModRegion;
 import net.guille_dlc.necronomicon.old.entity.ModEntityTypes;
-import net.guille_dlc.necronomicon.old.item.ModCreativeModeTab;
-import net.guille_dlc.necronomicon.old.item.ModItems;
-import net.guille_dlc.necronomicon.old.item.NecronomiconBookItem;
+import net.guille_dlc.necronomicon.init.ModCreativeModeTab;
+import net.guille_dlc.necronomicon.init.ModItems;
+import net.guille_dlc.necronomicon.common.item.NecronomiconBookItem;
 import net.guille_dlc.necronomicon.old.particles.ModParticles;
 import net.guille_dlc.necronomicon.old.util.BetterBrewingRecipe;
 import net.minecraft.core.particles.ParticleType;
@@ -30,7 +30,6 @@ import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.carver.WorldCarver;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -40,7 +39,6 @@ import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.TickEvent.PlayerTickEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -49,7 +47,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import terrablender.api.Regions;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Necronomicon.MOD_ID)
@@ -96,11 +93,12 @@ public class Necronomicon
         DAMAGE_TYPE_REGISTER.register(modEventBus);
 
         ModConfig.setup();
+        ModItems.setup();
+
+        ModCreativeModeTab.setup();
 
         /**Nos hemos quedado aqui*/
 
-        ModCreativeModeTab.register(modEventBus);
-        ModItems.register(modEventBus);
         ModEntityTypes.register(modEventBus);
         ModParticles.register(modEventBus);
 
@@ -116,7 +114,7 @@ public class Necronomicon
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ModBiomes.setupBiomes();
-            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD, Items.WHEAT, ModItems.BEER.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD, Items.WHEAT, NecronomiconItems.BEER.get()));
             /**Make wheat be able to be in a brewing stand*/
             /**Old: Regions.register(new ModRegion());*/
         });

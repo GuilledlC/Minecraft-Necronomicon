@@ -1,7 +1,7 @@
 package net.guille_dlc.necronomicon.old.entity.custom;
 
-import net.guille_dlc.necronomicon.old.item.ModItems;
-import net.guille_dlc.necronomicon.old.item.NecronomiconBookItem;
+import net.guille_dlc.necronomicon.api.item.NecronomiconItems;
+import net.guille_dlc.necronomicon.common.item.NecronomiconBookItem;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.*;
@@ -81,7 +81,7 @@ public class AngleEntity extends Vindicator {
         //this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.NECRONOMICON_BOOK.get()));
         int p = Math.abs(this.random.nextInt(67));
         if(p > 65)
-            this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, new ItemStack(ModItems.IRON_DAGGER.get()));
+            this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, new ItemStack(NecronomiconItems.IRON_DAGGER.get()));
         else if(p > 64)
             this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_AXE));
         else if(p > 63)
@@ -93,7 +93,7 @@ public class AngleEntity extends Vindicator {
         else if(p > 60)
             this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));
         else if(p > 50)
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.IRON_DAGGER.get()));
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(NecronomiconItems.IRON_DAGGER.get()));
         else if(p > 40)
             this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_AXE));
         else if(p > 30)

@@ -1,6 +1,6 @@
 package net.guille_dlc.necronomicon.old.util;
 
-import net.guille_dlc.necronomicon.old.item.BeerItem;
+import net.guille_dlc.necronomicon.common.item.BeerItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.alchemy.Potion;

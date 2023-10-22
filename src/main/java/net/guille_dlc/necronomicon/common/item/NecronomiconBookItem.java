@@ -1,4 +1,4 @@
-package net.guille_dlc.necronomicon.old.item;
+package net.guille_dlc.necronomicon.common.item;
 
 import com.google.common.collect.Lists;
 import net.guille_dlc.necronomicon.old.events.ClientModEvents;
