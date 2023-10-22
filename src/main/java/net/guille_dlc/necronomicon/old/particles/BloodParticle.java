@@ -1,0 +1,41 @@
+package net.guille_dlc.necronomicon.old.particles;
+
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.particle.*;
+import net.minecraft.core.particles.SimpleParticleType;
+
+//@OnlyIn(Dist.CLIENT)
+public class BloodParticle extends SimpleAnimatedParticle {
+
+    BloodParticle(ClientLevel pLevel, double pX, double pY, double pZ, double pXSpeed, double pYSpeed, double pZSpeed, SpriteSet pSprites) {
+        super(pLevel, pX, pY, pZ, pSprites, 1.25F);
+        this.friction = 0.6F;
+        this.xd = pXSpeed;
+        this.yd = pYSpeed;
+        this.zd = pZSpeed;
+        this.quadSize *= 0.75F;
+        this.lifetime = 60 + this.random.nextInt(12);
+        this.setSpriteFromAge(pSprites);
+        int rand = this.random.nextInt(4);
+        if (rand == 0) {
+            this.setColor(0.6F + this.random.nextFloat() * 0.1F, this.random.nextFloat() * 0.2F, 0.05F + this.random.nextFloat() * 0.1F);
+        } else {//if(rand == 1) {
+            this.setColor(0.1F + this.random.nextFloat() * 0.1F, 0.1F + this.random.nextFloat() * 0.1F, 0.1F + this.random.nextFloat() * 0.1F);
+        }/* else {
+            this.setColor(1F + this.random.nextFloat() * 0.0F, this.random.nextFloat() * 0.2F, this.random.nextFloat() * 0.1F);
+        }*/
+    }
+
+    //@OnlyIn(Dist.CLIENT)
+    public static class Provider implements ParticleProvider<SimpleParticleType> {
+        private final SpriteSet sprites;
+
+        public Provider(SpriteSet pSprites) {
+            this.sprites = pSprites;
+        }
+
+        public Particle createParticle(SimpleParticleType pType, ClientLevel pLevel, double pX, double pY, double pZ, double pXSpeed, double pYSpeed, double pZSpeed) {
+            return new BloodParticle(pLevel, pX, pY, pZ, pXSpeed, pYSpeed, pZSpeed, this.sprites);
+        }
+    }
+}

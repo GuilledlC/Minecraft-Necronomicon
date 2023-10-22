@@ -1,62 +1,55 @@
 package net.guille_dlc.necronomicon;
 
-/*import net.guille_dlc.necronomicon.biome.TestBiomeProvider;*/
-import net.guille_dlc.necronomicon.biome.ModBiomes;
-import net.guille_dlc.necronomicon.biome.ModRegion;
-import net.guille_dlc.necronomicon.entity.ModEntityTypes;
-import net.guille_dlc.necronomicon.entity.custom.AngleEntity;
-import net.guille_dlc.necronomicon.events.ClientModEvents;
-import net.guille_dlc.necronomicon.item.ModItems;
-import net.guille_dlc.necronomicon.item.NecronomiconBookItem;
-import net.guille_dlc.necronomicon.particles.ModParticles;
-import net.guille_dlc.necronomicon.util.BetterBrewingRecipe;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.gui.screens.inventory.BookViewScreen;
-import net.minecraft.client.player.LocalPlayer;
+import net.guille_dlc.necronomicon.init.ModBiomes;
+import net.guille_dlc.necronomicon.init.ModConfig;
+import net.guille_dlc.necronomicon.old.biome.ModRegion;
+import net.guille_dlc.necronomicon.old.entity.ModEntityTypes;
+import net.guille_dlc.necronomicon.old.item.ModCreativeModeTab;
+import net.guille_dlc.necronomicon.old.item.ModItems;
+import net.guille_dlc.necronomicon.old.item.NecronomiconBookItem;
+import net.guille_dlc.necronomicon.old.particles.ModParticles;
+import net.guille_dlc.necronomicon.old.util.BetterBrewingRecipe;
+import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.Music;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.client.event.*;
+import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
+import net.minecraft.world.level.levelgen.carver.WorldCarver;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.brewing.BrewingRecipe;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
-import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
+import net.minecraftforge.event.TickEvent.PlayerTickEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-/*import terrablender.api.BiomeProvider;
-import terrablender.api.BiomeProviders;*/
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.TickEvent.PlayerTickEvent;
-import terrablender.api.Region;
 import terrablender.api.Regions;
-
-
-import java.util.concurrent.TimeUnit;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Necronomicon.MOD_ID)
@@ -68,20 +61,49 @@ public class Necronomicon
         return new ResourceLocation(MOD_ID, path);
     }
 
-    // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final DeferredRegister<Biome> BIOME_REGISTER = DeferredRegister.create(Registries.BIOME, MOD_ID);
+    public static final DeferredRegister<Block> BLOCK_REGISTER = DeferredRegister.create(Registries.BLOCK, MOD_ID);
+    public static final DeferredRegister<WorldCarver<?>> CARVER_REGISTER = DeferredRegister.create(Registries.CARVER, MOD_ID);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB_REGISTER = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
+    public static final DeferredRegister<ConfiguredWorldCarver<?>> CONFIGURED_CARVER_REGISTER = DeferredRegister.create(Registries.CONFIGURED_CARVER, MOD_ID);
+    public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURE_REGISTER = DeferredRegister.create(Registries.CONFIGURED_FEATURE, MOD_ID);
+    public static final DeferredRegister<Feature<?>> FEATURE_REGISTER = DeferredRegister.create(Registries.FEATURE, MOD_ID);
+    public static final DeferredRegister<Item> ITEM_REGISTER = DeferredRegister.create(Registries.ITEM, MOD_ID);
+    public static final DeferredRegister<ParticleType<?>> PARTICLES_REGISTER = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, MOD_ID);
+    public static final DeferredRegister<SoundEvent> SOUND_EVENT_REGISTER = DeferredRegister.create(Registries.SOUND_EVENT, MOD_ID);
+    public static final DeferredRegister<DamageType> DAMAGE_TYPE_REGISTER = DeferredRegister.create(Registries.DAMAGE_TYPE, MOD_ID);
+
+    public static Necronomicon instance;
+    public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
     public Necronomicon() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        modEventBus.addListener(this::setup);
 
+        instance = this;
+
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        modEventBus.addListener(this::commonSetup);
+
+        BIOME_REGISTER.register(modEventBus);
+        BLOCK_REGISTER.register(modEventBus);
+        CARVER_REGISTER.register(modEventBus);
+        CREATIVE_TAB_REGISTER.register(modEventBus);
+        CONFIGURED_CARVER_REGISTER.register(modEventBus);
+        CONFIGURED_FEATURE_REGISTER.register(modEventBus);
+        FEATURE_REGISTER.register(modEventBus);
+        ITEM_REGISTER.register(modEventBus);
+        PARTICLES_REGISTER.register(modEventBus);
+        SOUND_EVENT_REGISTER.register(modEventBus);
+        DAMAGE_TYPE_REGISTER.register(modEventBus);
+
+        ModConfig.setup();
+
+        /**Nos hemos quedado aqui*/
+
+        ModCreativeModeTab.register(modEventBus);
         ModItems.register(modEventBus);
         ModEntityTypes.register(modEventBus);
-        /*BiomeProviders.register(new TestBiomeProvider(new ResourceLocation(MOD_ID, "biome_provider"), 2));*/
         ModParticles.register(modEventBus);
 
-        ModBiomes.BIOME_REGISTER.register(modEventBus);
-        ModBiomes.registerBiomes();
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -91,23 +113,20 @@ public class Necronomicon
 
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getName()); //Blocks.DIRT.getRegistryName());
-
-
+    private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            ModBiomes.setupBiomes();
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD, Items.WHEAT, ModItems.BEER.get()));
-            Regions.register(new ModRegion());
+            /**Make wheat be able to be in a brewing stand*/
+            /**Old: Regions.register(new ModRegion());*/
         });
     }
 
     private void livingHurt(final LivingHurtEvent event) {
-        if (event.getSource() == DamageSource.OUT_OF_WORLD) //Makes sure you get killed with "/kill" and The Void
+        if (event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY)) //Makes sure you get killed with "/kill" and The Void
             return;
         Entity entity = event.getEntity();
-        if(entity.getLevel().isClientSide())
+        if(entity.level().isClientSide())
             return;
         if(event.getAmount() < event.getEntity().getHealth())
             return;
@@ -122,7 +141,7 @@ public class Necronomicon
                     player.heal(event.getAmount());
 
                     if(item.coolDown == 0) {
-                        item.rapture(event.getEntity().getLevel(), player, hand);
+                        item.rapture(event.getEntity().level(), player, hand);
 
                         player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 150, 0));
                         player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 150, 0));
@@ -141,8 +160,8 @@ public class Necronomicon
                 if(itemStack.getItem() instanceof NecronomiconBookItem item) {
                     if(item.coolDown != 0 && item.activated) {
                         if(item.coolDown == 1) {
-                            ResourceKey<Level> resourcekey = player.getLevel().dimension() == Level.END ? Level.OVERWORLD : Level.END;
-                            ServerLevel serverlevel = player.getLevel().getServer().getLevel(resourcekey);
+                            ResourceKey<Level> resourcekey = player.level().dimension() == Level.END ? Level.OVERWORLD : Level.END;
+                            ServerLevel serverlevel = player.level().getServer().getLevel(resourcekey);
                             if (serverlevel == null) {
                                return;
                             }
