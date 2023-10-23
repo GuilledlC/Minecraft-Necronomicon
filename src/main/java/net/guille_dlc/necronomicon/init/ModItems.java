@@ -1,7 +1,7 @@
 package net.guille_dlc.necronomicon.init;
 
 import net.guille_dlc.necronomicon.Necronomicon;
-import net.guille_dlc.necronomicon.old.entity.ModEntityTypes;
+import net.guille_dlc.necronomicon.api.entity.NecronomiconEntities;
 import net.guille_dlc.necronomicon.common.item.BeerItem;
 import net.guille_dlc.necronomicon.common.item.ModArmorMaterials;
 import net.guille_dlc.necronomicon.common.item.ModFoods;
@@ -31,7 +31,7 @@ public class ModItems {
 
         ANGLE_SPAWN_EGG = registerItem(() ->
                 new ForgeSpawnEggItem(
-                        ModEntityTypes.ANGLE,
+                        NecronomiconEntities.ANGLE,
                         0x917443,
                         0x3d3923,
                         new Item.Properties()),

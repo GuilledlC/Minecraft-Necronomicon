@@ -1,34 +1,18 @@
 package net.guille_dlc.necronomicon.init;
 
-import net.guille_dlc.necronomicon.Necronomicon;
 import net.guille_dlc.necronomicon.api.biome.NecronomiconBiomes;
 import net.guille_dlc.necronomicon.common.biome.OverworldBiomes;
 import net.guille_dlc.necronomicon.common.worldgen.OverworldRegion;
-import net.guille_dlc.necronomicon.old.entity.ModEntityTypes;
 import net.minecraft.core.HolderGetter;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
-import net.minecraft.data.worldgen.placement.VegetationPlacements;
-import net.minecraft.sounds.Musics;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 //import net.minecraftforge.event.RegistryEvent;
-import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraftforge.fml.common.Mod;
 
 import net.minecraft.resources.ResourceKey;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
 import terrablender.api.Regions;
-import terrablender.api.SurfaceRuleManager;
-
-import java.util.function.Supplier;
 
 public class ModBiomes {
 

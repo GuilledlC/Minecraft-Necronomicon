@@ -1,4 +1,4 @@
-package net.guille_dlc.necronomicon.old.entity.custom;
+package net.guille_dlc.necronomicon.common.entity.custom;
 
 import net.guille_dlc.necronomicon.api.item.NecronomiconItems;
 import net.guille_dlc.necronomicon.common.item.NecronomiconBookItem;

@@ -1,8 +1,8 @@
-package net.guille_dlc.necronomicon.old.entity.render;
+package net.guille_dlc.necronomicon.client.entity.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.guille_dlc.necronomicon.Necronomicon;
-import net.guille_dlc.necronomicon.old.entity.custom.AngleEntity;
+import net.guille_dlc.necronomicon.common.entity.custom.AngleEntity;
 import net.minecraft.client.model.IllagerModel;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;

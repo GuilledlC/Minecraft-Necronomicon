@@ -1,9 +1,8 @@
 package net.guille_dlc.necronomicon.common.biome;
 
-import net.guille_dlc.necronomicon.old.entity.ModEntityTypes;
+import net.guille_dlc.necronomicon.api.entity.NecronomiconEntities;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.sounds.Musics;
@@ -21,14 +20,14 @@ public class OverworldBiomes {
         MobSpawnSettings spawnSettings = new MobSpawnSettings.Builder()
                 .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ZOMBIE, 40, 5, 10))
                 .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SPIDER, 20, 2, 5))
-                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntityTypes.ANGLE.get(), 60, 10, 20))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(NecronomiconEntities.ANGLE.get(), 60, 10, 20))
                 .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 30, 5, 20))
                 .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 20, 4, 10))
                 .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.CAT, 20, 4, 10))
                 .addSpawn(MobCategory.AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.BAT, 30, 10, 20))
                 .addMobCharge(EntityType.ZOMBIE, 1, 0.8)
                 .addMobCharge(EntityType.SPIDER, 1, 0.8)
-                .addMobCharge(ModEntityTypes.ANGLE.get(), 1, 0.8)
+                .addMobCharge(NecronomiconEntities.ANGLE.get(), 1, 0.8)
                 .build();
 
         BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder(features, carvers)

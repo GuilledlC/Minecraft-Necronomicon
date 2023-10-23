@@ -1,7 +1,7 @@
 package net.guille_dlc.necronomicon.common.item;
 
 import com.google.common.collect.Lists;
-import net.guille_dlc.necronomicon.old.events.ClientModEvents;
+import net.guille_dlc.necronomicon.common.events.ClientModEvents;
 import net.guille_dlc.necronomicon.client.screen.NecronomiconBookViewScreen;
 import net.guille_dlc.necronomicon.client.particle.ModParticles;
 import net.minecraft.client.Minecraft;

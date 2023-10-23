@@ -3,12 +3,12 @@ package net.guille_dlc.necronomicon;
 import net.guille_dlc.necronomicon.api.item.NecronomiconItems;
 import net.guille_dlc.necronomicon.init.ModBiomes;
 import net.guille_dlc.necronomicon.init.ModConfig;
-import net.guille_dlc.necronomicon.old.entity.ModEntityTypes;
 import net.guille_dlc.necronomicon.init.ModCreativeModeTab;
 import net.guille_dlc.necronomicon.init.ModItems;
 import net.guille_dlc.necronomicon.common.item.NecronomiconBookItem;
 import net.guille_dlc.necronomicon.client.particle.ModParticles;
 import net.guille_dlc.necronomicon.common.util.BetterBrewingRecipe;
+import net.guille_dlc.necronomicon.init.ModEntities;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -22,6 +22,7 @@ import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -65,6 +66,7 @@ public class Necronomicon
     public static final DeferredRegister<ConfiguredWorldCarver<?>> CONFIGURED_CARVER_REGISTER = DeferredRegister.create(Registries.CONFIGURED_CARVER, MOD_ID);
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURE_REGISTER = DeferredRegister.create(Registries.CONFIGURED_FEATURE, MOD_ID);
     public static final DeferredRegister<Feature<?>> FEATURE_REGISTER = DeferredRegister.create(Registries.FEATURE, MOD_ID);
+    public static final DeferredRegister<EntityType<?>> ENTITY_TYPE_REGISTER = DeferredRegister.create(Registries.ENTITY_TYPE, MOD_ID);
     public static final DeferredRegister<Item> ITEM_REGISTER = DeferredRegister.create(Registries.ITEM, MOD_ID);
     public static final DeferredRegister<ParticleType<?>> PARTICLES_REGISTER = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, MOD_ID);
     public static final DeferredRegister<SoundEvent> SOUND_EVENT_REGISTER = DeferredRegister.create(Registries.SOUND_EVENT, MOD_ID);
@@ -87,19 +89,20 @@ public class Necronomicon
         CONFIGURED_CARVER_REGISTER.register(modEventBus);
         CONFIGURED_FEATURE_REGISTER.register(modEventBus);
         FEATURE_REGISTER.register(modEventBus);
+        ENTITY_TYPE_REGISTER.register(modEventBus);
         ITEM_REGISTER.register(modEventBus);
         PARTICLES_REGISTER.register(modEventBus);
         SOUND_EVENT_REGISTER.register(modEventBus);
         DAMAGE_TYPE_REGISTER.register(modEventBus);
 
         ModConfig.setup();
+        ModEntities.setup();
         ModItems.setup();
 
         ModCreativeModeTab.setup();
 
         /**Nos hemos quedado aqui*/
 
-        ModEntityTypes.register(modEventBus);
         ModParticles.register(modEventBus);
 
 

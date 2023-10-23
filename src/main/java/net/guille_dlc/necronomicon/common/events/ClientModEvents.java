@@ -1,8 +1,8 @@
-package net.guille_dlc.necronomicon.old.events;
+package net.guille_dlc.necronomicon.common.events;
 
 import net.guille_dlc.necronomicon.Necronomicon;
-import net.guille_dlc.necronomicon.old.entity.ModEntityTypes;
-import net.guille_dlc.necronomicon.old.entity.render.AngleRenderer;
+import net.guille_dlc.necronomicon.api.entity.NecronomiconEntities;
+import net.guille_dlc.necronomicon.client.entity.render.AngleRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.BookViewScreen;
 import net.minecraftforge.api.distmarker.Dist;
@@ -28,6 +28,6 @@ public final class ClientModEvents {
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(ModEntityTypes.ANGLE.get(), AngleRenderer::new);
+        event.registerEntityRenderer(NecronomiconEntities.ANGLE.get(), AngleRenderer::new);
     }
 }

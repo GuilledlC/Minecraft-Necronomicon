@@ -1,17 +1,17 @@
-package net.guille_dlc.necronomicon.old.entity.model;
+package net.guille_dlc.necronomicon.common.entity.model;
 
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.guille_dlc.necronomicon.Necronomicon;
-import net.guille_dlc.necronomicon.old.entity.custom.AngleEntity;
+import net.guille_dlc.necronomicon.common.entity.custom.AngleEntity;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-//Its not used because the Angle uses the Vindicator model
+//It's not used because the Angle uses the Vindicator model
 public class AngleModel<T extends AngleEntity> extends EntityModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
