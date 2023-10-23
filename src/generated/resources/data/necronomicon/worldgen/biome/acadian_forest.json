@@ -1,0 +1,159 @@
+{
+  "has_precipitation": true,
+  "temperature": 0.6,
+  "downfall":0.6,
+  "effects": {
+    "fog_color": 4804422,
+    "sky_color": 2896699,
+    "water_color": 3362632,
+    "water_fog_color": 4804398,
+    "foliage_color": 8604968,
+    "grass_color":6180136,
+    "particle": {
+      "options": {
+        "type": "minecraft:ash"
+      },
+      "probability": 0.1
+    },
+    "ambient_sound": {
+      "sound": "minecraft:ambient.soul_sand_valley"
+    },
+    "mood_sound": {
+      "sound": "minecraft:soul_sand_valley"
+    },
+    "music": {
+      "sound": "minecraft:music.overworld.forest"
+    }
+  },
+  "carvers": {
+    "air": [
+      "minecraft:cave"
+    ]
+  },
+  "features": [
+    [],
+    [
+      "minecraft:lake_lava_underground"
+    ],
+    [
+      "minecraft:forest_rock"
+    ],
+    [
+      "minecraft:fossil_upper",
+      "minecraft:fossil_lower",
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
+    ],
+    [],
+    [],
+    [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_upper",
+      "minecraft:ore_iron_middle",
+      "minecraft:ore_iron_small",
+      "minecraft:ore_gold",
+      "minecraft:ore_gold_lower",
+      "minecraft:ore_redstone",
+      "minecraft:ore_redstone_lower",
+      "minecraft:ore_diamond",
+      "minecraft:ore_diamond_medium",
+      "minecraft:ore_diamond_large",
+      "minecraft:ore_diamond_buried",
+      "minecraft:ore_lapis",
+      "minecraft:ore_lapis_buried",
+      "minecraft:ore_copper",
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
+    ],
+    [],
+    [
+      "minecraft:spring_water"
+    ],
+    [
+      "minecraft:glow_lichen",
+      "minecraft:patch_large_fern",
+      "minecraft:trees_taiga",
+      "minecraft:trees_plains",
+      "minecraft:trees_windswept_forest",
+      "minecraft:trees_birch_and_oak",
+      "minecraft:trees_grove",
+      "minecraft:trees_water",
+      "minecraft:trees_birch",
+      "minecraft:birch_tall",
+      "minecraft:trees_swamp",
+      "minecraft:patch_pumpkin"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ],
+  "spawners": {
+    "ambient": [
+      {
+        "type": "minecraft:bat",
+        "maxCount": 8,
+        "minCount": 8,
+        "weight": 10
+      }
+    ],
+    "creature": [
+      {
+        "type": "minecraft:sheep",
+        "maxCount": 20,
+        "minCount": 8,
+        "weight": 20
+      },
+      {
+        "type": "minecraft:fox",
+        "maxCount": 8,
+        "minCount": 4,
+        "weight": 10
+      },
+      {
+        "type": "minecraft:cat",
+        "maxCount": 8,
+        "minCount": 4,
+        "weight": 10
+      }
+    ],
+    "monster": [
+      {
+        "type": "minecraft:zombie",
+        "maxCount": 10,
+        "minCount": 5,
+        "weight": 60
+      },
+      {
+        "type": "minecraft:zombie_villager",
+        "maxCount": 6,
+        "minCount": 3,
+        "weight": 50
+      },
+      {
+        "type": "minecraft:spider",
+        "maxCount": 15,
+        "minCount": 2,
+        "weight": 40
+      },
+      {
+        "type": "necronomicon:angle",
+        "maxCount": 20,
+        "minCount": 10,
+        "weight": 100
+      }
+    ]
+  },
+  "spawn_costs": {}
+}
