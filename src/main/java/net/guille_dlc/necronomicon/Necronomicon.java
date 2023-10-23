@@ -31,7 +31,10 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
@@ -41,6 +44,7 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.brewing.BrewingRecipe;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.TickEvent.PlayerTickEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -54,6 +58,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.lwjgl.system.windows.POINT;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Necronomicon.MOD_ID)
@@ -77,6 +82,7 @@ public class Necronomicon
     public static final DeferredRegister<ParticleType<?>> PARTICLES_REGISTER = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, MOD_ID);
     public static final DeferredRegister<SoundEvent> SOUND_EVENT_REGISTER = DeferredRegister.create(Registries.SOUND_EVENT, MOD_ID);
     public static final DeferredRegister<DamageType> DAMAGE_TYPE_REGISTER = DeferredRegister.create(Registries.DAMAGE_TYPE, MOD_ID);
+    public static final DeferredRegister<Potion> POTION_REGISTER = DeferredRegister.create(Registries.POTION, MOD_ID);
 
     public static Necronomicon instance;
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
@@ -100,6 +106,7 @@ public class Necronomicon
         PARTICLES_REGISTER.register(modEventBus);
         SOUND_EVENT_REGISTER.register(modEventBus);
         DAMAGE_TYPE_REGISTER.register(modEventBus);
+        POTION_REGISTER.register(modEventBus);
 
         ModConfig.setup();
         ModEntities.setup();
@@ -119,8 +126,7 @@ public class Necronomicon
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ModBiomes.setupBiomes();
-            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD, Items.WHEAT, NecronomiconItems.BEER.get()));
-            /**Make wheat be able to be in a brewing stand*/
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER, Items.WHEAT, NecronomiconItems.BEER.get()));
             /**Old: Regions.register(new ModRegion());*/
         });
     }

@@ -22,7 +22,7 @@ public class BetterBrewingRecipe implements IBrewingRecipe {
 
     @Override
     public boolean isInput(ItemStack input) {
-        return PotionUtils.getPotion(input) == this.input || input.getItem() instanceof BeerItem;
+        return PotionUtils.getPotion(input) == this.input;
     }
 
     @Override
@@ -36,7 +36,6 @@ public class BetterBrewingRecipe implements IBrewingRecipe {
             return ItemStack.EMPTY;
         }
 
-        ItemStack itemStack = new ItemStack(input.getItem());
-        return itemStack;
+        return output.getDefaultInstance();
     }
 }
