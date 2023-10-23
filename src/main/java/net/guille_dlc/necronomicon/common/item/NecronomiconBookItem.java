@@ -1,9 +1,10 @@
 package net.guille_dlc.necronomicon.common.item;
 
 import com.google.common.collect.Lists;
+import net.guille_dlc.necronomicon.api.particle.NecronomiconParticles;
 import net.guille_dlc.necronomicon.common.events.ClientModEvents;
 import net.guille_dlc.necronomicon.client.screen.NecronomiconBookViewScreen;
-import net.guille_dlc.necronomicon.client.particle.ModParticles;
+import net.guille_dlc.necronomicon.init.ModParticles;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.BookViewScreen;
 import net.minecraft.commands.CommandSourceStack;
@@ -215,7 +216,7 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
     public void playActivateAnimation(ItemStack itemStack, Entity entity) {
         Minecraft mc = Minecraft.getInstance();
         //mc.particleEngine.createTrackingEmitter(entity, ParticleTypes.TOTEM_OF_UNDYING, 10);
-        mc.particleEngine.createTrackingEmitter(entity, ModParticles.BLOOD_PARTICLE.get(), 10);
+        mc.particleEngine.createTrackingEmitter(entity, NecronomiconParticles.BLOOD_PARTICLE.get(), 10);
 
         assert mc.level != null: "Level is null";
         mc.level.playLocalSound(entity.getX(), entity.getY(), entity.getZ(), SoundEvents.TOTEM_USE, entity.getSoundSource(), 1.0F, 1.0F, false);

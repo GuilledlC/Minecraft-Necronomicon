@@ -1,14 +1,18 @@
 package net.guille_dlc.necronomicon;
 
 import net.guille_dlc.necronomicon.api.item.NecronomiconItems;
+import net.guille_dlc.necronomicon.api.particle.NecronomiconParticles;
+import net.guille_dlc.necronomicon.client.particle.BloodParticle;
+import net.guille_dlc.necronomicon.common.events.ModEvents;
 import net.guille_dlc.necronomicon.init.ModBiomes;
 import net.guille_dlc.necronomicon.init.ModConfig;
 import net.guille_dlc.necronomicon.init.ModCreativeModeTab;
 import net.guille_dlc.necronomicon.init.ModItems;
 import net.guille_dlc.necronomicon.common.item.NecronomiconBookItem;
-import net.guille_dlc.necronomicon.client.particle.ModParticles;
+import net.guille_dlc.necronomicon.init.ModParticles;
 import net.guille_dlc.necronomicon.common.util.BetterBrewingRecipe;
 import net.guille_dlc.necronomicon.init.ModEntities;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -35,12 +39,14 @@ import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.carver.WorldCarver;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.TickEvent.PlayerTickEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -98,19 +104,15 @@ public class Necronomicon
         ModConfig.setup();
         ModEntities.setup();
         ModItems.setup();
+        ModParticles.setup();
 
         ModCreativeModeTab.setup();
 
-        /**Nos hemos quedado aqui*/
-
-        ModParticles.register(modEventBus);
-
-
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.addListener(this::livingHurt);
-        MinecraftForge.EVENT_BUS.addListener(this::playerTick);
-        MinecraftForge.EVENT_BUS.addListener(this::playerRightClickItem);
+        MinecraftForge.EVENT_BUS.addListener(ModEvents::livingHurt);
+        MinecraftForge.EVENT_BUS.addListener(ModEvents::playerTick);
+        MinecraftForge.EVENT_BUS.addListener(ModEvents::playerRightClickItem);
 
     }
 
@@ -121,68 +123,6 @@ public class Necronomicon
             /**Make wheat be able to be in a brewing stand*/
             /**Old: Regions.register(new ModRegion());*/
         });
-    }
-
-    private void livingHurt(final LivingHurtEvent event) {
-        if (event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY)) //Makes sure you get killed with "/kill" and The Void
-            return;
-        Entity entity = event.getEntity();
-        if(entity.level().isClientSide())
-            return;
-        if(event.getAmount() < event.getEntity().getHealth())
-            return;
-
-        if(event.getEntity() instanceof ServerPlayer player) {
-            for(InteractionHand hand : InteractionHand.values()) {
-                ItemStack itemStack = player.getItemInHand(hand);
-                if(itemStack.getItem() instanceof NecronomiconBookItem item) {
-
-                    if(event.getAmount() > player.getMaxHealth())
-                        event.setAmount(player.getHealth());
-                    player.heal(event.getAmount());
-
-                    if(item.coolDown == 0) {
-                        item.rapture(event.getEntity().level(), player, hand);
-
-                        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 150, 0));
-                        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 150, 0));
-                        player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 300, 0));
-                        player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
-                    }
-                }
-            }
-        }
-    }
-
-    private void playerTick(final PlayerTickEvent event) {
-        if(event.player instanceof ServerPlayer player) {
-            for(InteractionHand hand : InteractionHand.values()) {
-                ItemStack itemStack = player.getItemInHand(hand);
-                if(itemStack.getItem() instanceof NecronomiconBookItem item) {
-                    if(item.coolDown != 0 && item.activated) {
-                        if(item.coolDown == 1) {
-                            ResourceKey<Level> resourcekey = player.level().dimension() == Level.END ? Level.OVERWORLD : Level.END;
-                            ServerLevel serverlevel = player.level().getServer().getLevel(resourcekey);
-                            if (serverlevel == null) {
-                               return;
-                            }
-                            item.activated = false;
-                            player.changeDimension(serverlevel);
-                        }
-                        item.coolDown--;
-                    }
-                    break;
-                }
-            }
-        }
-    }
-
-    private void playerRightClickItem(final PlayerInteractEvent.RightClickItem event) {
-        if(event.getEntity() instanceof ServerPlayer player) {
-            if(event.getItemStack().getItem() instanceof NecronomiconBookItem item) {
-                player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 300, 0));
-            }
-        }
     }
 
 }
