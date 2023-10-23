@@ -1,4 +1,4 @@
-package net.guille_dlc.necronomicon.old.particles;
+package net.guille_dlc.necronomicon.client.particle;
 
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;

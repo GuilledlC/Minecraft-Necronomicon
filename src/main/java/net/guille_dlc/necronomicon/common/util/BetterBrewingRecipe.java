@@ -1,4 +1,4 @@
-package net.guille_dlc.necronomicon.old.util;
+package net.guille_dlc.necronomicon.common.util;
 
 import net.guille_dlc.necronomicon.common.item.BeerItem;
 import net.minecraft.world.item.Item;

@@ -1,4 +1,4 @@
-package net.guille_dlc.necronomicon.old.screen;
+package net.guille_dlc.necronomicon.client.screen;
 
 import net.minecraft.client.gui.screens.inventory.BookViewScreen;
 import net.minecraft.network.chat.ClickEvent;
