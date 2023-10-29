@@ -1,34 +1,38 @@
 {
-  "has_precipitation": true,
-  "temperature": 0.6,
-  "downfall":0.6,
+  "carvers": {
+    "air": "minecraft:cave"
+  },
+  "downfall": 0.6,
   "effects": {
+    "additions_sound": {
+      "sound": "minecraft:ambient.soul_sand_valley.additions",
+      "tick_chance": 0.0111
+    },
+    "ambient_sound": "minecraft:ambient.soul_sand_valley.loop",
     "fog_color": 4804422,
-    "sky_color": 2896699,
-    "water_color": 3362632,
-    "water_fog_color": 4804398,
     "foliage_color": 8604968,
-    "grass_color":6180136,
+    "grass_color": 6180136,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.soul_sand_valley.mood",
+      "tick_delay": 6000
+    },
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.nether.soul_sand_valley"
+    },
     "particle": {
       "options": {
         "type": "minecraft:ash"
       },
       "probability": 0.1
     },
-    "ambient_sound": {
-      "sound": "minecraft:ambient.soul_sand_valley"
-    },
-    "mood_sound": {
-      "sound": "minecraft:soul_sand_valley"
-    },
-    "music": {
-      "sound": "minecraft:music.overworld.forest"
-    }
-  },
-  "carvers": {
-    "air": [
-      "minecraft:cave"
-    ]
+    "sky_color": 2896699,
+    "water_color": 3362632,
+    "water_fog_color": 4804398
   },
   "features": [
     [],
@@ -47,15 +51,6 @@
     [],
     [],
     [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_granite_upper",
-      "minecraft:ore_granite_lower",
-      "minecraft:ore_diorite_upper",
-      "minecraft:ore_diorite_lower",
-      "minecraft:ore_andesite_upper",
-      "minecraft:ore_andesite_lower",
-      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -72,10 +67,7 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma",
-      "minecraft:disk_sand",
-      "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:underwater_magma"
     ],
     [],
     [
@@ -84,14 +76,15 @@
     [
       "minecraft:glow_lichen",
       "minecraft:patch_large_fern",
-      "minecraft:trees_taiga",
       "minecraft:trees_plains",
+      "minecraft:trees_taiga",
       "minecraft:trees_windswept_forest",
       "minecraft:trees_birch_and_oak",
       "minecraft:trees_grove",
       "minecraft:trees_water",
       "minecraft:trees_birch",
       "minecraft:birch_tall",
+      "minecraft:patch_grass_taiga",
       "minecraft:trees_swamp",
       "minecraft:patch_pumpkin"
     ],
@@ -99,15 +92,31 @@
       "minecraft:freeze_top_layer"
     ]
   ],
+  "has_precipitation": true,
+  "spawn_costs": {
+    "minecraft:spider": {
+      "charge": 1.0,
+      "energy_budget": 0.8
+    },
+    "minecraft:zombie": {
+      "charge": 1.0,
+      "energy_budget": 0.8
+    },
+    "necronomicon:angle": {
+      "charge": 1.0,
+      "energy_budget": 0.8
+    }
+  },
   "spawners": {
     "ambient": [
       {
         "type": "minecraft:bat",
-        "maxCount": 8,
+        "maxCount": 10,
         "minCount": 8,
-        "weight": 10
+        "weight": 8
       }
     ],
+    "axolotls": [],
     "creature": [
       {
         "type": "minecraft:sheep",
@@ -117,43 +126,47 @@
       },
       {
         "type": "minecraft:fox",
-        "maxCount": 8,
+        "maxCount": 10,
         "minCount": 4,
-        "weight": 10
+        "weight": 8
       },
       {
         "type": "minecraft:cat",
-        "maxCount": 8,
+        "maxCount": 10,
         "minCount": 4,
-        "weight": 10
+        "weight": 8
       }
     ],
+    "misc": [],
     "monster": [
       {
         "type": "minecraft:zombie",
-        "maxCount": 10,
+        "maxCount": 60,
         "minCount": 5,
-        "weight": 60
+        "weight": 10
       },
       {
         "type": "minecraft:zombie_villager",
-        "maxCount": 6,
+        "maxCount": 50,
         "minCount": 3,
-        "weight": 50
+        "weight": 6
       },
       {
         "type": "minecraft:spider",
-        "maxCount": 15,
+        "maxCount": 40,
         "minCount": 2,
-        "weight": 40
+        "weight": 15
       },
       {
         "type": "necronomicon:angle",
-        "maxCount": 20,
+        "maxCount": 100,
         "minCount": 10,
-        "weight": 100
+        "weight": 20
       }
-    ]
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
   },
-  "spawn_costs": {}
+  "temperature": 0.6
 }

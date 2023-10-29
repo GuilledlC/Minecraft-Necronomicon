@@ -1,7 +1,7 @@
 package net.guille_dlc.necronomicon.init;
 
 import net.guille_dlc.necronomicon.api.biome.NecronomiconBiomes;
-import net.guille_dlc.necronomicon.common.biome.OverworldBiomes;
+import net.guille_dlc.necronomicon.common.biome.LovecraftBiomes;
 import net.guille_dlc.necronomicon.common.worldgen.OverworldRegion;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -28,7 +28,7 @@ public class ModBiomes {
         HolderGetter<ConfiguredWorldCarver<?>> carverGetter = context.lookup(Registries.CONFIGURED_CARVER);
         HolderGetter<PlacedFeature> placedFeatureGetter = context.lookup(Registries.PLACED_FEATURE);
 
-        register(context, NecronomiconBiomes.ACADIAN_FOREST, OverworldBiomes.acadianforest(placedFeatureGetter, carverGetter));
+        register(context, NecronomiconBiomes.ACADIAN_FOREST, LovecraftBiomes.acadianforest(placedFeatureGetter, carverGetter));
     }
 
     public static void register(BootstapContext<Biome> context, ResourceKey<Biome> key, Biome biome) {

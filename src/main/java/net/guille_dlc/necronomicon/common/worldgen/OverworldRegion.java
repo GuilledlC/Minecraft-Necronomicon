@@ -2,7 +2,7 @@ package net.guille_dlc.necronomicon.common.worldgen;
 
 import com.mojang.datafixers.util.Pair;
 import net.guille_dlc.necronomicon.Necronomicon;
-import net.guille_dlc.necronomicon.common.biome.OverworldBiomeBuilder;
+import net.guille_dlc.necronomicon.common.biome.LovecraftBiomeBuilder;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -23,6 +23,6 @@ public class OverworldRegion extends Region {
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
-        (new OverworldBiomeBuilder()).addBiomes(registry, mapper);
+        (new LovecraftBiomeBuilder()).addBiomes(registry, mapper);
     }
 }

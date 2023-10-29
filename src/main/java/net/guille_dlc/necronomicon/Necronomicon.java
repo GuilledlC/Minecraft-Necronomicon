@@ -38,6 +38,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.carver.WorldCarver;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -71,6 +72,8 @@ public class Necronomicon
     }
 
     public static final DeferredRegister<Biome> BIOME_REGISTER = DeferredRegister.create(Registries.BIOME, MOD_ID);
+    public static final DeferredRegister<DimensionType> DIMENSION_TYPE_REGISTER = DeferredRegister.create(Registries.DIMENSION_TYPE, MOD_ID);
+    public static final DeferredRegister<Level> DIMENSION_REGISTER = DeferredRegister.create(Registries.DIMENSION, MOD_ID);
     public static final DeferredRegister<Block> BLOCK_REGISTER = DeferredRegister.create(Registries.BLOCK, MOD_ID);
     public static final DeferredRegister<WorldCarver<?>> CARVER_REGISTER = DeferredRegister.create(Registries.CARVER, MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB_REGISTER = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
@@ -95,6 +98,8 @@ public class Necronomicon
         modEventBus.addListener(this::commonSetup);
 
         BIOME_REGISTER.register(modEventBus);
+        DIMENSION_TYPE_REGISTER.register(modEventBus);
+        DIMENSION_REGISTER.register(modEventBus);
         BLOCK_REGISTER.register(modEventBus);
         CARVER_REGISTER.register(modEventBus);
         CREATIVE_TAB_REGISTER.register(modEventBus);
