@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import net.guille_dlc.necronomicon.api.particle.NecronomiconParticles;
 import net.guille_dlc.necronomicon.common.events.ClientModEvents;
 import net.guille_dlc.necronomicon.client.screen.NecronomiconBookViewScreen;
-import net.guille_dlc.necronomicon.init.ModParticles;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.BookViewScreen;
 import net.minecraft.commands.CommandSourceStack;
@@ -25,15 +24,15 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LecternBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.extensions.IForgeItem;
-import net.minecraftforge.fml.DistExecutor;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.neoforge.common.extensions.IItemExtension;
 import org.jetbrains.annotations.Nullable;
 
 
 import java.util.List;
 
-public class NecronomiconBookItem extends Item implements IForgeItem {
+public class NecronomiconBookItem extends Item implements IItemExtension {
 
     public int coolDown = 0;
     public boolean activated = false;
@@ -125,7 +124,8 @@ public class NecronomiconBookItem extends Item implements IForgeItem {
             pPlayer.playSound(SoundEvents.FIRE_AMBIENT, 1.5F, 1.0F);
 
             BookViewScreen screen = new NecronomiconBookViewScreen(new BookViewScreen.WrittenBookAccess(itemStack));
-            DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientModEvents.BookScreen(screen));
+            if(FMLEnvironment.dist == Dist.CLIENT)
+                ClientModEvents.BookScreen(screen);
         }
         pPlayer.awardStat(Stats.ITEM_USED.get(this));
         return InteractionResultHolder.sidedSuccess(itemStack, pLevel.isClientSide());

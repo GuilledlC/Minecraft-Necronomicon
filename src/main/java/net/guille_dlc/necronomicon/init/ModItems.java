@@ -7,11 +7,9 @@ import net.guille_dlc.necronomicon.common.item.ModArmorMaterials;
 import net.guille_dlc.necronomicon.common.item.ModFoods;
 import net.guille_dlc.necronomicon.common.item.NecronomiconBookItem;
 import net.minecraft.world.item.*;
-import net.minecraftforge.common.ForgeSpawnEggItem;
-import net.minecraftforge.registries.RegistryObject;
-
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
+import net.neoforged.neoforge.registries.RegistryObject;
 import java.util.function.Supplier;
-
 import static net.guille_dlc.necronomicon.api.item.NecronomiconItems.*;
 
 public class ModItems {
@@ -30,7 +28,7 @@ public class ModItems {
                 "necronomicon_book");
 
         ANGLE_SPAWN_EGG = registerItem(() ->
-                new ForgeSpawnEggItem(
+                new DeferredSpawnEggItem(
                         NecronomiconEntities.ANGLE,
                         0x917443,
                         0x3d3923,

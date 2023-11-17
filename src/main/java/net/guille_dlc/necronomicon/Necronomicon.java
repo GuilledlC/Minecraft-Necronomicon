@@ -1,40 +1,20 @@
 package net.guille_dlc.necronomicon;
 
 import net.guille_dlc.necronomicon.api.item.NecronomiconItems;
-import net.guille_dlc.necronomicon.api.particle.NecronomiconParticles;
-import net.guille_dlc.necronomicon.client.particle.BloodParticle;
 import net.guille_dlc.necronomicon.common.events.ModEvents;
-import net.guille_dlc.necronomicon.init.ModBiomes;
-import net.guille_dlc.necronomicon.init.ModConfig;
-import net.guille_dlc.necronomicon.init.ModCreativeModeTab;
-import net.guille_dlc.necronomicon.init.ModItems;
-import net.guille_dlc.necronomicon.common.item.NecronomiconBookItem;
-import net.guille_dlc.necronomicon.init.ModParticles;
 import net.guille_dlc.necronomicon.common.util.BetterBrewingRecipe;
-import net.guille_dlc.necronomicon.init.ModEntities;
-import net.minecraft.client.Minecraft;
+import net.guille_dlc.necronomicon.init.*;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.tags.DamageTypeTags;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageType;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
@@ -43,23 +23,17 @@ import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.carver.WorldCarver;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.brewing.BrewingRecipe;
-import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
-import net.minecraftforge.event.TickEvent.PlayerTickEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.brewing.BrewingRecipeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.lwjgl.system.windows.POINT;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.ForgeRegistries;
+
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Necronomicon.MOD_ID)
@@ -121,10 +95,9 @@ public class Necronomicon
         ModCreativeModeTab.setup();
 
         // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.addListener(ModEvents::livingHurt);
-        MinecraftForge.EVENT_BUS.addListener(ModEvents::playerTick);
-        MinecraftForge.EVENT_BUS.addListener(ModEvents::playerRightClickItem);
+        NeoForge.EVENT_BUS.addListener(ModEvents::livingHurt);
+        NeoForge.EVENT_BUS.addListener(ModEvents::playerTick);
+        NeoForge.EVENT_BUS.addListener(ModEvents::playerRightClickItem);
 
     }
 

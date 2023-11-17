@@ -1,7 +1,7 @@
 package net.guille_dlc.necronomicon.api.item;
 
 import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.RegistryObject;
 
 public class NecronomiconItems {
 

@@ -3,11 +3,9 @@ package net.guille_dlc.necronomicon.api.dimension;
 import net.guille_dlc.necronomicon.Necronomicon;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
-import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 
 public class NecronomiconDimensions {
 

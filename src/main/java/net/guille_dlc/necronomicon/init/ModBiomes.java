@@ -2,23 +2,22 @@ package net.guille_dlc.necronomicon.init;
 
 import net.guille_dlc.necronomicon.api.biome.NecronomiconBiomes;
 import net.guille_dlc.necronomicon.common.biome.LovecraftBiomes;
-import net.guille_dlc.necronomicon.common.worldgen.OverworldRegion;
+//import net.guille_dlc.necronomicon.common.worldgen.OverworldRegion;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.world.level.biome.*;
-//import net.minecraftforge.event.RegistryEvent;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import net.minecraft.resources.ResourceKey;
-import terrablender.api.Regions;
+//import terrablender.api.Regions;
 
 public class ModBiomes {
 
     public static void setupBiomes() {
         //Register the regions
-        Regions.register(new OverworldRegion(ModConfig.GenerationConfig.overworldRegionWeight.get()));
+        //Regions.register(new OverworldRegion(ModConfig.GenerationConfig.overworldRegionWeight.get()));
 
         //Register the surface rules
         /**To do*/

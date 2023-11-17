@@ -15,7 +15,6 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -47,9 +46,9 @@ public class AngleEntity extends Vindicator {
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new AngleEntity.AngleBreakDoorGoal(this));
-        this.goalSelector.addGoal(2, new AbstractIllager.RaiderOpenDoorGoal(this));
-        this.goalSelector.addGoal(3, new Raider.HoldGroundAttackGoal(this, 10.0F));
+        this.goalSelector.addGoal(1, new AngleBreakDoorGoal(this));
+        this.goalSelector.addGoal(2, new RaiderOpenDoorGoal(this));
+        this.goalSelector.addGoal(3, new HoldGroundAttackGoal(this, 10.0F));
         this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, false));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers());
         //this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
@@ -57,8 +56,8 @@ public class AngleEntity extends Vindicator {
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Skeleton.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
-        this.targetSelector.addGoal(4, new AngleEntity.AngleJohnnyAttackGoal(this));
-        this.targetSelector.addGoal(1, new AngleEntity.AngleAvoidNecronomiconGoal<Player>(this, Player.class, 4.0F, 1.5F, 1.5F));
+        this.targetSelector.addGoal(4, new AngleJohnnyAttackGoal(this));
+        this.targetSelector.addGoal(1, new AngleAvoidNecronomiconGoal<Player>(this, Player.class, 4.0F, 1.5F, 1.5F));
         /*this.goalSelector.addGoal(0, new UseItemGoal<>(this,
                 new NecronomiconBookItem(new Item.Properties()).getDefaultInstance(),
                 SoundEvents.BOOK_PAGE_TURN, (arg) -> {
@@ -135,7 +134,7 @@ public class AngleEntity extends Vindicator {
     static class AngleBreakDoorGoal extends BreakDoorGoal {
         public AngleBreakDoorGoal(Mob p_34112_) {
             super(p_34112_, 6, AngleEntity.DOOR_BREAKING_PREDICATE);
-            this.setFlags(EnumSet.of(Goal.Flag.MOVE));
+            this.setFlags(EnumSet.of(Flag.MOVE));
         }
 
         /**
@@ -190,7 +189,7 @@ public class AngleEntity extends Vindicator {
     /**Class stolen from the Fox class**/
     class AngleSearchForItemsGoal extends Goal {
         public AngleSearchForItemsGoal() {
-            this.setFlags(EnumSet.of(Goal.Flag.MOVE));
+            this.setFlags(EnumSet.of(Flag.MOVE));
         }
 
         /**

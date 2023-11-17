@@ -1,10 +1,9 @@
 package net.guille_dlc.necronomicon.init;
 
 import net.guille_dlc.necronomicon.Necronomicon;
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.loading.FMLPaths;
-
+import net.neoforged.neoforge.common.ModConfigSpec;
+import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.loading.FMLPaths;
 import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
@@ -15,9 +14,9 @@ public class ModConfig {
 
     public static class GenerationConfig {
 
-        public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
-        public static final ForgeConfigSpec SPEC;
-        public static final ForgeConfigSpec.IntValue overworldRegionWeight;
+        public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
+        public static final ModConfigSpec SPEC;
+        public static final ModConfigSpec.IntValue overworldRegionWeight;
         static {
             BUILDER.comment("World generation related options.");
             BUILDER.push("overworld");
@@ -30,7 +29,7 @@ public class ModConfig {
 
     public static void setup() {
         createConfigDirectoryIfNecessary();
-        ModLoadingContext.get().registerConfig(net.minecraftforge.fml.config.ModConfig.Type.COMMON, GenerationConfig.SPEC, "biomesoplenty/generation.toml");
+        ModLoadingContext.get().registerConfig(net.neoforged.fml.config.ModConfig.Type.COMMON, GenerationConfig.SPEC, "biomesoplenty/generation.toml");
     }
 
     private static void createConfigDirectoryIfNecessary() {
@@ -51,6 +50,6 @@ public class ModConfig {
 
     private static Path getConfigPath() {
         Path configPath = FMLPaths.CONFIGDIR.get();
-        return Paths.get(configPath.toAbsolutePath().toString(), "necronomicon");
+        return Paths.get(configPath.toAbsolutePath().toString(), "assets/necronomicon");
     }
 }

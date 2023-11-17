@@ -1,14 +1,9 @@
 package net.guille_dlc.necronomicon.client.screen;
 
 import net.minecraft.client.gui.screens.inventory.BookViewScreen;
-import net.minecraft.network.chat.ClickEvent;
-import net.minecraft.network.chat.Style;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import org.stringtemplate.v4.ST;
 
 public class NecronomiconBookViewScreen extends BookViewScreen {
-    public NecronomiconBookViewScreen(BookViewScreen.BookAccess pBookAccess) {
+    public NecronomiconBookViewScreen(BookAccess pBookAccess) {
         super(pBookAccess);
     }
 

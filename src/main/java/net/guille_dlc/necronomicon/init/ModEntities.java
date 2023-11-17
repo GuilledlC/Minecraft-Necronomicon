@@ -6,8 +6,7 @@ import net.guille_dlc.necronomicon.common.entity.custom.AngleEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraftforge.registries.RegistryObject;
-
+import net.neoforged.neoforge.registries.RegistryObject;
 import java.util.function.Supplier;
 
 public class ModEntities {
