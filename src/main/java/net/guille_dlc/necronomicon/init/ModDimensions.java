@@ -18,6 +18,7 @@ public class ModDimensions {
 
     public static void bootstrapDimensionTypes(BootstapContext<DimensionType> context) {
         context.register(NecronomiconDimensions.LOVECRAFT_COUNTRY_TYPE, Dimensions.lovecraftCountry());
+        context.register(NecronomiconDimensions.DAGON_TYPE, Dimensions.dagon());
     }
 
     public static void bootstrapStems(BootstapContext<LevelStem> context) {
@@ -26,6 +27,7 @@ public class ModDimensions {
         HolderGetter<NoiseGeneratorSettings> noise = context.lookup(Registries.NOISE_SETTINGS);
 
         context.register(NecronomiconDimensions.LOVECRAFT_COUNTRY_STEM, Dimensions.lovecraftCoutryStem(biomes, dimensionTypes, noise));
+        context.register(NecronomiconDimensions.DAGON_STEM, Dimensions.dagonStem(biomes, dimensionTypes, noise));
     }
 
 }

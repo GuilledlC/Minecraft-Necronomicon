@@ -13,6 +13,10 @@ public class NecronomiconDimensions {
     public static ResourceKey<DimensionType> LOVECRAFT_COUNTRY_TYPE = registerDimensionType("lovecraft_country");
     public static ResourceKey<LevelStem> LOVECRAFT_COUNTRY_STEM = registerLevelStem("lovecraft_country");
 
+    public static ResourceKey<Level> DAGON = registerDimension("dagon");
+    public static ResourceKey<DimensionType> DAGON_TYPE = registerDimensionType("dagon");
+    public static ResourceKey<LevelStem> DAGON_STEM = registerLevelStem("dagon");
+
     private static ResourceKey<Level> registerDimension(String name) {
         ResourceKey<Level> key = ResourceKey.create(Registries.DIMENSION, Necronomicon.id(name));
         return key;

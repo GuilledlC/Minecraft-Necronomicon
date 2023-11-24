@@ -6,10 +6,7 @@ import net.guille_dlc.necronomicon.api.biome.NecronomiconBiomes;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.BiomeSource;
-import net.minecraft.world.level.biome.Climate;
-import net.minecraft.world.level.biome.MultiNoiseBiomeSource;
+import net.minecraft.world.level.biome.*;
 
 import java.util.function.Consumer;
 
@@ -84,9 +81,16 @@ public class LovecraftBiomeBuilder {
         mapper.accept(Pair.of(Climate.parameters(temperature, humidity, continentalness, erosion, Climate.Parameter.point(1.0F), weirdness, offset), biome));
     }
 
-    public static BiomeSource buildBiomeSource(HolderGetter<Biome> biomes) {
+    public static BiomeSource buildLovecraftBiomeSource(HolderGetter<Biome> biomes) {
         return MultiNoiseBiomeSource.createFromList(new Climate.ParameterList<>(ImmutableList.of(
                 Pair.of(Climate.parameters(temperatures[1], humidities[1], midInlandContinentalness, erosions[3], Climate.Parameter.span(0.2F, 0.7F), Climate.Parameter.point(0), 0.0F), biomes.getOrThrow(NecronomiconBiomes.ACADIAN_FOREST))
         )));
+    }
+
+    public static BiomeSource buildDagonBiomeSource(HolderGetter<Biome> biomes) {
+        return new FixedBiomeSource(biomes.getOrThrow(NecronomiconBiomes.MUDDY_WASTELAND));
+        /*return MultiNoiseBiomeSource.createFromList(new Climate.ParameterList<>(ImmutableList.of(
+                Pair.of(Climate.parameters(temperatures[1], humidities[1], midInlandContinentalness, erosions[3], Climate.Parameter.span(0.2F, 0.7F), Climate.Parameter.point(0), 0.0F), biomes.getOrThrow(NecronomiconBiomes.MUDDY_WASTELAND))
+        )));*/
     }
 }

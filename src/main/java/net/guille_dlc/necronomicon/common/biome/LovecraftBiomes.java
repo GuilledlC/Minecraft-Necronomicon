@@ -19,7 +19,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class LovecraftBiomes {
 
-    public static Biome acadianforest(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+    public static Biome acadianForest(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
         MobSpawnSettings spawnSettings = new MobSpawnSettings.Builder()
                 .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ZOMBIE, 10, 5, 60))
                 .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ZOMBIE_VILLAGER, 6, 3, 50))
@@ -77,8 +77,8 @@ public class LovecraftBiomes {
 
 
         return new Biome.BiomeBuilder()
-                .temperature(0.6F)
-                .downfall(0.6F)
+                .temperature(0.3F)
+                .downfall(0.8F)
                 .specialEffects(
                         new BiomeSpecialEffects.Builder()
                                 .skyColor(0x2c333b)
@@ -92,6 +92,60 @@ public class LovecraftBiomes {
                                 .ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_MOOD, 6000, 8, 2))
                                 .ambientAdditionsSound(new AmbientAdditionsSettings(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_ADDITIONS, 0.0111))
                                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SOUL_SAND_VALLEY))
+                                .build())
+                .mobSpawnSettings(spawnSettings)
+                .generationSettings(generationSettings.build())
+                .build();
+    }
+
+    public static Biome muddyWasteland(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+        MobSpawnSettings spawnSettings = new MobSpawnSettings.Builder()
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.DROWNED, 10, 5, 60))
+                .build();
+
+        //https://minecraft.fandom.com/wiki/Custom_biome
+        BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder(features, carvers)
+
+                //Carvers
+                //.addCarver(GenerationStep.Carving.AIR, Carvers.CANYON)
+
+                //Lakes
+
+                //Local modifications
+
+                //Underground structures
+
+                //Fluid springs
+                .addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER)
+
+                //Vegetal decoration
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.GLOW_LICHEN)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_2)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.VINES)
+                ;
+
+        //Underground ores
+        BiomeDefaultFeatures.addDefaultMonsterRoom(generationSettings);
+        BiomeDefaultFeatures.addSurfaceFreezing(generationSettings);
+
+        return new Biome.BiomeBuilder()
+                .temperature(0.5F)
+                .downfall(0.5F)
+                .specialEffects(
+                        new BiomeSpecialEffects.Builder()
+                                .skyColor(0x284952)
+                                .waterColor(0x26414f)
+                                .waterFogColor(0x334352)
+                                .fogColor(0x46474f)
+                                .grassColorOverride(0x434d43)
+                                .foliageColorOverride(0x403c3d)
+                                .ambientParticle(new AmbientParticleSettings(ParticleTypes.RAIN, 0.1F))
+                                .ambientLoopSound(SoundEvents.MUSIC_BIOME_DEEP_DARK)
+                                .ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_CAVE, 6000, 8, 2))
+                                .ambientAdditionsSound(new AmbientAdditionsSettings(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_ADDITIONS, 0.0111))
+                                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DEEP_DARK))
                                 .build())
                 .mobSpawnSettings(spawnSettings)
                 .generationSettings(generationSettings.build())

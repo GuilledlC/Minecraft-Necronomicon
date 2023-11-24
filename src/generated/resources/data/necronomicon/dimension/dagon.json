@@ -1,0 +1,11 @@
+{
+  "type": "necronomicon:dagon",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "necronomicon:muddy_wasteland"
+    },
+    "settings": "minecraft:overworld"
+  }
+}

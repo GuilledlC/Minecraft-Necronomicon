@@ -46,8 +46,43 @@ public class Dimensions {
         return new LevelStem(
                 dimensionTypes.getOrThrow(NecronomiconDimensions.LOVECRAFT_COUNTRY_TYPE),
                 new NoiseBasedChunkGenerator(
-                        LovecraftBiomeBuilder.buildBiomeSource(biomes),
+                        LovecraftBiomeBuilder.buildLovecraftBiomeSource(biomes),
                         noise.getOrThrow(NoiseGeneratorSettings.OVERWORLD)
                 ));
+    }
+
+    public static DimensionType dagon() {
+        return new DimensionType(
+                OptionalLong.of(12000),
+                false,
+                false,
+                false,
+                false,
+                1.0F,
+                false,
+                true,
+                0,
+                256,
+                256,
+                BlockTags.INFINIBURN_NETHER,
+                new ResourceLocation("minecraft:nether"),
+                0.1F,
+                new DimensionType.MonsterSettings(
+                        false,
+                        false,
+                        UniformInt.of(0, 7),
+                        0
+                )
+        );
+    }
+
+    public static LevelStem dagonStem(HolderGetter<Biome> biomes, HolderGetter<DimensionType> dimensionTypes, HolderGetter<NoiseGeneratorSettings> noise) {
+        return new LevelStem(
+                dimensionTypes.getOrThrow(NecronomiconDimensions.DAGON_TYPE),
+                new NoiseBasedChunkGenerator(
+                        LovecraftBiomeBuilder.buildDagonBiomeSource(biomes),
+                        noise.getOrThrow(NoiseGeneratorSettings.OVERWORLD)
+                )
+        );
     }
 }
