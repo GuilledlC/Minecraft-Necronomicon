@@ -120,7 +120,7 @@ public class NecronomiconBookItem extends Item implements IItemExtension {
             }
             itemStack.setTag(bookTag());
             pPlayer.playSound(SoundEvents.BOOK_PAGE_TURN, 1.0F, 1.0F);
-            pPlayer.playSound(SoundEvents.AMBIENT_CAVE.get(), 1.0F, 5.0F);
+            pPlayer.playSound(SoundEvents.AMBIENT_CAVE.value(), 1.0F, 5.0F);
             pPlayer.playSound(SoundEvents.FIRE_AMBIENT, 1.5F, 1.0F);
 
             BookViewScreen screen = new NecronomiconBookViewScreen(new BookViewScreen.WrittenBookAccess(itemStack));

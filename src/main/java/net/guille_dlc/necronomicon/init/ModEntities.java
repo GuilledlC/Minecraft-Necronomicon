@@ -6,7 +6,6 @@ import net.guille_dlc.necronomicon.common.entity.custom.AngleEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.neoforged.neoforge.registries.RegistryObject;
 import java.util.function.Supplier;
 
 public class ModEntities {
@@ -25,7 +24,7 @@ public class ModEntities {
                 "angle");
     }
 
-    private static <I extends Entity> RegistryObject<EntityType<I>> registerEntity(Supplier<EntityType<I>> typeSupplier, String name) {
+    private static <I extends Entity> Supplier<EntityType<I>> registerEntity(Supplier<EntityType<I>> typeSupplier, String name) {
         return Necronomicon.ENTITY_TYPE_REGISTER.register(name, typeSupplier);
     }
 }

@@ -8,7 +8,6 @@ import net.guille_dlc.necronomicon.common.item.ModFoods;
 import net.guille_dlc.necronomicon.common.item.NecronomiconBookItem;
 import net.minecraft.world.item.*;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
-import net.neoforged.neoforge.registries.RegistryObject;
 import java.util.function.Supplier;
 import static net.guille_dlc.necronomicon.api.item.NecronomiconItems.*;
 
@@ -98,7 +97,7 @@ public class ModItems {
                 "iron_dagger");
     }
 
-    private static RegistryObject<Item> registerItem(Supplier<Item> itemSupplier, String name) {
+    private static Supplier<Item> registerItem(Supplier<Item> itemSupplier, String name) {
         return Necronomicon.ITEM_REGISTER.register(name, itemSupplier);
     }
 
