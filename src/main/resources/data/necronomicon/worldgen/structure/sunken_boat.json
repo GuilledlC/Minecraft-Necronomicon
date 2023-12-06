@@ -1,0 +1,15 @@
+// https://github.com/TelepathicGrunt/StructureTutorialMod/tree/1.20.2-Neoforge-Jigsaw/src/main/resources/data/structure_tutorial/worldgen/structure
+
+{
+  "type": "minecraft:jigsaw",
+  "max_distance_from_center": 80,
+  "size": 6,
+  "biomes": "#necronomicon:has_structure/dagon",
+  "spawn_overrides": {},
+  "start_height": {
+    "absolute": 2
+  },
+  "start_pool": "necronomicon:sunken_boat/start_pool",
+  "step": "surface_structures",
+  "use_expansion_hack": false
+}
