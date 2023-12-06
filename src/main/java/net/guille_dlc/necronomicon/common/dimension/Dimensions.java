@@ -19,26 +19,26 @@ public class Dimensions {
     //https://minecraft.fandom.com/wiki/Custom_dimension
     public static DimensionType lovecraftCountry() {
         return new DimensionType(
-                OptionalLong.empty(),
-                true,
-                false,
-                false,
-                true,
-                1.0F,
-                true,
-                false,
-                0,
-                256,
-                256,
-                BlockTags.INFINIBURN_OVERWORLD,
-                new ResourceLocation("minecraft:overworld"),
-                0F,
+                OptionalLong.empty(), //Fixed time
+                true, //Has skylight
+                false, //Has ceiling
+                false, //Ultrawarm
+                true, //Natural
+                1.0F, //Coordinate scale
+                true, //Bed works
+                false, //Respawn anchor works
+                0, //MinY
+                256, //Height
+                256, //Logical height
+                BlockTags.INFINIBURN_OVERWORLD, //Infiniburn
+                new ResourceLocation("minecraft:overworld"), //Effects
+                0F, //Ambient light
                 new DimensionType.MonsterSettings(
                         false,
                         false,
                         UniformInt.of(0, 7),
                         2
-                )
+                ) //Monster settings
         );
     }
 
@@ -53,26 +53,26 @@ public class Dimensions {
 
     public static DimensionType dagon() {
         return new DimensionType(
-                OptionalLong.of(12000),
-                false,
-                false,
-                false,
-                false,
-                1.0F,
-                false,
-                true,
-                0,
-                256,
-                256,
-                BlockTags.INFINIBURN_NETHER,
-                new ResourceLocation("minecraft:nether"),
-                0.1F,
+                OptionalLong.of(12500), //Fixed time
+                false, //Has skylight
+                false, //Has ceiling
+                false, //Ultrawarm
+                false, //Natural
+                1.0F, //Coordinate scale
+                false, //Bed works
+                true, //Respawn anchor works
+                0, //MinY
+                128, //Height
+                128, //Logical height
+                BlockTags.INFINIBURN_NETHER, //Infiniburn
+                new ResourceLocation("minecraft:nether"), //Effects
+                0.1F, //Ambient light
                 new DimensionType.MonsterSettings(
                         false,
                         false,
                         UniformInt.of(0, 7),
                         0
-                )
+                ) //Monster settings
         );
     }
 

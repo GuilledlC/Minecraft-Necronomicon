@@ -107,7 +107,6 @@ public class LovecraftBiomes {
         BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder(features, carvers)
 
                 //Carvers
-                //.addCarver(GenerationStep.Carving.AIR, Carvers.CANYON)
 
                 //Lakes
 
@@ -116,18 +115,11 @@ public class LovecraftBiomes {
                 //Underground structures
 
                 //Fluid springs
-                .addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER)
 
                 //Vegetal decoration
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.GLOW_LICHEN)
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH)
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_2)
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_BADLANDS)
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.VINES)
                 ;
 
         //Underground ores
-        BiomeDefaultFeatures.addDefaultMonsterRoom(generationSettings);
         BiomeDefaultFeatures.addSurfaceFreezing(generationSettings);
 
         return new Biome.BiomeBuilder()

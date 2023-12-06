@@ -3,6 +3,7 @@ package net.guille_dlc.necronomicon;
 import net.guille_dlc.necronomicon.api.item.NecronomiconItems;
 import net.guille_dlc.necronomicon.common.events.ModEvents;
 import net.guille_dlc.necronomicon.common.util.BetterBrewingRecipe;
+import net.guille_dlc.necronomicon.common.worldgen.NecronomiconSurfaceRuleData;
 import net.guille_dlc.necronomicon.init.*;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -33,6 +34,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import terrablender.api.SurfaceRuleManager;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -106,6 +108,7 @@ public class Necronomicon
             ModBiomes.setupBiomes();
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER, Items.WHEAT, NecronomiconItems.BEER.get()));
             /**Old: Regions.register(new ModRegion());*/
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, NecronomiconSurfaceRuleData.makeRules());
         });
     }
 

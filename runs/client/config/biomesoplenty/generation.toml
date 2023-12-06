@@ -1,0 +1,7 @@
+
+#World generation related options.
+[overworld]
+	#The weighting of primary bop biome regions in the overworld.
+	#Range: > 0
+	overworld_region_weight = 10
+
