@@ -1,0 +1,26 @@
+{
+  "structures": [
+    {
+      "structure": "necronomicon:sunken_boat",
+      "weight": 1
+    },
+    {
+      "structure": "necronomicon:sunken_boat_deep",
+      "weight": 1
+    },
+    {
+      "structure": "necronomicon:wreck_small",
+      "weight": 1
+    },
+    {
+      "structure": "necronomicon:raft",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1153566740,
+    "separation": 10,
+    "spacing": 30
+  }
+}

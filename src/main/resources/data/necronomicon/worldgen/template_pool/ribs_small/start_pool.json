@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "necronomicon:sunken_boat",
+        "location": "necronomicon:ribs_small",
         "projection": "rigid",
         "processors": "minecraft:empty"
       },

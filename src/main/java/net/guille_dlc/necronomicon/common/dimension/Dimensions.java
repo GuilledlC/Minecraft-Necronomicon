@@ -53,7 +53,7 @@ public class Dimensions {
 
     public static DimensionType dagon() {
         return new DimensionType(
-                OptionalLong.of(12500), //Fixed time
+                OptionalLong.of(18000), //Fixed time
                 false, //Has skylight
                 false, //Has ceiling
                 false, //Ultrawarm
@@ -65,8 +65,8 @@ public class Dimensions {
                 128, //Height
                 128, //Logical height
                 BlockTags.INFINIBURN_NETHER, //Infiniburn
-                new ResourceLocation("minecraft:nether"), //Effects
-                0.1F, //Ambient light
+                NecronomiconDimensions.DAGON_EFFECTS, //Effects
+                0.075F, //Ambient light
                 new DimensionType.MonsterSettings(
                         false,
                         false,

@@ -16,6 +16,7 @@ public class NecronomiconSurfaceRuleData {
     private static final SurfaceRules.RuleSource WATER = makeStateRule(Blocks.WATER);
     private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
     private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
+    private static final SurfaceRules.RuleSource BASALT = makeStateRule(Blocks.BASALT);
 
 
     public static SurfaceRules.RuleSource makeRules() {
@@ -24,6 +25,8 @@ public class NecronomiconSurfaceRuleData {
         SurfaceRules.RuleSource mud = SurfaceRules.sequence(SurfaceRules.ifTrue(dagon, MUD), GRASS_BLOCK);
         SurfaceRules.RuleSource stone = SurfaceRules.sequence(
                 SurfaceRules.ifTrue(dagon, COBBLESTONE));
+        SurfaceRules.RuleSource basalt = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(dagon, BASALT));
         SurfaceRules.RuleSource air = SurfaceRules.sequence(
                 SurfaceRules.ifTrue(dagon, MUD), CAVE_AIR
         );
@@ -48,7 +51,7 @@ public class NecronomiconSurfaceRuleData {
                                         SurfaceRules.ifTrue(surfaceNoiseAbove(-1D), PODZOL)))));
 
 
-        return SurfaceRules.sequence(highlandsNoise);
+        return SurfaceRules.sequence(surface, basalt);
         //return SurfaceRules.sequence(surface, stone);
     }
 

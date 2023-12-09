@@ -16,18 +16,6 @@
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "music": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "minecraft:music.overworld.deep_dark"
-    },
-    "particle": {
-      "options": {
-        "type": "minecraft:rain"
-      },
-      "probability": 0.1
-    },
     "sky_color": 2640210,
     "water_color": 2507087,
     "water_fog_color": 3359570

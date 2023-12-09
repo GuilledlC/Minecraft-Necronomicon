@@ -3,6 +3,7 @@ package net.guille_dlc.necronomicon.api.dimension;
 import net.guille_dlc.necronomicon.Necronomicon;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
@@ -16,6 +17,7 @@ public class NecronomiconDimensions {
     public static ResourceKey<Level> DAGON = registerDimension("dagon");
     public static ResourceKey<DimensionType> DAGON_TYPE = registerDimensionType("dagon");
     public static ResourceKey<LevelStem> DAGON_STEM = registerLevelStem("dagon");
+    public static final ResourceLocation DAGON_EFFECTS = Necronomicon.id("dagon_effects");
 
     private static ResourceKey<Level> registerDimension(String name) {
         ResourceKey<Level> key = ResourceKey.create(Registries.DIMENSION, Necronomicon.id(name));

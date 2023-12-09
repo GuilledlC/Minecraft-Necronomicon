@@ -1,0 +1,26 @@
+{
+  "structures": [
+    {
+      "structure": "necronomicon:spine",
+      "weight": 3
+    },
+    {
+      "structure": "necronomicon:ribs_small",
+      "weight": 3
+    },
+    {
+      "structure": "necronomicon:ribs_huge",
+      "weight": 3
+    },
+    {
+      "structure": "necronomicon:ribs_giant",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 245895199,
+    "separation": 9,
+    "spacing": 29
+  }
+}
