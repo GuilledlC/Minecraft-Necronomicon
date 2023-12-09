@@ -1,7 +1,7 @@
 package net.guille_dlc.necronomicon.init;
 
 import net.guille_dlc.necronomicon.Necronomicon;
-import net.guille_dlc.necronomicon.api.item.NecronomiconItems;
+import net.guille_dlc.necronomicon.common.item.NecronomiconItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;

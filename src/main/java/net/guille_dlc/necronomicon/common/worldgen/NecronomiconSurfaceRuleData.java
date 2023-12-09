@@ -1,6 +1,6 @@
 package net.guille_dlc.necronomicon.common.worldgen;
 
-import net.guille_dlc.necronomicon.api.biome.NecronomiconBiomes;
+import net.guille_dlc.necronomicon.common.biome.NecronomiconBiomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Noises;

@@ -2,7 +2,6 @@ package net.guille_dlc.necronomicon.common.biome;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
-import net.guille_dlc.necronomicon.api.biome.NecronomiconBiomes;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
@@ -10,7 +9,7 @@ import net.minecraft.world.level.biome.*;
 
 import java.util.function.Consumer;
 
-public class LovecraftBiomeBuilder {
+public class NecronomiconBiomeBuilder {
 
     /**Copied from BOP
      * Maybe use this instead: https://minecraft.fandom.com/wiki/Biome

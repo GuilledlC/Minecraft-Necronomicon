@@ -1,6 +1,6 @@
 package net.guille_dlc.necronomicon.common.entity.custom;
 
-import net.guille_dlc.necronomicon.api.item.NecronomiconItems;
+import net.guille_dlc.necronomicon.common.item.NecronomiconItems;
 import net.guille_dlc.necronomicon.common.item.NecronomiconBookItem;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.*;

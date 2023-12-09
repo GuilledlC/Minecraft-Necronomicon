@@ -1,13 +1,17 @@
 package net.guille_dlc.necronomicon.common.biome;
 
-import net.guille_dlc.necronomicon.api.entity.NecronomiconEntities;
+import net.guille_dlc.necronomicon.Necronomicon;
+import net.guille_dlc.necronomicon.common.entity.NecronomiconEntities;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.Carvers;
 import net.minecraft.data.worldgen.placement.CavePlacements;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
@@ -17,7 +21,10 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
-public class LovecraftBiomes {
+public class NecronomiconBiomes {
+
+    public static ResourceKey<Biome> ACADIAN_FOREST = register("acadian_forest");
+    public static ResourceKey<Biome> MUDDY_WASTELAND = register("muddy_wasteland");
 
     public static Biome acadianForest(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
         MobSpawnSettings spawnSettings = new MobSpawnSettings.Builder()
@@ -142,5 +149,10 @@ public class LovecraftBiomes {
                 .mobSpawnSettings(spawnSettings)
                 .generationSettings(generationSettings.build())
                 .build();
+    }
+
+    private static ResourceKey<Biome> register(String name) {
+        ResourceKey<Biome> key = ResourceKey.create(Registries.BIOME, new ResourceLocation(Necronomicon.MOD_ID, name));
+        return key;
     }
 }

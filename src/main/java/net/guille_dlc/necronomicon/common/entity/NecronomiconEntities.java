@@ -1,4 +1,4 @@
-package net.guille_dlc.necronomicon.api.entity;
+package net.guille_dlc.necronomicon.common.entity;
 
 import net.guille_dlc.necronomicon.common.entity.custom.AngleEntity;
 import net.minecraft.world.entity.EntityType;

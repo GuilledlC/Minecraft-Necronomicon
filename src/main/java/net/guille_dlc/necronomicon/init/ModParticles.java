@@ -1,7 +1,7 @@
 package net.guille_dlc.necronomicon.init;
 
 import net.guille_dlc.necronomicon.Necronomicon;
-import net.guille_dlc.necronomicon.api.particle.NecronomiconParticles;
+import net.guille_dlc.necronomicon.client.particle.NecronomiconParticles;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import java.util.function.Supplier;

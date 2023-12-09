@@ -1,7 +1,6 @@
 package net.guille_dlc.necronomicon.init;
 
-import net.guille_dlc.necronomicon.api.dimension.NecronomiconDimensions;
-import net.guille_dlc.necronomicon.common.dimension.Dimensions;
+import net.guille_dlc.necronomicon.common.dimension.NecronomiconDimensions;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -17,8 +16,8 @@ public class ModDimensions {
     }
 
     public static void bootstrapDimensionTypes(BootstapContext<DimensionType> context) {
-        context.register(NecronomiconDimensions.LOVECRAFT_COUNTRY_TYPE, Dimensions.lovecraftCountry());
-        context.register(NecronomiconDimensions.DAGON_TYPE, Dimensions.dagon());
+        context.register(NecronomiconDimensions.LOVECRAFT_COUNTRY_TYPE, NecronomiconDimensions.lovecraftCountry());
+        context.register(NecronomiconDimensions.DAGON_TYPE, NecronomiconDimensions.dagon());
     }
 
     public static void bootstrapStems(BootstapContext<LevelStem> context) {
@@ -26,8 +25,8 @@ public class ModDimensions {
         HolderGetter<DimensionType> dimensionTypes = context.lookup(Registries.DIMENSION_TYPE);
         HolderGetter<NoiseGeneratorSettings> noise = context.lookup(Registries.NOISE_SETTINGS);
 
-        context.register(NecronomiconDimensions.LOVECRAFT_COUNTRY_STEM, Dimensions.lovecraftCoutryStem(biomes, dimensionTypes, noise));
-        context.register(NecronomiconDimensions.DAGON_STEM, Dimensions.dagonStem(biomes, dimensionTypes, noise));
+        context.register(NecronomiconDimensions.LOVECRAFT_COUNTRY_STEM, NecronomiconDimensions.lovecraftCoutryStem(biomes, dimensionTypes, noise));
+        context.register(NecronomiconDimensions.DAGON_STEM, NecronomiconDimensions.dagonStem(biomes, dimensionTypes, noise));
     }
 
 }

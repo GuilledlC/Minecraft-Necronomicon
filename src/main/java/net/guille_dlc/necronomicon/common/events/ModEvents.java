@@ -1,8 +1,8 @@
 package net.guille_dlc.necronomicon.common.events;
 
 import net.guille_dlc.necronomicon.Necronomicon;
-import net.guille_dlc.necronomicon.api.entity.NecronomiconEntities;
-import net.guille_dlc.necronomicon.api.particle.NecronomiconParticles;
+import net.guille_dlc.necronomicon.common.entity.NecronomiconEntities;
+import net.guille_dlc.necronomicon.client.particle.NecronomiconParticles;
 import net.guille_dlc.necronomicon.client.particle.BloodParticle;
 import net.guille_dlc.necronomicon.common.entity.custom.AngleEntity;
 import net.guille_dlc.necronomicon.common.item.NecronomiconBookItem;

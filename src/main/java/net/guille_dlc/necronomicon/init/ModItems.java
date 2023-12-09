@@ -1,7 +1,7 @@
 package net.guille_dlc.necronomicon.init;
 
 import net.guille_dlc.necronomicon.Necronomicon;
-import net.guille_dlc.necronomicon.api.entity.NecronomiconEntities;
+import net.guille_dlc.necronomicon.common.entity.NecronomiconEntities;
 import net.guille_dlc.necronomicon.common.item.BeerItem;
 import net.guille_dlc.necronomicon.common.item.ModArmorMaterials;
 import net.guille_dlc.necronomicon.common.item.ModFoods;
@@ -9,7 +9,7 @@ import net.guille_dlc.necronomicon.common.item.NecronomiconBookItem;
 import net.minecraft.world.item.*;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import java.util.function.Supplier;
-import static net.guille_dlc.necronomicon.api.item.NecronomiconItems.*;
+import static net.guille_dlc.necronomicon.common.item.NecronomiconItems.*;
 
 public class ModItems {
 

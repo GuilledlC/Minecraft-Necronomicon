@@ -1,4 +1,4 @@
-package net.guille_dlc.necronomicon.api.item;
+package net.guille_dlc.necronomicon.common.item;
 
 import net.minecraft.world.item.Item;
 import java.util.function.Supplier;
