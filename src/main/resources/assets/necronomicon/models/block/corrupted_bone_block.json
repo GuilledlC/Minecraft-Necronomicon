@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "necronomicon:block/corrupted_bone_block_top",
+    "side": "necronomicon:block/corrupted_bone_block_side"
+  }
+}

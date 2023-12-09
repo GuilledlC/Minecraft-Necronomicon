@@ -19,5 +19,7 @@
   "item.necronomicon.beer": "Cerveza",
   "item.necronomicon.beating_heart": "Corazón Paliptante",
 
-  "biome.necronomicon.acadian_forest": "Bosque Acadiano"
+  "biome.necronomicon.acadian_forest": "Bosque Acadiano",
+
+  "block.necronomicon.corrupted_bone_block": "Bloque de Huesos Corruptos"
 }

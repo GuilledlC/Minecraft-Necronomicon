@@ -11,7 +11,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.function.Supplier;
 
-public enum ModArmorMaterials implements ArmorMaterial {
+public enum NecronomiconArmorMaterials implements ArmorMaterial {
     CTHULHU("cthulhu", 20, new int[]{3, 5, 7, 3},
             9, SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 0.1F,
             () -> {return Ingredient.of(Items.ROTTEN_FLESH);
@@ -29,7 +29,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
 
     private static final int[] BASE_DURABILITY = { 7, 12, 12, 9 };
 
-    ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantmentValue, SoundEvent sound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
+    NecronomiconArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantmentValue, SoundEvent sound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectionAmounts = protectionAmounts;

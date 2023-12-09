@@ -90,6 +90,7 @@ public class Necronomicon
         ModConfig.setup();
         ModEntities.setup();
         ModItems.setup();
+        ModBlocks.setup();
         ModParticles.setup();
 
         ModCreativeModeTab.setup();

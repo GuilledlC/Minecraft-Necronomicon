@@ -1,6 +1,7 @@
 package net.guille_dlc.necronomicon.init;
 
 import net.guille_dlc.necronomicon.Necronomicon;
+import net.guille_dlc.necronomicon.common.block.NecronomiconBlocks;
 import net.guille_dlc.necronomicon.common.item.NecronomiconItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -25,6 +26,7 @@ public class ModCreativeModeTab {
                             pOutput.accept(NecronomiconItems.BEER.get());
                             pOutput.accept(NecronomiconItems.BEATING_HEART.get());
                             pOutput.accept(NecronomiconItems.IRON_DAGGER.get());
+                            pOutput.accept(NecronomiconBlocks.CORRUPTED_BONE_BLOCK.get());
                         })
                         .build());
     }

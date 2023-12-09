@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "necronomicon:block/corrupted_bone_block",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "necronomicon:block/corrupted_bone_block"
+    },
+    "axis=z": {
+      "model": "necronomicon:block/corrupted_bone_block",
+      "x": 90
+    }
+  }
+}

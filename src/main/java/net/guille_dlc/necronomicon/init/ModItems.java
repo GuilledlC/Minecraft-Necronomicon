@@ -3,8 +3,8 @@ package net.guille_dlc.necronomicon.init;
 import net.guille_dlc.necronomicon.Necronomicon;
 import net.guille_dlc.necronomicon.common.entity.NecronomiconEntities;
 import net.guille_dlc.necronomicon.common.item.BeerItem;
-import net.guille_dlc.necronomicon.common.item.ModArmorMaterials;
-import net.guille_dlc.necronomicon.common.item.ModFoods;
+import net.guille_dlc.necronomicon.common.item.NecronomiconArmorMaterials;
+import net.guille_dlc.necronomicon.common.item.NecronomiconFoods;
 import net.guille_dlc.necronomicon.common.item.NecronomiconBookItem;
 import net.minecraft.world.item.*;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
@@ -36,28 +36,28 @@ public class ModItems {
 
         CTHULHU_HELMET = registerItem(() ->
                 new ArmorItem(
-                        ModArmorMaterials.CTHULHU,
+                        NecronomiconArmorMaterials.CTHULHU,
                         ArmorItem.Type.HELMET,
                         new Item.Properties()),
                 "cthulhu_helmet");
 
         CTHULHU_CHESTPLATE = registerItem(() ->
                 new ArmorItem(
-                        ModArmorMaterials.CTHULHU,
+                        NecronomiconArmorMaterials.CTHULHU,
                         ArmorItem.Type.CHESTPLATE,
                         new Item.Properties()),
                 "cthulhu_chestplate");
 
         CTHULHU_LEGGINGS = registerItem(() ->
                 new ArmorItem(
-                        ModArmorMaterials.CTHULHU,
+                        NecronomiconArmorMaterials.CTHULHU,
                         ArmorItem.Type.LEGGINGS,
                         new Item.Properties()),
                 "cthulhu_leggings");
 
         CTHULHU_BOOTS = registerItem(() ->
                 new ArmorItem(
-                        ModArmorMaterials.CTHULHU,
+                        NecronomiconArmorMaterials.CTHULHU,
                         ArmorItem.Type.BOOTS,
                         new Item.Properties()),
                 "cthulhu_boots");
@@ -65,19 +65,19 @@ public class ModItems {
         BATTERED_COD = registerItem(() ->
                 new Item(
                         new Item.Properties()
-                                .food(ModFoods.BATTERED_COD)),
+                                .food(NecronomiconFoods.BATTERED_COD)),
                 "battered_cod");
 
         FISH_N_CHIPS = registerItem(() ->
                         new Item(
                                 new Item.Properties()
-                                        .food(ModFoods.FISH_N_CHIPS)),
+                                        .food(NecronomiconFoods.FISH_N_CHIPS)),
                 "fish_n_chips");
 
         BEER = registerItem(() ->
                 new BeerItem(
                         new Item.Properties()
-                                .food(ModFoods.BEER)
+                                .food(NecronomiconFoods.BEER)
                                 .craftRemainder(Items.GLASS_BOTTLE)
                                 .stacksTo(16)),
                 "beer");
@@ -85,7 +85,7 @@ public class ModItems {
         BEATING_HEART = registerItem(() ->
                         new Item(
                                 new Item.Properties()
-                                        .food(ModFoods.BEATING_HEART)),
+                                        .food(NecronomiconFoods.BEATING_HEART)),
                 "beating_heart");
 
         IRON_DAGGER = registerItem(() ->
@@ -97,7 +97,7 @@ public class ModItems {
                 "iron_dagger");
     }
 
-    private static Supplier<Item> registerItem(Supplier<Item> itemSupplier, String name) {
+    public static <T extends Item> Supplier<T> registerItem(Supplier<T> itemSupplier, String name) {
         return Necronomicon.ITEM_REGISTER.register(name, itemSupplier);
     }
 

@@ -19,5 +19,7 @@
   "item.necronomicon.beer": "Beer",
   "item.necronomicon.beating_heart": "Beating Heart",
 
-  "biome.necronomicon.acadian_forest": "Acadian Forest"
+  "biome.necronomicon.acadian_forest": "Acadian Forest",
+
+  "block.necronomicon.corrupted_bone_block": "Corrupted Bone Block"
 }

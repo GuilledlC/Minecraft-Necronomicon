@@ -1,43 +1,43 @@
-[09Dec2023 18:12:01.724] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, 20.2.86, --assetIndex, asset-index, --assetsDir, C:\Users\Guille\.gradle\caches\minecraft\assets\1.20.2, --gameDir, ., --fml.neoForgeVersion, 20.2.86, --fml.fmlVersion, 1.0.16, --fml.mcVersion, 1.20.2, --fml.neoFormVersion, 20231019.002635]
-[09Dec2023 18:12:01.727] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.2 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
-[09Dec2023 18:12:01.807] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
-[09Dec2023 18:12:01.914] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
-[09Dec2023 18:12:02.083] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
-[09Dec2023 18:12:02.137] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Guille/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23138!/ Service=ModLauncher Env=CLIENT
-[09Dec2023 18:12:02.174] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 3060/PCIe/SSE2 GL version 4.6.0 NVIDIA 546.17, NVIDIA Corporation
-[09Dec2023 18:12:02.298] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\core\1.0.16\6bab0913ca1635a8e272ef89c17befb52115a3c2\core-1.0.16.jar is missing mods.toml file
-[09Dec2023 18:12:02.302] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-java\1.0.16\2ddedcd8a488fd73e3e92a59949845e9c3a7d9f2\language-java-1.0.16.jar is missing mods.toml file
-[09Dec2023 18:12:02.306] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-lowcode\1.0.16\e627c78870d4286826c4b14c0137319ff03b4e0\language-lowcode-1.0.16.jar is missing mods.toml file
-[09Dec2023 18:12:02.310] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-minecraft\1.0.16\c1f7785ff7fc0b18aa6d2d4056dcff4fee1b32be\language-minecraft-1.0.16.jar is missing mods.toml file
-[09Dec2023 18:12:02.322] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "core-1.0.16.jar" of type LIBRARY with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@6594402a
-[09Dec2023 18:12:02.322] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "language-java-1.0.16.jar" of type LANGPROVIDER with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@6594402a
-[09Dec2023 18:12:02.322] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "language-lowcode-1.0.16.jar" of type LANGPROVIDER with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@6594402a
-[09Dec2023 18:12:02.323] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "language-minecraft-1.0.16.jar" of type LANGPROVIDER with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@6594402a
-[09Dec2023 18:12:02.323] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "neoforge-20.2.86.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@6594402a
-[09Dec2023 18:12:02.323] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "main" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@6594402a
-[09Dec2023 18:12:02.323] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@6594402a
-[09Dec2023 18:12:02.345] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "TerraBlender-neoforge-1.20.2-3.2.0.14.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.ClasspathLocator@5b56b654
-[09Dec2023 18:12:02.346] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "TerraBlender-neoforge-1.20.2-3.2.0.14.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.ClasspathLocator@5b56b654
-[09Dec2023 18:12:02.351] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "events-1.0.16.jar" of type GAMELIBRARY with provider net.neoforged.fml.loading.moddiscovery.BuiltinGameLibraryLocator@138a7441
-[09Dec2023 18:12:02.435] [main/INFO] [net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
-[09Dec2023 18:12:02.436] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "mixinextras-neoforge-0.3.1.jar" of type GAMELIBRARY with provider net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator@3e58d65e
-[09Dec2023 18:12:03.055] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[09Dec2023 18:12:03.059] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, 20.2.86, --gameDir, ., --assetsDir, C:\Users\Guille\.gradle\caches\minecraft\assets\1.20.2, --assetIndex, asset-index]
-[09Dec2023 18:12:03.118] [main/WARN] [mixin/]: Reference map 'terrablender.refmap.json' for terrablender_neoforge.mixins.json could not be read. If this is a development environment you can ignore this message
-[09Dec2023 18:12:03.118] [main/WARN] [mixin/]: Reference map 'terrablender.refmap.json' for terrablender.mixins.json could not be read. If this is a development environment you can ignore this message
-[09Dec2023 18:12:03.758] [main/WARN] [oshi.util.platform.windows.PerfDataUtil/]: Failed to add PDH Counter: \Paging File(_Total)\% Usage, Error code: 0xC0000BB8
-[09Dec2023 18:12:03.758] [main/WARN] [oshi.util.platform.windows.PerfCounterQueryHandler/]: Failed to add counter for PDH counter: \Paging File(_Total)\% Usage
-[09Dec2023 18:12:03.758] [main/WARN] [oshi.util.platform.windows.PerfCounterQuery/]: Disabling further attempts to query Paging File.
-[09Dec2023 18:12:08.854] [main/WARN] [oshi.util.platform.windows.WmiQueryHandler/]: COM exception: Invalid Query: SELECT PERCENTUSAGE FROM Win32_PerfRawData_PerfOS_PagingFile
-[09Dec2023 18:12:08.869] [pool-7-thread-1/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.1).
-[09Dec2023 18:12:10.620] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 192 Datafixer optimizations took 73 milliseconds
-[09Dec2023 18:12:11.832] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Guille/Documents/CODE/Minecraft%20Mods/Necronomicon/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/20.2.86/neoforge-20.2.86.jar%23192!/assets/.mcassetsroot' uses unexpected schema
-[09Dec2023 18:12:11.832] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Guille/Documents/CODE/Minecraft%20Mods/Necronomicon/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/20.2.86/neoforge-20.2.86.jar%23192!/data/.mcassetsroot' uses unexpected schema
-[09Dec2023 18:12:11.840] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[accountsHost=https://api.mojang.com, sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[09Dec2023 18:12:11.845] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[09Dec2023 18:12:11.902] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.2+13
-[09Dec2023 18:12:12.071] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 20.2.86, for MC 1.20.2 with MCP 20231019.002635
-[09Dec2023 18:12:12.076] [modloading-worker-0/ERROR] [necronomicon/]: Failed to create config directory
+[09Dec2023 19:25:35.546] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, 20.2.86, --assetIndex, asset-index, --assetsDir, C:\Users\Guille\.gradle\caches\minecraft\assets\1.20.2, --gameDir, ., --fml.neoForgeVersion, 20.2.86, --fml.fmlVersion, 1.0.16, --fml.mcVersion, 1.20.2, --fml.neoFormVersion, 20231019.002635]
+[09Dec2023 19:25:35.548] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.2 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
+[09Dec2023 19:25:35.626] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[09Dec2023 19:25:35.719] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[09Dec2023 19:25:35.871] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
+[09Dec2023 19:25:35.918] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Guille/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23138!/ Service=ModLauncher Env=CLIENT
+[09Dec2023 19:25:35.958] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 3060/PCIe/SSE2 GL version 4.6.0 NVIDIA 546.17, NVIDIA Corporation
+[09Dec2023 19:25:36.059] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\core\1.0.16\6bab0913ca1635a8e272ef89c17befb52115a3c2\core-1.0.16.jar is missing mods.toml file
+[09Dec2023 19:25:36.062] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-java\1.0.16\2ddedcd8a488fd73e3e92a59949845e9c3a7d9f2\language-java-1.0.16.jar is missing mods.toml file
+[09Dec2023 19:25:36.065] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-lowcode\1.0.16\e627c78870d4286826c4b14c0137319ff03b4e0\language-lowcode-1.0.16.jar is missing mods.toml file
+[09Dec2023 19:25:36.068] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-minecraft\1.0.16\c1f7785ff7fc0b18aa6d2d4056dcff4fee1b32be\language-minecraft-1.0.16.jar is missing mods.toml file
+[09Dec2023 19:25:36.077] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "core-1.0.16.jar" of type LIBRARY with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@6594402a
+[09Dec2023 19:25:36.077] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "language-java-1.0.16.jar" of type LANGPROVIDER with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@6594402a
+[09Dec2023 19:25:36.078] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "language-lowcode-1.0.16.jar" of type LANGPROVIDER with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@6594402a
+[09Dec2023 19:25:36.078] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "language-minecraft-1.0.16.jar" of type LANGPROVIDER with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@6594402a
+[09Dec2023 19:25:36.078] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "neoforge-20.2.86.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@6594402a
+[09Dec2023 19:25:36.078] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "main" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@6594402a
+[09Dec2023 19:25:36.078] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@6594402a
+[09Dec2023 19:25:36.100] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "TerraBlender-neoforge-1.20.2-3.2.0.14.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.ClasspathLocator@5b56b654
+[09Dec2023 19:25:36.100] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "TerraBlender-neoforge-1.20.2-3.2.0.14.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.ClasspathLocator@5b56b654
+[09Dec2023 19:25:36.104] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "events-1.0.16.jar" of type GAMELIBRARY with provider net.neoforged.fml.loading.moddiscovery.BuiltinGameLibraryLocator@138a7441
+[09Dec2023 19:25:36.194] [main/INFO] [net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
+[09Dec2023 19:25:36.194] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "mixinextras-neoforge-0.3.1.jar" of type GAMELIBRARY with provider net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator@3e58d65e
+[09Dec2023 19:25:36.785] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[09Dec2023 19:25:36.787] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, 20.2.86, --gameDir, ., --assetsDir, C:\Users\Guille\.gradle\caches\minecraft\assets\1.20.2, --assetIndex, asset-index]
+[09Dec2023 19:25:36.847] [main/WARN] [mixin/]: Reference map 'terrablender.refmap.json' for terrablender_neoforge.mixins.json could not be read. If this is a development environment you can ignore this message
+[09Dec2023 19:25:36.847] [main/WARN] [mixin/]: Reference map 'terrablender.refmap.json' for terrablender.mixins.json could not be read. If this is a development environment you can ignore this message
+[09Dec2023 19:25:37.502] [main/WARN] [oshi.util.platform.windows.PerfDataUtil/]: Failed to add PDH Counter: \Paging File(_Total)\% Usage, Error code: 0xC0000BB8
+[09Dec2023 19:25:37.502] [main/WARN] [oshi.util.platform.windows.PerfCounterQueryHandler/]: Failed to add counter for PDH counter: \Paging File(_Total)\% Usage
+[09Dec2023 19:25:37.503] [main/WARN] [oshi.util.platform.windows.PerfCounterQuery/]: Disabling further attempts to query Paging File.
+[09Dec2023 19:25:38.185] [main/WARN] [oshi.util.platform.windows.WmiQueryHandler/]: COM exception: Invalid Query: SELECT PERCENTUSAGE FROM Win32_PerfRawData_PerfOS_PagingFile
+[09Dec2023 19:25:38.202] [pool-7-thread-1/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.1).
+[09Dec2023 19:25:40.106] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 192 Datafixer optimizations took 90 milliseconds
+[09Dec2023 19:25:41.350] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Guille/Documents/CODE/Minecraft%20Mods/Necronomicon/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/20.2.86/neoforge-20.2.86.jar%23192!/assets/.mcassetsroot' uses unexpected schema
+[09Dec2023 19:25:41.350] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Guille/Documents/CODE/Minecraft%20Mods/Necronomicon/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/20.2.86/neoforge-20.2.86.jar%23192!/data/.mcassetsroot' uses unexpected schema
+[09Dec2023 19:25:41.358] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[accountsHost=https://api.mojang.com, sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[09Dec2023 19:25:41.365] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[09Dec2023 19:25:41.434] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.2+13
+[09Dec2023 19:25:41.605] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 20.2.86, for MC 1.20.2 with MCP 20231019.002635
+[09Dec2023 19:25:41.611] [modloading-worker-0/ERROR] [necronomicon/]: Failed to create config directory
 java.nio.file.NoSuchFileException: C:\Users\Guille\Documents\CODE\Minecraft Mods\Necronomicon\runs\client\config\assets\necronomicon
 	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[?:?]
 	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
@@ -61,153 +61,146 @@ java.nio.file.NoSuchFileException: C:\Users\Guille\Documents\CODE\Minecraft Mods
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[09Dec2023 18:12:12.651] [Render thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: []
-[09Dec2023 18:12:12.771] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
-[09Dec2023 18:12:12.843] [Worker-Main-3/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
-[09Dec2023 18:12:13.031] [Worker-Main-12/WARN] [net.minecraft.client.renderer.texture.SpriteLoader/]: Texture necronomicon:item/corrupted_bone with size 15x14 limits mip level from 4 to 0
-[09Dec2023 18:12:13.390] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'necronomicon:cthulhu_chestplate#inventory' referenced from: necronomicon:cthulhu_chestplate#inventory: java.io.FileNotFoundException: necronomicon:models/item/cthulhu_chestplate.json
-[09Dec2023 18:12:13.392] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'necronomicon:cthulhu_leggings#inventory' referenced from: necronomicon:cthulhu_leggings#inventory: java.io.FileNotFoundException: necronomicon:models/item/cthulhu_leggings.json
-[09Dec2023 18:12:13.393] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'necronomicon:cthulhu_boots#inventory' referenced from: necronomicon:cthulhu_boots#inventory: java.io.FileNotFoundException: necronomicon:models/item/cthulhu_boots.json
-[09Dec2023 18:12:13.393] [Worker-Main-6/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'necronomicon:cthulhu_helmet#inventory' referenced from: necronomicon:cthulhu_helmet#inventory: java.io.FileNotFoundException: necronomicon:models/item/cthulhu_helmet.json
-[09Dec2023 18:12:13.897] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
-[09Dec2023 18:12:13.897] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[09Dec2023 18:12:14.312] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on Speakers (Logitech G432 Gaming Headset)
-[09Dec2023 18:12:14.312] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
-[09Dec2023 18:12:14.397] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[09Dec2023 18:12:14.406] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[09Dec2023 18:12:14.407] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[09Dec2023 18:12:14.407] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[09Dec2023 18:12:14.408] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[09Dec2023 18:12:14.410] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[09Dec2023 18:12:14.411] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[09Dec2023 18:12:14.411] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[09Dec2023 18:12:14.411] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[09Dec2023 18:12:14.486] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[09Dec2023 18:12:14.518] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[09Dec2023 18:12:14.519] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[09Dec2023 18:12:14.519] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[09Dec2023 18:12:14.519] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
-[09Dec2023 18:12:21.500] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
-[09Dec2023 18:12:21.589] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1274 advancements
-[09Dec2023 18:12:23.183] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.2
-[09Dec2023 18:12:23.183] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[09Dec2023 18:12:23.255] [Server thread/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Configuration file .\saves\New World (1)\serverconfig\neoforge-server.toml is not correct. Correcting
-[09Dec2023 18:12:23.256] [Server thread/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key server was corrected from null to its default, SimpleCommentedConfig:{}. 
-[09Dec2023 18:12:23.256] [Server thread/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. 
-[09Dec2023 18:12:23.256] [Server thread/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key server.removeErroringEntities was corrected from null to its default, false. 
-[09Dec2023 18:12:23.256] [Server thread/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. 
-[09Dec2023 18:12:23.256] [Server thread/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key server.permissionHandler was corrected from null to its default, neoforge:default_handler. 
-[09Dec2023 18:12:23.256] [Server thread/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key server.advertiseDedicatedServerToLan was corrected from null to its default, true. 
-[09Dec2023 18:12:23.279] [Server thread/INFO] [terrablender/]: Registered region minecraft:overworld to index 0 for type OVERWORLD
-[09Dec2023 18:12:23.279] [Server thread/INFO] [terrablender/]: Registered region minecraft:nether to index 0 for type NETHER
-[09Dec2023 18:12:23.398] [Server thread/INFO] [terrablender/]: Initialized TerraBlender biomes for level stem minecraft:overworld
-[09Dec2023 18:12:23.399] [Server thread/INFO] [terrablender/]: Initialized TerraBlender biomes for level stem minecraft:the_nether
-[09Dec2023 18:12:26.209] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
-[09Dec2023 18:12:26.591] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[09Dec2023 18:12:26.723] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[09Dec2023 18:12:27.226] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[09Dec2023 18:12:27.722] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 2%
-[09Dec2023 18:12:28.222] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 4%
-[09Dec2023 18:12:28.723] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 7%
-[09Dec2023 18:12:29.219] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 10%
-[09Dec2023 18:12:29.719] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 13%
-[09Dec2023 18:12:30.216] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 16%
-[09Dec2023 18:12:30.725] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 20%
-[09Dec2023 18:12:31.224] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 24%
-[09Dec2023 18:12:31.715] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 27%
-[09Dec2023 18:12:32.227] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 33%
-[09Dec2023 18:12:32.727] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 37%
-[09Dec2023 18:12:33.227] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 43%
-[09Dec2023 18:12:33.715] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 45%
-[09Dec2023 18:12:34.224] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 50%
-[09Dec2023 18:12:34.716] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 55%
-[09Dec2023 18:12:35.226] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 60%
-[09Dec2023 18:12:35.712] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 65%
-[09Dec2023 18:12:36.219] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 70%
-[09Dec2023 18:12:36.722] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 74%
-[09Dec2023 18:12:37.213] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 80%
-[09Dec2023 18:12:37.719] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 86%
-[09Dec2023 18:12:38.226] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 89%
-[09Dec2023 18:12:38.715] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 95%
-[09Dec2023 18:12:39.001] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
-[09Dec2023 18:12:39.012] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 12802 ms
-[09Dec2023 18:12:39.100] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 32, from 10
-[09Dec2023 18:12:39.100] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
-[09Dec2023 18:12:39.478] [Netty Server IO #1/WARN] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Unknown custom packet payload: minecraft:brand
-[09Dec2023 18:12:39.512] [Render thread/INFO] [net.neoforged.neoforge.network.NetworkHooks/]: Connected to a modded server.
-[09Dec2023 18:12:39.576] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:bb121c86] logged in with entity id 126 at (233.5, 64.0, -32.5)
-[09Dec2023 18:12:39.609] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
-[09Dec2023 18:12:39.919] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 2 advancements
-[09Dec2023 18:12:44.527] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev has made the advancement [The Book of the Dead]
-[09Dec2023 18:12:44.537] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Dev has made the advancement [The Book of the Dead]
-[09Dec2023 18:12:44.562] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 5 advancements
-[09Dec2023 18:12:45.252] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[09Dec2023 18:12:45.273] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[09Dec2023 18:12:45.284] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[09Dec2023 18:12:45.285] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:lovecraft_country
-[09Dec2023 18:12:45.286] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:dagon
-[09Dec2023 18:12:45.287] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[09Dec2023 18:12:47.625] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev has made the advancement [The Rapture]
-[09Dec2023 18:12:47.631] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Dev has made the advancement [The Rapture]
-[09Dec2023 18:12:47.665] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 5 advancements
-[09Dec2023 18:12:52.886] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 22 advancements
-[09Dec2023 18:13:13.115] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Set own game mode to Survival Mode]
-[09Dec2023 18:13:13.115] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Set own game mode to Survival Mode
-[09Dec2023 18:13:15.737] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Set own game mode to Creative Mode]
-[09Dec2023 18:13:15.740] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Set own game mode to Creative Mode
-[09Dec2023 18:13:32.242] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Set own game mode to Survival Mode]
-[09Dec2023 18:13:32.242] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Set own game mode to Survival Mode
-[09Dec2023 18:13:38.013] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Set own game mode to Creative Mode]
-[09Dec2023 18:13:38.018] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Set own game mode to Creative Mode
-[09Dec2023 18:13:39.356] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[09Dec2023 18:13:39.362] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[09Dec2023 18:13:39.375] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[09Dec2023 18:13:39.376] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:lovecraft_country
-[09Dec2023 18:13:39.377] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:dagon
-[09Dec2023 18:13:39.378] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[09Dec2023 18:13:47.892] [Worker-Main-2/WARN] [net.minecraft.world.level.levelgen.heightproviders.UniformHeight/]: Empty height range: [6 above bottom--1 absolute]
-[09Dec2023 18:13:48.113] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Teleported Dev to 264.941675, 63.000000, -30.106105]
-[09Dec2023 18:13:48.113] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[09Dec2023 18:13:48.122] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[09Dec2023 18:13:48.161] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[09Dec2023 18:13:48.163] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:lovecraft_country
-[09Dec2023 18:13:48.165] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:dagon
-[09Dec2023 18:13:48.166] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[09Dec2023 18:13:48.335] [Worker-Main-7/WARN] [net.minecraft.world.level.levelgen.heightproviders.UniformHeight/]: Empty height range: [0 above bottom--8 absolute]
-[09Dec2023 18:13:48.588] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Teleported Dev to 264.941675, 63.000000, -30.106105
-[09Dec2023 18:13:58.896] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Teleported Dev to 272.565867, 71.217996, -45.930250]
-[09Dec2023 18:13:58.904] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Teleported Dev to 272.565867, 71.217996, -45.930250
-[09Dec2023 18:14:02.051] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[09Dec2023 18:14:02.055] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[09Dec2023 18:14:02.059] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[09Dec2023 18:14:02.060] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:lovecraft_country
-[09Dec2023 18:14:02.061] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:dagon
-[09Dec2023 18:14:02.063] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[09Dec2023 18:14:08.940] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Removed every effect from Dev]
-[09Dec2023 18:14:08.943] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Removed every effect from Dev
-[09Dec2023 18:15:11.505] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[09Dec2023 18:15:11.511] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[09Dec2023 18:15:11.515] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[09Dec2023 18:15:11.516] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:lovecraft_country
-[09Dec2023 18:15:11.517] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:dagon
-[09Dec2023 18:15:11.524] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[09Dec2023 18:15:12.109] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
-[09Dec2023 18:15:12.110] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
-[09Dec2023 18:15:12.114] [Server thread/INFO] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Stopping singleplayer server as player logged out
-[09Dec2023 18:15:12.165] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
-[09Dec2023 18:15:12.165] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
-[09Dec2023 18:15:12.165] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
-[09Dec2023 18:15:12.395] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[09Dec2023 18:15:12.429] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[09Dec2023 18:15:12.429] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:lovecraft_country
-[09Dec2023 18:15:12.433] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:dagon
-[09Dec2023 18:15:13.039] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[09Dec2023 18:15:13.042] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (New World (1)): All chunks are saved
-[09Dec2023 18:15:13.042] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[09Dec2023 18:15:13.042] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (lovecraft_country): All chunks are saved
-[09Dec2023 18:15:13.042] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (dagon): All chunks are saved
-[09Dec2023 18:15:13.042] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[09Dec2023 18:15:13.042] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
-[09Dec2023 18:15:15.178] [Render thread/INFO] [net.minecraft.world.level.storage.LevelStorageSource/]: Deleting level New World (1)
-[09Dec2023 18:15:15.178] [Render thread/INFO] [net.minecraft.world.level.storage.LevelStorageSource/]: Attempt 1...
-[09Dec2023 18:15:15.896] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[09Dec2023 19:25:42.197] [Render thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: []
+[09Dec2023 19:25:42.334] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
+[09Dec2023 19:25:42.433] [Worker-Main-10/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
+[09Dec2023 19:25:42.608] [Worker-Main-2/WARN] [net.minecraft.client.renderer.texture.SpriteLoader/]: Texture necronomicon:item/corrupted_bone with size 15x14 limits mip level from 4 to 0
+[09Dec2023 19:25:42.968] [Worker-Main-11/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'necronomicon:cthulhu_chestplate#inventory' referenced from: necronomicon:cthulhu_chestplate#inventory: java.io.FileNotFoundException: necronomicon:models/item/cthulhu_chestplate.json
+[09Dec2023 19:25:42.970] [Worker-Main-11/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'necronomicon:cthulhu_leggings#inventory' referenced from: necronomicon:cthulhu_leggings#inventory: java.io.FileNotFoundException: necronomicon:models/item/cthulhu_leggings.json
+[09Dec2023 19:25:42.970] [Worker-Main-11/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'necronomicon:cthulhu_boots#inventory' referenced from: necronomicon:cthulhu_boots#inventory: java.io.FileNotFoundException: necronomicon:models/item/cthulhu_boots.json
+[09Dec2023 19:25:42.971] [Worker-Main-11/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'necronomicon:cthulhu_helmet#inventory' referenced from: necronomicon:cthulhu_helmet#inventory: java.io.FileNotFoundException: necronomicon:models/item/cthulhu_helmet.json
+[09Dec2023 19:25:43.639] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[09Dec2023 19:25:43.640] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[09Dec2023 19:25:43.934] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on Speakers (Logitech G432 Gaming Headset)
+[09Dec2023 19:25:43.934] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[09Dec2023 19:25:44.020] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[09Dec2023 19:25:44.029] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[09Dec2023 19:25:44.029] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[09Dec2023 19:25:44.029] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[09Dec2023 19:25:44.030] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[09Dec2023 19:25:44.033] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[09Dec2023 19:25:44.033] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[09Dec2023 19:25:44.033] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[09Dec2023 19:25:44.033] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[09Dec2023 19:25:44.111] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[09Dec2023 19:25:44.165] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[09Dec2023 19:25:44.167] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[09Dec2023 19:25:44.167] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[09Dec2023 19:25:44.167] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[09Dec2023 19:25:57.061] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
+[09Dec2023 19:25:57.135] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1274 advancements
+[09Dec2023 19:25:57.473] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.2
+[09Dec2023 19:25:57.473] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[09Dec2023 19:25:57.553] [Server thread/INFO] [terrablender/]: Registered region minecraft:overworld to index 0 for type OVERWORLD
+[09Dec2023 19:25:57.553] [Server thread/INFO] [terrablender/]: Registered region minecraft:nether to index 0 for type NETHER
+[09Dec2023 19:25:57.688] [Server thread/INFO] [terrablender/]: Initialized TerraBlender biomes for level stem minecraft:overworld
+[09Dec2023 19:25:57.688] [Server thread/INFO] [terrablender/]: Initialized TerraBlender biomes for level stem minecraft:the_nether
+[09Dec2023 19:25:58.749] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[09Dec2023 19:26:00.100] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[09Dec2023 19:26:00.122] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[09Dec2023 19:26:00.141] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[09Dec2023 19:26:00.269] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[09Dec2023 19:26:00.778] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[09Dec2023 19:26:01.277] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 72%
+[09Dec2023 19:26:01.372] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[09Dec2023 19:26:01.388] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 2625 ms
+[09Dec2023 19:26:01.492] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 32, from 10
+[09Dec2023 19:26:01.493] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[09Dec2023 19:26:01.837] [Netty Server IO #1/WARN] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Unknown custom packet payload: minecraft:brand
+[09Dec2023 19:26:01.865] [Render thread/INFO] [net.neoforged.neoforge.network.NetworkHooks/]: Connected to a modded server.
+[09Dec2023 19:26:01.910] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:05f0356e] logged in with entity id 248 at (-1.5381092938056218, 76.75748682415012, 3.5778045481039302)
+[09Dec2023 19:26:01.944] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[09Dec2023 19:26:02.314] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 4 advancements
+[09Dec2023 19:26:02.885] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[09Dec2023 19:26:02.895] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[09Dec2023 19:26:04.464] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:lovecraft_country
+[09Dec2023 19:26:04.465] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[09Dec2023 19:26:04.466] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:dagon
+[09Dec2023 19:26:04.467] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[09Dec2023 19:26:23.285] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Teleported Dev to -3.715944, 76.757487, -4.624914]
+[09Dec2023 19:26:23.285] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[09Dec2023 19:26:23.290] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[09Dec2023 19:26:23.318] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Teleported Dev to -3.715944, 76.757487, -4.624914
+[09Dec2023 19:26:23.427] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:lovecraft_country
+[09Dec2023 19:26:23.428] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[09Dec2023 19:26:23.429] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:dagon
+[09Dec2023 19:26:23.431] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[09Dec2023 19:26:32.162] [Server thread/INFO] [net.minecraft.server.commands.LocateCommand/]: Locating element necronomicon:ribs_small took 20 ms
+[09Dec2023 19:26:32.165] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] The nearest necronomicon:ribs_small is at [-816, ~, -688] (1059 blocks away)
+[09Dec2023 19:26:34.133] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Teleported Dev to -815.500000, 80.368136, -687.500000]
+[09Dec2023 19:26:34.149] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Teleported Dev to -815.500000, 80.368136, -687.500000
+[09Dec2023 19:26:36.837] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 13 advancements
+[09Dec2023 19:27:24.919] [Server thread/INFO] [net.minecraft.server.commands.LocateCommand/]: Locating element necronomicon:ribs_huge took 0 ms
+[09Dec2023 19:27:24.923] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] The nearest necronomicon:ribs_huge is at [-1248, ~, -1104] (586 blocks away)
+[09Dec2023 19:27:26.386] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Teleported Dev to -1247.500000, 58.242903, -1103.500000]
+[09Dec2023 19:27:26.387] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Teleported Dev to -1247.500000, 58.242903, -1103.500000
+[09Dec2023 19:27:35.989] [Server thread/INFO] [net.minecraft.server.commands.LocateCommand/]: Locating element necronomicon:ribs_giant took 1459 ms
+[09Dec2023 19:27:35.993] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] The nearest necronomicon:ribs_giant is at [-272, ~, -3104] (2225 blocks away)
+[09Dec2023 19:27:37.908] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Teleported Dev to -271.500000, 68.737235, -3103.500000]
+[09Dec2023 19:27:37.908] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Teleported Dev to -271.500000, 68.737235, -3103.500000
+[09Dec2023 19:27:39.773] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[09Dec2023 19:27:39.777] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[09Dec2023 19:27:39.781] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:lovecraft_country
+[09Dec2023 19:27:39.782] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[09Dec2023 19:27:39.783] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:dagon
+[09Dec2023 19:27:39.787] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[09Dec2023 19:27:40.328] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
+[09Dec2023 19:27:40.328] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
+[09Dec2023 19:27:40.334] [Server thread/INFO] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Stopping singleplayer server as player logged out
+[09Dec2023 19:27:40.373] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[09Dec2023 19:27:40.373] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[09Dec2023 19:27:40.373] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[09Dec2023 19:27:40.565] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[09Dec2023 19:27:40.605] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:lovecraft_country
+[09Dec2023 19:27:40.605] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[09Dec2023 19:27:40.606] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/necronomicon:dagon
+[09Dec2023 19:27:40.914] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[09Dec2023 19:27:40.917] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (New World (1)): All chunks are saved
+[09Dec2023 19:27:40.917] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (lovecraft_country): All chunks are saved
+[09Dec2023 19:27:40.917] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[09Dec2023 19:27:40.917] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (dagon): All chunks are saved
+[09Dec2023 19:27:40.917] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[09Dec2023 19:27:40.917] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[09Dec2023 19:27:43.253] [Render thread/INFO] [net.minecraft.world.level.storage.LevelStorageSource/]: Deleting level New World (1)
+[09Dec2023 19:27:43.253] [Render thread/INFO] [net.minecraft.world.level.storage.LevelStorageSource/]: Attempt 1...
+[09Dec2023 19:27:44.235] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
+[09Dec2023 19:27:44.255] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1274 advancements
+[09Dec2023 19:27:44.515] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.2
+[09Dec2023 19:27:44.515] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[09Dec2023 19:27:44.525] [Server thread/INFO] [terrablender/]: Initialized TerraBlender biomes for level stem minecraft:the_nether
+[09Dec2023 19:27:44.545] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[09Dec2023 19:27:44.975] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[09Dec2023 19:27:45.066] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[09Dec2023 19:27:45.494] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[09Dec2023 19:27:45.499] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 938 ms
+[09Dec2023 19:27:45.506] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 32, from 10
+[09Dec2023 19:27:45.506] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[09Dec2023 19:27:45.703] [Netty Server IO #3/WARN] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Unknown custom packet payload: minecraft:brand
+[09Dec2023 19:27:45.708] [Render thread/INFO] [net.neoforged.neoforge.network.NetworkHooks/]: Connected to a modded server.
+[09Dec2023 19:27:45.716] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:6ad4283f] logged in with entity id 1684 at (-132.2799300423966, -47.24894058481391, -17.429031250170112)
+[09Dec2023 19:27:45.757] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[09Dec2023 19:27:45.944] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 47 advancements
+[09Dec2023 19:28:26.446] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[09Dec2023 19:28:26.453] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Superflat]'/minecraft:overworld
+[09Dec2023 19:28:26.462] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Superflat]'/necronomicon:lovecraft_country
+[09Dec2023 19:28:26.463] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Superflat]'/minecraft:the_end
+[09Dec2023 19:28:26.464] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Superflat]'/necronomicon:dagon
+[09Dec2023 19:28:26.465] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Superflat]'/minecraft:the_nether
+[09Dec2023 19:28:26.803] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
+[09Dec2023 19:28:26.803] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
+[09Dec2023 19:28:26.812] [Server thread/INFO] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Stopping singleplayer server as player logged out
+[09Dec2023 19:28:26.861] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[09Dec2023 19:28:26.862] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[09Dec2023 19:28:26.862] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[09Dec2023 19:28:27.201] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Superflat]'/minecraft:overworld
+[09Dec2023 19:28:27.466] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Superflat]'/necronomicon:lovecraft_country
+[09Dec2023 19:28:27.466] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Superflat]'/minecraft:the_end
+[09Dec2023 19:28:27.467] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Superflat]'/necronomicon:dagon
+[09Dec2023 19:28:27.467] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Superflat]'/minecraft:the_nether
+[09Dec2023 19:28:27.471] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (Superflat): All chunks are saved
+[09Dec2023 19:28:27.471] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (lovecraft_country): All chunks are saved
+[09Dec2023 19:28:27.471] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[09Dec2023 19:28:27.471] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (dagon): All chunks are saved
+[09Dec2023 19:28:27.471] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[09Dec2023 19:28:27.471] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[09Dec2023 19:28:28.366] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
