@@ -29,7 +29,7 @@ public class NecronomiconDimensionSpecialEffects {
 
         @Override
         public boolean isFoggyAt(int x, int y) {
-            return false;
+            return y > 100;
         }
 
         @Override

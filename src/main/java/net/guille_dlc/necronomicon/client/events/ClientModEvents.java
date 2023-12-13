@@ -1,4 +1,4 @@
-package net.guille_dlc.necronomicon.common.events;
+package net.guille_dlc.necronomicon.client.events;
 
 import net.guille_dlc.necronomicon.Necronomicon;
 import net.guille_dlc.necronomicon.client.entity.render.AngleRenderer;

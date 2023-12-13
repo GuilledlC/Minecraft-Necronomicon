@@ -1,31 +1,31 @@
-[09Dec2023 18:57:10.743] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--mod, necronomicon, --all, --output, C:\Users\Guille\Documents\CODE\Minecraft Mods\Necronomicon\src\generated\resources, --existing, C:\Users\Guille\Documents\CODE\Minecraft Mods\Necronomicon\src\main\resources, --launchTarget, forgedatauserdev, --assetIndex, asset-index, --assetsDir, C:\Users\Guille\.gradle\caches\minecraft\assets\1.20.2, --gameDir, ., --fml.neoForgeVersion, 20.2.86, --fml.fmlVersion, 1.0.16, --fml.mcVersion, 1.20.2, --fml.neoFormVersion, 20231019.002635]
-[09Dec2023 18:57:10.753] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.2 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
-[09Dec2023 18:57:10.967] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[09Dec2023 18:57:11.030] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Guille/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23138!/ Service=ModLauncher Env=CLIENT
-[09Dec2023 18:57:11.331] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\core\1.0.16\6bab0913ca1635a8e272ef89c17befb52115a3c2\core-1.0.16.jar is missing mods.toml file
-[09Dec2023 18:57:11.338] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-java\1.0.16\2ddedcd8a488fd73e3e92a59949845e9c3a7d9f2\language-java-1.0.16.jar is missing mods.toml file
-[09Dec2023 18:57:11.342] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-lowcode\1.0.16\e627c78870d4286826c4b14c0137319ff03b4e0\language-lowcode-1.0.16.jar is missing mods.toml file
-[09Dec2023 18:57:11.347] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-minecraft\1.0.16\c1f7785ff7fc0b18aa6d2d4056dcff4fee1b32be\language-minecraft-1.0.16.jar is missing mods.toml file
-[09Dec2023 18:57:11.364] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "core-1.0.16.jar" of type LIBRARY with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@7728643a
-[09Dec2023 18:57:11.364] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "language-java-1.0.16.jar" of type LANGPROVIDER with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@7728643a
-[09Dec2023 18:57:11.364] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "language-lowcode-1.0.16.jar" of type LANGPROVIDER with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@7728643a
-[09Dec2023 18:57:11.365] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "language-minecraft-1.0.16.jar" of type LANGPROVIDER with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@7728643a
-[09Dec2023 18:57:11.365] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "neoforge-20.2.86.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@7728643a
-[09Dec2023 18:57:11.365] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "main" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@7728643a
-[09Dec2023 18:57:11.365] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@7728643a
-[09Dec2023 18:57:11.408] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "TerraBlender-neoforge-1.20.2-3.2.0.14.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.ClasspathLocator@73e132e0
-[09Dec2023 18:57:11.408] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "TerraBlender-neoforge-1.20.2-3.2.0.14.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.ClasspathLocator@73e132e0
-[09Dec2023 18:57:11.417] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "events-1.0.16.jar" of type GAMELIBRARY with provider net.neoforged.fml.loading.moddiscovery.BuiltinGameLibraryLocator@4d666b41
-[09Dec2023 18:57:11.521] [main/INFO] [net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
-[09Dec2023 18:57:11.521] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "mixinextras-neoforge-0.3.1.jar" of type GAMELIBRARY with provider net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator@56bc3fac
-[09Dec2023 18:57:12.955] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[09Dec2023 18:57:12.963] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\Guille\.gradle\caches\minecraft\assets\1.20.2, --mod, necronomicon, --all, --output, C:\Users\Guille\Documents\CODE\Minecraft Mods\Necronomicon\src\generated\resources, --existing, C:\Users\Guille\Documents\CODE\Minecraft Mods\Necronomicon\src\main\resources, --assetIndex, asset-index]
-[09Dec2023 18:57:13.075] [main/WARN] [mixin/]: Reference map 'terrablender.refmap.json' for terrablender_neoforge.mixins.json could not be read. If this is a development environment you can ignore this message
-[09Dec2023 18:57:13.077] [main/WARN] [mixin/]: Reference map 'terrablender.refmap.json' for terrablender.mixins.json could not be read. If this is a development environment you can ignore this message
-[09Dec2023 18:57:13.668] [main/INFO] [net.neoforged.neoforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [necronomicon]
-[09Dec2023 18:57:13.678] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.1).
-[09Dec2023 18:57:19.967] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 20.2.86, for MC 1.20.2 with MCP 20231019.002635
-[09Dec2023 18:57:19.976] [modloading-worker-0/ERROR] [necronomicon/]: Failed to create config directory
+[13Dec2023 20:35:09.828] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--mod, necronomicon, --all, --output, C:\Users\Guille\Documents\CODE\Minecraft Mods\Necronomicon\src\generated\resources, --existing, C:\Users\Guille\Documents\CODE\Minecraft Mods\Necronomicon\src\main\resources, --launchTarget, forgedatauserdev, --assetIndex, asset-index, --assetsDir, C:\Users\Guille\.gradle\caches\minecraft\assets\1.20.2, --gameDir, ., --fml.neoForgeVersion, 20.2.86, --fml.fmlVersion, 1.0.16, --fml.mcVersion, 1.20.2, --fml.neoFormVersion, 20231019.002635]
+[13Dec2023 20:35:09.837] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.2 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
+[13Dec2023 20:35:09.925] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[13Dec2023 20:35:09.958] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Guille/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23138!/ Service=ModLauncher Env=CLIENT
+[13Dec2023 20:35:10.134] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\core\1.0.16\6bab0913ca1635a8e272ef89c17befb52115a3c2\core-1.0.16.jar is missing mods.toml file
+[13Dec2023 20:35:10.136] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-java\1.0.16\2ddedcd8a488fd73e3e92a59949845e9c3a7d9f2\language-java-1.0.16.jar is missing mods.toml file
+[13Dec2023 20:35:10.139] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-lowcode\1.0.16\e627c78870d4286826c4b14c0137319ff03b4e0\language-lowcode-1.0.16.jar is missing mods.toml file
+[13Dec2023 20:35:10.141] [main/WARN] [net.neoforged.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Guille\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\language-minecraft\1.0.16\c1f7785ff7fc0b18aa6d2d4056dcff4fee1b32be\language-minecraft-1.0.16.jar is missing mods.toml file
+[13Dec2023 20:35:10.155] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "core-1.0.16.jar" of type LIBRARY with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@5167268
+[13Dec2023 20:35:10.155] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "language-java-1.0.16.jar" of type LANGPROVIDER with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@5167268
+[13Dec2023 20:35:10.155] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "language-lowcode-1.0.16.jar" of type LANGPROVIDER with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@5167268
+[13Dec2023 20:35:10.155] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "language-minecraft-1.0.16.jar" of type LANGPROVIDER with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@5167268
+[13Dec2023 20:35:10.155] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "neoforge-20.2.86.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@5167268
+[13Dec2023 20:35:10.155] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "main" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@5167268
+[13Dec2023 20:35:10.156] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@5167268
+[13Dec2023 20:35:10.174] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "TerraBlender-neoforge-1.20.2-3.2.0.14.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.ClasspathLocator@2472c7d8
+[13Dec2023 20:35:10.174] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "TerraBlender-neoforge-1.20.2-3.2.0.14.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.ClasspathLocator@2472c7d8
+[13Dec2023 20:35:10.179] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "events-1.0.16.jar" of type GAMELIBRARY with provider net.neoforged.fml.loading.moddiscovery.BuiltinGameLibraryLocator@30f4b1a6
+[13Dec2023 20:35:10.252] [main/INFO] [net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
+[13Dec2023 20:35:10.253] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "mixinextras-neoforge-0.3.1.jar" of type GAMELIBRARY with provider net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator@2ba45490
+[13Dec2023 20:35:10.867] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[13Dec2023 20:35:10.870] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\Guille\.gradle\caches\minecraft\assets\1.20.2, --mod, necronomicon, --all, --output, C:\Users\Guille\Documents\CODE\Minecraft Mods\Necronomicon\src\generated\resources, --existing, C:\Users\Guille\Documents\CODE\Minecraft Mods\Necronomicon\src\main\resources, --assetIndex, asset-index]
+[13Dec2023 20:35:10.930] [main/WARN] [mixin/]: Reference map 'terrablender.refmap.json' for terrablender_neoforge.mixins.json could not be read. If this is a development environment you can ignore this message
+[13Dec2023 20:35:10.931] [main/WARN] [mixin/]: Reference map 'terrablender.refmap.json' for terrablender.mixins.json could not be read. If this is a development environment you can ignore this message
+[13Dec2023 20:35:11.211] [main/INFO] [net.neoforged.neoforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [necronomicon]
+[13Dec2023 20:35:11.215] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.1).
+[13Dec2023 20:35:14.637] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 20.2.86, for MC 1.20.2 with MCP 20231019.002635
+[13Dec2023 20:35:14.642] [modloading-worker-0/ERROR] [necronomicon/]: Failed to create config directory
 java.nio.file.NoSuchFileException: C:\Users\Guille\Documents\CODE\Minecraft Mods\Necronomicon\runs\data\config\assets\necronomicon
 	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[?:?]
 	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
@@ -49,9 +49,9 @@ java.nio.file.NoSuchFileException: C:\Users\Guille\Documents\CODE\Minecraft Mods
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
-[09Dec2023 18:57:20.706] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Guille/Documents/CODE/Minecraft%20Mods/Necronomicon/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/20.2.86/neoforge-20.2.86.jar%23192!/assets/.mcassetsroot' uses unexpected schema
-[09Dec2023 18:57:20.706] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Guille/Documents/CODE/Minecraft%20Mods/Necronomicon/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/20.2.86/neoforge-20.2.86.jar%23192!/data/.mcassetsroot' uses unexpected schema
-[09Dec2023 18:57:20.725] [main/ERROR] [net.minecraft.server.packs.AbstractPackResources/]: Couldn't load filter metadata
+[13Dec2023 20:35:15.288] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Guille/Documents/CODE/Minecraft%20Mods/Necronomicon/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/20.2.86/neoforge-20.2.86.jar%23192!/assets/.mcassetsroot' uses unexpected schema
+[13Dec2023 20:35:15.288] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Guille/Documents/CODE/Minecraft%20Mods/Necronomicon/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/20.2.86/neoforge-20.2.86.jar%23192!/data/.mcassetsroot' uses unexpected schema
+[13Dec2023 20:35:15.320] [main/ERROR] [net.minecraft.server.packs.AbstractPackResources/]: Couldn't load filter metadata
 com.google.gson.JsonParseException: com.google.gson.stream.MalformedJsonException: Use JsonReader.setLenient(true) to accept malformed JSON at line 6 column 20 path $.pack.pack_format
 	at net.minecraft.util.GsonHelper.fromNullableJson(GsonHelper.java:438) ~[neoforge-20.2.86.jar:?]
 	at net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:443) ~[neoforge-20.2.86.jar:?]
@@ -90,7 +90,7 @@ Caused by: com.google.gson.stream.MalformedJsonException: Use JsonReader.setLeni
 	at com.google.gson.internal.bind.TypeAdapters$34$1.read(TypeAdapters.java:1007) ~[gson-2.10.1.jar:?]
 	at net.minecraft.util.GsonHelper.fromNullableJson(GsonHelper.java:436) ~[neoforge-20.2.86.jar:?]
 	... 26 more
-[09Dec2023 18:57:20.740] [main/ERROR] [net.minecraft.server.packs.AbstractPackResources/]: Couldn't load filter metadata
+[13Dec2023 20:35:15.351] [main/ERROR] [net.minecraft.server.packs.AbstractPackResources/]: Couldn't load filter metadata
 com.google.gson.JsonParseException: com.google.gson.stream.MalformedJsonException: Use JsonReader.setLenient(true) to accept malformed JSON at line 6 column 20 path $.pack.pack_format
 	at net.minecraft.util.GsonHelper.fromNullableJson(GsonHelper.java:438) ~[neoforge-20.2.86.jar:?]
 	at net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:443) ~[neoforge-20.2.86.jar:?]
@@ -129,7 +129,7 @@ Caused by: com.google.gson.stream.MalformedJsonException: Use JsonReader.setLeni
 	at com.google.gson.internal.bind.TypeAdapters$34$1.read(TypeAdapters.java:1007) ~[gson-2.10.1.jar:?]
 	at net.minecraft.util.GsonHelper.fromNullableJson(GsonHelper.java:436) ~[neoforge-20.2.86.jar:?]
 	... 26 more
-[09Dec2023 18:57:20.831] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
-[09Dec2023 18:57:21.024] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 193 ms
-[09Dec2023 18:57:21.024] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 193 ms
-[09Dec2023 18:57:21.030] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 6, old count: 6, new count: 7, removed stale: 0, written: 2
+[13Dec2023 20:35:15.475] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[13Dec2023 20:35:15.679] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 203 ms
+[13Dec2023 20:35:15.679] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 203 ms
+[13Dec2023 20:35:15.683] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 6, old count: 6, new count: 7, removed stale: 0, written: 0
