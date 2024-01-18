@@ -5,5 +5,5 @@ import java.util.function.Supplier;
 
 public class NecronomiconParticles {
 
-    public static Supplier<SimpleParticleType> BLOOD_PARTICLE;
+	public static Supplier<SimpleParticleType> BLOOD_PARTICLE;
 }

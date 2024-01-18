@@ -14,31 +14,31 @@ import static net.guille_dlc.necronomicon.common.block.NecronomiconBlocks.CORRUP
 
 public class ModBlocks {
 
-    public static void setup() {
-        registerBlocks();
-    }
+	public static void setup() {
+		registerBlocks();
+	}
 
-    private static void registerBlocks() {
-        CORRUPTED_BONE_BLOCK = registerBlock(() ->
-                new RotatedPillarBlock(
-                        BlockBehaviour.Properties.of()
-                                .mapColor(MapColor.SAND)
-                                .instrument(NoteBlockInstrument.XYLOPHONE)
-                                .requiresCorrectToolForDrops()
-                                .strength(1.0F)
-                                .sound(SoundType.BONE_BLOCK)
-                ),
-                "corrupted_bone_block"
-        );
-    }
+	private static void registerBlocks() {
+		CORRUPTED_BONE_BLOCK = registerBlock(() ->
+				new RotatedPillarBlock(
+						BlockBehaviour.Properties.of()
+								.mapColor(MapColor.SAND)
+								.instrument(NoteBlockInstrument.XYLOPHONE)
+								.requiresCorrectToolForDrops()
+								.strength(1.0F)
+								.sound(SoundType.BONE_BLOCK)
+				),
+				"corrupted_bone_block"
+		);
+	}
 
-    private static <T extends Block> Supplier<T> registerBlock(Supplier<T> blockSupplier, String name) {
-        Supplier<T> ret = Necronomicon.BLOCK_REGISTER.register(name, blockSupplier);
-        registerBlockItem(ret, name);
-        return ret;
-    }
+	private static <T extends Block> Supplier<T> registerBlock(Supplier<T> blockSupplier, String name) {
+		Supplier<T> ret = Necronomicon.BLOCK_REGISTER.register(name, blockSupplier);
+		registerBlockItem(ret, name);
+		return ret;
+	}
 
-    private static <T extends Block> Supplier<Item> registerBlockItem(Supplier<T> blockSupplier, String name) {
-        return ModItems.registerItem(() -> new BlockItem(blockSupplier.get(), new Item.Properties()), name);
-    }
+	private static <T extends Block> Supplier<Item> registerBlockItem(Supplier<T> blockSupplier, String name) {
+		return ModItems.registerItem(() -> new BlockItem(blockSupplier.get(), new Item.Properties()), name);
+	}
 }

@@ -6,14 +6,14 @@ package net.guille_dlc.necronomicon.common.worldgen;
 
 /*public class OverworldRegion extends Region {
 
-    public static ResourceLocation LOCATION = new ResourceLocation(Necronomicon.MOD_ID, "overworld");
+	public static ResourceLocation LOCATION = new ResourceLocation(Necronomicon.MOD_ID, "overworld");
 
-    public OverworldRegion(int weight) {
-        super(LOCATION, RegionType.OVERWORLD, weight);
-    }
+	public OverworldRegion(int weight) {
+		super(LOCATION, RegionType.OVERWORLD, weight);
+	}
 
-    @Override
-    public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
-        (new LovecraftBiomeBuilder()).addBiomes(registry, mapper);
-    }
+	@Override
+	public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
+		(new LovecraftBiomeBuilder()).addBiomes(registry, mapper);
+	}
 }*/

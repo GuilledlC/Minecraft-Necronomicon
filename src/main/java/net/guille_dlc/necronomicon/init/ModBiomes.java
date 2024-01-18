@@ -15,25 +15,25 @@ import terrablender.api.SurfaceRuleManager;
 
 public class ModBiomes {
 
-    public static void setupBiomes() {
-        //Register the regions
-        //Regions.register(new OverworldRegion(ModConfig.GenerationConfig.overworldRegionWeight.get()));
+	public static void setupBiomes() {
+		//Register the regions
+		//Regions.register(new OverworldRegion(ModConfig.GenerationConfig.overworldRegionWeight.get()));
 
-        //Register the surface rules
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, Necronomicon.MOD_ID, NecronomiconSurfaceRuleData.makeRules());
-        /**To do*/
-    }
+		//Register the surface rules
+		SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, Necronomicon.MOD_ID, NecronomiconSurfaceRuleData.makeRules());
+		/**To do*/
+	}
 
-    public static void bootstrapBiomes(BootstapContext<Biome> context) {
-        HolderGetter<ConfiguredWorldCarver<?>> carverGetter = context.lookup(Registries.CONFIGURED_CARVER);
-        HolderGetter<PlacedFeature> placedFeatureGetter = context.lookup(Registries.PLACED_FEATURE);
+	public static void bootstrapBiomes(BootstapContext<Biome> context) {
+		HolderGetter<ConfiguredWorldCarver<?>> carverGetter = context.lookup(Registries.CONFIGURED_CARVER);
+		HolderGetter<PlacedFeature> placedFeatureGetter = context.lookup(Registries.PLACED_FEATURE);
 
-        register(context, NecronomiconBiomes.ACADIAN_FOREST, NecronomiconBiomes.acadianForest(placedFeatureGetter, carverGetter));
-        register(context, NecronomiconBiomes.MUDDY_WASTELAND, NecronomiconBiomes.muddyWasteland(placedFeatureGetter, carverGetter));
-    }
+		register(context, NecronomiconBiomes.ACADIAN_FOREST, NecronomiconBiomes.acadianForest(placedFeatureGetter, carverGetter));
+		register(context, NecronomiconBiomes.MUDDY_WASTELAND, NecronomiconBiomes.muddyWasteland(placedFeatureGetter, carverGetter));
+	}
 
-    public static void register(BootstapContext<Biome> context, ResourceKey<Biome> key, Biome biome) {
-        context.register(key, biome);
-    }
+	public static void register(BootstapContext<Biome> context, ResourceKey<Biome> key, Biome biome) {
+		context.register(key, biome);
+	}
 }
 

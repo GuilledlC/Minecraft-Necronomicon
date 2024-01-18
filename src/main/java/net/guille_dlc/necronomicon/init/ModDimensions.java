@@ -11,22 +11,22 @@ import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 
 public class ModDimensions {
 
-    public static void setup() {
+	public static void setup() {
 
-    }
+	}
 
-    public static void bootstrapDimensionTypes(BootstapContext<DimensionType> context) {
-        context.register(NecronomiconDimensions.LOVECRAFT_COUNTRY_TYPE, NecronomiconDimensions.lovecraftCountry());
-        context.register(NecronomiconDimensions.DAGON_TYPE, NecronomiconDimensions.dagon());
-    }
+	public static void bootstrapDimensionTypes(BootstapContext<DimensionType> context) {
+		context.register(NecronomiconDimensions.LOVECRAFT_COUNTRY_TYPE, NecronomiconDimensions.lovecraftCountry());
+		context.register(NecronomiconDimensions.DAGON_TYPE, NecronomiconDimensions.dagon());
+	}
 
-    public static void bootstrapStems(BootstapContext<LevelStem> context) {
-        HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
-        HolderGetter<DimensionType> dimensionTypes = context.lookup(Registries.DIMENSION_TYPE);
-        HolderGetter<NoiseGeneratorSettings> noise = context.lookup(Registries.NOISE_SETTINGS);
+	public static void bootstrapStems(BootstapContext<LevelStem> context) {
+		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
+		HolderGetter<DimensionType> dimensionTypes = context.lookup(Registries.DIMENSION_TYPE);
+		HolderGetter<NoiseGeneratorSettings> noise = context.lookup(Registries.NOISE_SETTINGS);
 
-        context.register(NecronomiconDimensions.LOVECRAFT_COUNTRY_STEM, NecronomiconDimensions.lovecraftCoutryStem(biomes, dimensionTypes, noise));
-        context.register(NecronomiconDimensions.DAGON_STEM, NecronomiconDimensions.dagonStem(biomes, dimensionTypes, noise));
-    }
+		context.register(NecronomiconDimensions.LOVECRAFT_COUNTRY_STEM, NecronomiconDimensions.lovecraftCoutryStem(biomes, dimensionTypes, noise));
+		context.register(NecronomiconDimensions.DAGON_STEM, NecronomiconDimensions.dagonStem(biomes, dimensionTypes, noise));
+	}
 
 }

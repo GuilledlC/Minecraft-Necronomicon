@@ -39,75 +39,75 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 @Mod(Necronomicon.MOD_ID)
 public class Necronomicon
 {
-    public static final String MOD_ID = "necronomicon";
+	public static final String MOD_ID = "necronomicon";
 
-    public static ResourceLocation id (String path) {
-        return new ResourceLocation(MOD_ID, path);
-    }
+	public static ResourceLocation id (String path) {
+		return new ResourceLocation(MOD_ID, path);
+	}
 
-    public static final DeferredRegister<Biome> BIOME_REGISTER = DeferredRegister.create(Registries.BIOME, MOD_ID);
-    public static final DeferredRegister<DimensionType> DIMENSION_TYPE_REGISTER = DeferredRegister.create(Registries.DIMENSION_TYPE, MOD_ID);
-    public static final DeferredRegister<Level> DIMENSION_REGISTER = DeferredRegister.create(Registries.DIMENSION, MOD_ID);
-    public static final DeferredRegister<Block> BLOCK_REGISTER = DeferredRegister.create(Registries.BLOCK, MOD_ID);
-    public static final DeferredRegister<WorldCarver<?>> CARVER_REGISTER = DeferredRegister.create(Registries.CARVER, MOD_ID);
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB_REGISTER = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
-    public static final DeferredRegister<ConfiguredWorldCarver<?>> CONFIGURED_CARVER_REGISTER = DeferredRegister.create(Registries.CONFIGURED_CARVER, MOD_ID);
-    public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURE_REGISTER = DeferredRegister.create(Registries.CONFIGURED_FEATURE, MOD_ID);
-    public static final DeferredRegister<Feature<?>> FEATURE_REGISTER = DeferredRegister.create(Registries.FEATURE, MOD_ID);
-    public static final DeferredRegister<EntityType<?>> ENTITY_TYPE_REGISTER = DeferredRegister.create(Registries.ENTITY_TYPE, MOD_ID);
-    public static final DeferredRegister<Item> ITEM_REGISTER = DeferredRegister.create(Registries.ITEM, MOD_ID);
-    public static final DeferredRegister<ParticleType<?>> PARTICLES_REGISTER = DeferredRegister.create(BuiltInRegistries.PARTICLE_TYPE, MOD_ID);
-    public static final DeferredRegister<SoundEvent> SOUND_EVENT_REGISTER = DeferredRegister.create(Registries.SOUND_EVENT, MOD_ID);
-    public static final DeferredRegister<DamageType> DAMAGE_TYPE_REGISTER = DeferredRegister.create(Registries.DAMAGE_TYPE, MOD_ID);
-    public static final DeferredRegister<Potion> POTION_REGISTER = DeferredRegister.create(Registries.POTION, MOD_ID);
+	public static final DeferredRegister<Biome> BIOME_REGISTER = DeferredRegister.create(Registries.BIOME, MOD_ID);
+	public static final DeferredRegister<DimensionType> DIMENSION_TYPE_REGISTER = DeferredRegister.create(Registries.DIMENSION_TYPE, MOD_ID);
+	public static final DeferredRegister<Level> DIMENSION_REGISTER = DeferredRegister.create(Registries.DIMENSION, MOD_ID);
+	public static final DeferredRegister<Block> BLOCK_REGISTER = DeferredRegister.create(Registries.BLOCK, MOD_ID);
+	public static final DeferredRegister<WorldCarver<?>> CARVER_REGISTER = DeferredRegister.create(Registries.CARVER, MOD_ID);
+	public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB_REGISTER = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
+	public static final DeferredRegister<ConfiguredWorldCarver<?>> CONFIGURED_CARVER_REGISTER = DeferredRegister.create(Registries.CONFIGURED_CARVER, MOD_ID);
+	public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURE_REGISTER = DeferredRegister.create(Registries.CONFIGURED_FEATURE, MOD_ID);
+	public static final DeferredRegister<Feature<?>> FEATURE_REGISTER = DeferredRegister.create(Registries.FEATURE, MOD_ID);
+	public static final DeferredRegister<EntityType<?>> ENTITY_TYPE_REGISTER = DeferredRegister.create(Registries.ENTITY_TYPE, MOD_ID);
+	public static final DeferredRegister<Item> ITEM_REGISTER = DeferredRegister.create(Registries.ITEM, MOD_ID);
+	public static final DeferredRegister<ParticleType<?>> PARTICLES_REGISTER = DeferredRegister.create(BuiltInRegistries.PARTICLE_TYPE, MOD_ID);
+	public static final DeferredRegister<SoundEvent> SOUND_EVENT_REGISTER = DeferredRegister.create(Registries.SOUND_EVENT, MOD_ID);
+	public static final DeferredRegister<DamageType> DAMAGE_TYPE_REGISTER = DeferredRegister.create(Registries.DAMAGE_TYPE, MOD_ID);
+	public static final DeferredRegister<Potion> POTION_REGISTER = DeferredRegister.create(Registries.POTION, MOD_ID);
 
-    public static Necronomicon instance;
-    public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
+	public static Necronomicon instance;
+	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
-    public Necronomicon() {
+	public Necronomicon() {
 
-        instance = this;
+		instance = this;
 
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        modEventBus.addListener(this::commonSetup);
+		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+		modEventBus.addListener(this::commonSetup);
 
-        BIOME_REGISTER.register(modEventBus);
-        DIMENSION_TYPE_REGISTER.register(modEventBus);
-        DIMENSION_REGISTER.register(modEventBus);
-        BLOCK_REGISTER.register(modEventBus);
-        CARVER_REGISTER.register(modEventBus);
-        CREATIVE_TAB_REGISTER.register(modEventBus);
-        CONFIGURED_CARVER_REGISTER.register(modEventBus);
-        CONFIGURED_FEATURE_REGISTER.register(modEventBus);
-        FEATURE_REGISTER.register(modEventBus);
-        ENTITY_TYPE_REGISTER.register(modEventBus);
-        ITEM_REGISTER.register(modEventBus);
-        PARTICLES_REGISTER.register(modEventBus);
-        SOUND_EVENT_REGISTER.register(modEventBus);
-        DAMAGE_TYPE_REGISTER.register(modEventBus);
-        POTION_REGISTER.register(modEventBus);
+		BIOME_REGISTER.register(modEventBus);
+		DIMENSION_TYPE_REGISTER.register(modEventBus);
+		DIMENSION_REGISTER.register(modEventBus);
+		BLOCK_REGISTER.register(modEventBus);
+		CARVER_REGISTER.register(modEventBus);
+		CREATIVE_TAB_REGISTER.register(modEventBus);
+		CONFIGURED_CARVER_REGISTER.register(modEventBus);
+		CONFIGURED_FEATURE_REGISTER.register(modEventBus);
+		FEATURE_REGISTER.register(modEventBus);
+		ENTITY_TYPE_REGISTER.register(modEventBus);
+		ITEM_REGISTER.register(modEventBus);
+		PARTICLES_REGISTER.register(modEventBus);
+		SOUND_EVENT_REGISTER.register(modEventBus);
+		DAMAGE_TYPE_REGISTER.register(modEventBus);
+		POTION_REGISTER.register(modEventBus);
 
-        ModConfig.setup();
-        ModEntities.setup();
-        ModItems.setup();
-        ModBlocks.setup();
-        ModParticles.setup();
+		ModConfig.setup();
+		ModEntities.setup();
+		ModItems.setup();
+		ModBlocks.setup();
+		ModParticles.setup();
 
-        ModCreativeModeTab.setup();
+		ModCreativeModeTab.setup();
 
-        // Register ourselves for server and other game events we are interested in
-        NeoForge.EVENT_BUS.addListener(ModEvents::livingHurt);
-        NeoForge.EVENT_BUS.addListener(ModEvents::playerTick);
-        NeoForge.EVENT_BUS.addListener(ModEvents::playerRightClickItem);
+		// Register ourselves for server and other game events we are interested in
+		NeoForge.EVENT_BUS.addListener(ModEvents::livingHurt);
+		NeoForge.EVENT_BUS.addListener(ModEvents::playerTick);
+		NeoForge.EVENT_BUS.addListener(ModEvents::playerRightClickItem);
 
-    }
+	}
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            ModBiomes.setupBiomes();
-            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER, Items.WHEAT, NecronomiconItems.BEER.get()));
-            /**Old: Regions.register(new ModRegion());*/
-        });
-    }
+	private void commonSetup(final FMLCommonSetupEvent event) {
+		event.enqueueWork(() -> {
+			ModBiomes.setupBiomes();
+			BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER, Items.WHEAT, NecronomiconItems.BEER.get()));
+			/**Old: Regions.register(new ModRegion());*/
+		});
+	}
 
 }

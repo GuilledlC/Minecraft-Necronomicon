@@ -6,5 +6,5 @@ import java.util.function.Supplier;
 
 public class NecronomiconEntities {
 
-    public static Supplier<EntityType<AngleEntity>> ANGLE;
+	public static Supplier<EntityType<AngleEntity>> ANGLE;
 }

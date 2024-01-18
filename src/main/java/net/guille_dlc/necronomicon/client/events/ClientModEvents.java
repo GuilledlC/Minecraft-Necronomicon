@@ -17,24 +17,24 @@ import net.neoforged.neoforge.client.event.RegisterDimensionSpecialEffectsEvent;
 @Mod.EventBusSubscriber(modid = Necronomicon.MOD_ID, bus = Bus.MOD, value = Dist.CLIENT)
 public final class ClientModEvents {
 
-    private ClientModEvents() {}
+	private ClientModEvents() {}
 
-    public static void BookScreen(BookViewScreen screen) {
-            Minecraft.getInstance().setScreen(screen);
-    }
+	public static void BookScreen(BookViewScreen screen) {
+			Minecraft.getInstance().setScreen(screen);
+	}
 
-    @SubscribeEvent
-    public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        //event.registerLayerDefinition(AngleModel.LAYER_LOCATION, AngleModel::createBodyLayer);
-    }
+	@SubscribeEvent
+	public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		//event.registerLayerDefinition(AngleModel.LAYER_LOCATION, AngleModel::createBodyLayer);
+	}
 
-    @SubscribeEvent
-    public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(NecronomiconEntities.ANGLE.get(), AngleRenderer::new);
-    }
+	@SubscribeEvent
+	public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+		event.registerEntityRenderer(NecronomiconEntities.ANGLE.get(), AngleRenderer::new);
+	}
 
-    @SubscribeEvent
-    public static void RegisterDimensionSpecialEffects(RegisterDimensionSpecialEffectsEvent event) {
-        event.register(NecronomiconDimensions.DAGON_EFFECTS, new NecronomiconDimensionSpecialEffects.DagonEffects());
-    }
+	@SubscribeEvent
+	public static void RegisterDimensionSpecialEffects(RegisterDimensionSpecialEffectsEvent event) {
+		event.register(NecronomiconDimensions.DAGON_EFFECTS, new NecronomiconDimensionSpecialEffects.DagonEffects());
+	}
 }
